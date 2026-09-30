@@ -55,3 +55,30 @@ def build_cells(df: pl.DataFrame) -> dict[str, list]:
                         + [0, int(round(row["pop"], -2))]
                     )
     return out
+
+
+# Profile dimensions a facet cell may also condition on (occupation only at major-group level)
+FACET_KEY_DIMS = ["occ_major", "age", "sex"]
+
+
+def build_facets(df: pl.DataFrame, facets: list[str]) -> dict[str, list]:
+    """Cells for extra dimensions ("facets" such as industry or citizenship).
+
+    Key: "<facet>=<value>|<occ major or *>|<age or *>|<sex or *>", same cell layout as build_cells.
+    Rows with a null facet value are left out of that facet.
+    """
+    out: dict[str, list] = {}
+    for facet in facets:
+        sub = df.filter(pl.col(facet).is_not_null())
+        for r in range(len(FACET_KEY_DIMS) + 1):
+            for subset in itertools.combinations(FACET_KEY_DIMS, r):
+                for row in weighted_cells(sub, [facet, *subset]).iter_rows(named=True):
+                    occ = f"M{row['occ_major']}" if "occ_major" in subset else "*"
+                    age = row["age"] if "age" in subset else "*"
+                    sex = row["sex"] if "sex" in subset else "*"
+                    out[f"{facet}={row[facet]}|{occ}|{age}|{sex}"] = (
+                        [row["n"], int(round(row["mean"], -2))]
+                        + [int(round(row[f"p{int(q * 100)}"], -2)) for q in QUANTILES]
+                        + [0, int(round(row["pop"], -2))]
+                    )
+    return out

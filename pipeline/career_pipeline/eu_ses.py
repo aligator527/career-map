@@ -81,6 +81,19 @@ REGIONS = {
         ("ITF", "South", "南部"), ("ITG", "Islands", "島嶼部"),
     ],
 }
+NACE = {
+    "B": ("Mining and quarrying", "鉱業"), "C": ("Manufacturing", "製造業"), "D": ("Electricity and gas", "電気・ガス"),
+    "E": ("Water supply and waste", "水道・廃棄物処理"), "F": ("Construction", "建設業"), "G": ("Wholesale and retail", "卸売・小売業"),
+    "H": ("Transport and storage", "運輸・倉庫業"), "I": ("Accommodation and food", "宿泊・飲食サービス業"),
+    "J": ("Information and communication", "情報通信業"), "K": ("Finance and insurance", "金融・保険業"),
+    "L": ("Real estate", "不動産業"), "M": ("Professional, scientific and technical", "専門・科学技術サービス業"),
+    "N": ("Administrative and support services", "事業支援サービス業"), "P": ("Education", "教育"),
+    "Q": ("Health and social work", "医療・福祉"), "R": ("Arts and recreation", "芸術・娯楽"), "S": ("Other services", "その他のサービス業"),
+}
+SIZES = {"10-49": "10-49", "50-249": "50-249", "250-499": "250-499", "500-999": "500-999", "GE1000": "1000+"}
+SIZE_LABELS = {"10-49": ("10–49 employees", "10〜49人"), "50-249": ("50–249 employees", "50〜249人"),
+               "250-499": ("250–499 employees", "250〜499人"), "500-999": ("500–999 employees", "500〜999人"),
+               "1000+": ("1,000+ employees", "1,000人以上")}
 NAMES = {"DE": ("Germany", "ドイツ"), "FR": ("France", "フランス"), "IT": ("Italy", "イタリア")}
 
 
@@ -136,6 +149,8 @@ def queries(c: str) -> dict[str, dict]:
             {"geo": c, "time": str(YEAR), "worktime": "FT", "nace_r2": "B-S_X_O",
              "indic_se": ["MEAN_E_EUR", "MED_E_EUR", "D1_E_EUR", "D9_E_EUR"]},
         ),
+        "occ_size_sex": fetch_json(f"ses22_32_{c}", "earn_ses22_32", {"geo": c, "unit": "EUR", "indic_se": "ERN"}),
+        "occ_nace_sex": fetch_json(f"ses22_49_{c}", "earn_ses22_49", {**common, "nace_r2": list(NACE)}),
         "regions": fetch_json(
             f"ses22_rann_{c}", "earn_ses22_rann",
             {"geo": [code for code, _, _ in REGIONS[c]], "unit": "EUR", "indic_se": "ERN"},
@@ -213,7 +228,21 @@ def build_country(c: str) -> None:
         if edu in EDU and edu != "TOTAL":
             national[f"*|*|{SEX[sex]}|{EDU[edu]}"] = cell(v, 0, shape_for("TOTAL", "TOTAL", r["sex"]))
 
+    # Facets: company size (occupation × size × sex) and industry (occupation × NACE section × sex); means only
+    facets: dict[str, list] = {}
+    for r, v in rows(q["occ_size_sex"]):
+        isco, size, sex = r["isco08"], r["sizeclas"], r["sex"]
+        if size in SIZES and (isco == "TOTAL" or isco in ISCO):
+            occ = "*" if isco == "TOTAL" else f"M{isco}"
+            facets[f"size={SIZES[size]}|{occ}|*|{SEX[sex]}"] = cell(v, 0, shape_for(isco, "TOTAL", sex))
+    for r, v in rows(q["occ_nace_sex"]):
+        isco, nace, sex = r["isco08"], r["nace_r2"], r["sex"]
+        if nace in NACE and (isco == "TOTAL" or isco in ISCO):
+            occ = "*" if isco == "TOTAL" else f"M{isco}"
+            facets[f"industry={nace}|{occ}|*|{SEX[sex]}"] = cell(v, 0, shape_for(isco, "TOTAL", sex))
+
     out = WEB_DATA_DIR / c.lower()
+    write_json(out / "facets.json", facets)
     for f in out.glob("region-*.json"):
         f.unlink()
     for r, v in rows(q["regions"]):
@@ -241,6 +270,12 @@ def build_country(c: str) -> None:
         "occupations": [],
         "ages": AGES_DISPLAY,
         "educations": ["lower_secondary", "upper_secondary", "tertiary"],
+        "facets": {
+            "industry": {"label": {"en": "Industry", "ja": "業界"},
+                         "values": [{"code": k, "label": {"en": en, "ja": ja}} for k, (en, ja) in NACE.items()]},
+            "size": {"label": {"en": "Company size", "ja": "企業規模"},
+                     "values": [{"code": k, "label": {"en": en, "ja": ja}} for k, (en, ja) in SIZE_LABELS.items()]},
+        },
     })
     write_region_summary(out)
     print(f"  {c}: {len(national)} national cells, {sum(1 for _ in out.glob('region-*.json'))} regions")

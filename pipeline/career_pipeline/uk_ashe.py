@@ -15,10 +15,12 @@ median (method 4). There is no education dimension in ASHE.
 from __future__ import annotations
 
 import io
+import json
 import math
 import re
 import time
 import zipfile
+from pathlib import Path
 
 import openpyxl
 import requests
@@ -33,6 +35,7 @@ TABLES = {
     3: "regionbyoccupation2digitsocashetable3",
 }
 UK_RAW = RAW_DIR / "uk"
+OCC_JA = json.loads((Path(__file__).parent / "labels" / "uk_occupations_ja.json").read_text())
 OUT_DIR = WEB_DATA_DIR / "uk"
 SHEETS = {"Full-Time": "*", "Male Full-Time": "M", "Female Full-Time": "F"}
 PCTS = [10, 20, 25, 30, 40, 60, 70, 75, 80, 90]  # columns 7..16
@@ -219,7 +222,7 @@ def build() -> None:
         },
         "regions": [{"code": k, "label": {"en": en, "ja": ja}, **({"abbr": a} if a else {})} for k, (en, ja, a) in REGIONS.items()],
         "occupationMajor": [{"code": f"M{k}", "label": {"en": v, "ja": SUB_MAJOR_JA.get(k, v)}} for k, v in sorted(majors.items())],
-        "occupations": [{"code": k, "major": k[:2], "label": {"en": v}} for k, v in sorted(occupations.items())],
+        "occupations": [{"code": k, "major": k[:2], "label": {"en": v, **({"ja": OCC_JA[k]} if k in OCC_JA else {})}} for k, v in sorted(occupations.items())],
         "ages": list(AGE.values()),
         "educations": [],
     })

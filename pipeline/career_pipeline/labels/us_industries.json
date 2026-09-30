@@ -1,0 +1,1398 @@
+{
+ "sectors": {
+  "AGR": {
+   "en": "Agriculture, Forestry, Fishing and Hunting",
+   "ja": "農業・林業・漁業"
+  },
+  "EXT": {
+   "en": "Mining, Quarrying, and Oil and Gas Extraction",
+   "ja": "鉱業・採石業"
+  },
+  "UTL": {
+   "en": "Utilities",
+   "ja": "電気・ガス・熱供給・水道業"
+  },
+  "CON": {
+   "en": "Construction",
+   "ja": "建設業"
+  },
+  "MFG": {
+   "en": "Manufacturing",
+   "ja": "製造業"
+  },
+  "WHL": {
+   "en": "Wholesale Trade",
+   "ja": "卸売業"
+  },
+  "RET": {
+   "en": "Retail Trade",
+   "ja": "小売業"
+  },
+  "TRN": {
+   "en": "Transportation and Warehousing",
+   "ja": "運輸業・郵便業"
+  },
+  "INF": {
+   "en": "Information",
+   "ja": "情報通信業"
+  },
+  "FIN": {
+   "en": "Finance, Insurance, Real Estate, and Rental and Leasing",
+   "ja": "金融・保険・不動産・物品賃貸業"
+  },
+  "PRF": {
+   "en": "Professional, Scientific, Management, and Administrative and Waste Management Services",
+   "ja": "専門・技術・事業支援サービス業"
+  },
+  "EDU": {
+   "en": "Educational Services",
+   "ja": "教育・学習支援業"
+  },
+  "MED": {
+   "en": "Health Care",
+   "ja": "医療・介護"
+  },
+  "SCA": {
+   "en": "Social Assistance",
+   "ja": "社会福祉"
+  },
+  "ENT": {
+   "en": "Arts, Entertainment, Recreation, Accommodation, and Food Services",
+   "ja": "娯楽・宿泊・飲食サービス業"
+  },
+  "SRV": {
+   "en": "Other Services, Except Public Administration",
+   "ja": "その他のサービス業"
+  },
+  "ADM": {
+   "en": "Public Administration",
+   "ja": "公務"
+  },
+  "MIL": {
+   "en": "Military",
+   "ja": "軍務"
+  }
+ },
+ "industries": {
+  "111": {
+   "sector": "AGR",
+   "en": "Crop Production",
+   "ja": "耕種農業"
+  },
+  "112": {
+   "sector": "AGR",
+   "en": "Animal Production And Aquaculture",
+   "ja": "畜産業・水産養殖業"
+  },
+  "1133": {
+   "sector": "AGR",
+   "en": "Logging",
+   "ja": "素材生産業（伐採）"
+  },
+  "113M": {
+   "sector": "AGR",
+   "en": "Forestry Except Logging",
+   "ja": "林業（伐採を除く）"
+  },
+  "114": {
+   "sector": "AGR",
+   "en": "Fishing, Hunting And Trapping",
+   "ja": "漁業・狩猟業"
+  },
+  "115": {
+   "sector": "AGR",
+   "en": "Support Activities For Agriculture And Forestry",
+   "ja": "農林業サービス業"
+  },
+  "211": {
+   "sector": "EXT",
+   "en": "Oil And Gas Extraction",
+   "ja": "石油・天然ガス採掘業"
+  },
+  "2121": {
+   "sector": "EXT",
+   "en": "Coal Mining",
+   "ja": "石炭鉱業"
+  },
+  "2122": {
+   "sector": "EXT",
+   "en": "Metal Ore Mining",
+   "ja": "金属鉱業"
+  },
+  "2123": {
+   "sector": "EXT",
+   "en": "Nonmetallic Mineral Mining And Quarrying",
+   "ja": "非金属鉱業・採石業"
+  },
+  "213": {
+   "sector": "EXT",
+   "en": "Support Activities For Mining",
+   "ja": "鉱業サービス業"
+  },
+  "2211P": {
+   "sector": "UTL",
+   "en": "Electric Power Generation, Transmission And Distribution",
+   "ja": "電気業（発電・送配電）"
+  },
+  "2212P": {
+   "sector": "UTL",
+   "en": "Natural Gas Distribution",
+   "ja": "ガス業（供給）"
+  },
+  "22132": {
+   "sector": "UTL",
+   "en": "Sewage Treatment Facilities",
+   "ja": "下水道業"
+  },
+  "2213M": {
+   "sector": "UTL",
+   "en": "Water Supply And Irrigation Systems, And Steam And Air-conditioning Supply",
+   "ja": "水道・かんがい・熱供給業"
+  },
+  "221MP": {
+   "sector": "UTL",
+   "en": "Electric And Gas, And Other Combinations",
+   "ja": "電気・ガス兼業等"
+  },
+  "22S": {
+   "sector": "UTL",
+   "en": "Not Specified Utilities",
+   "ja": "その他の電気・ガス・水道業（不詳）"
+  },
+  "23": {
+   "sector": "CON",
+   "en": "Construction (The Cleaning Of Buildings And Dwellings Is Incidental During Construction And Immediately After Construction)",
+   "ja": "建設業"
+  },
+  "3113": {
+   "sector": "MFG",
+   "en": "Sugar And Confectionery Products",
+   "ja": "砂糖・菓子製造業"
+  },
+  "3114": {
+   "sector": "MFG",
+   "en": "Fruit And Vegetable Preserving And Specialty Food",
+   "ja": "果実・野菜加工食品製造業"
+  },
+  "3115": {
+   "sector": "MFG",
+   "en": "Dairy Product",
+   "ja": "乳製品製造業"
+  },
+  "3116": {
+   "sector": "MFG",
+   "en": "Animal Slaughtering And Processing",
+   "ja": "畜産食料品製造業"
+  },
+  "311811": {
+   "sector": "MFG",
+   "en": "Retail Bakeries",
+   "ja": "パン製造小売業"
+  },
+  "3118Z": {
+   "sector": "MFG",
+   "en": "Bakeries And Tortilla, Except Retail Bakeries",
+   "ja": "パン・トルティーヤ製造業（小売除く）"
+  },
+  "311M1": {
+   "sector": "MFG",
+   "en": "Animal Food, Grain And Oilseed Milling",
+   "ja": "飼料・精穀・製粉・油脂製造業"
+  },
+  "311M2": {
+   "sector": "MFG",
+   "en": "Seafood And Other Miscellaneous Foods, N.E.C.",
+   "ja": "水産食料品・その他の食料品製造業"
+  },
+  "311S": {
+   "sector": "MFG",
+   "en": "Not Specified Food Industries",
+   "ja": "食料品製造業（不詳）"
+  },
+  "3121": {
+   "sector": "MFG",
+   "en": "Beverage",
+   "ja": "飲料製造業"
+  },
+  "3122": {
+   "sector": "MFG",
+   "en": "Tobacco",
+   "ja": "たばこ製造業"
+  },
+  "3131": {
+   "sector": "MFG",
+   "en": "Fiber, Yarn, And Thread Mills",
+   "ja": "紡績・製糸業"
+  },
+  "3132Z": {
+   "sector": "MFG",
+   "en": "Fabric Mills, Except Knit Fabric Mills",
+   "ja": "織物業（ニット生地を除く）"
+  },
+  "3133": {
+   "sector": "MFG",
+   "en": "Textile And Fabric Finishing And Fabric Coating Mills",
+   "ja": "染色整理業"
+  },
+  "31411": {
+   "sector": "MFG",
+   "en": "Carpet And Rug Mills",
+   "ja": "じゅうたん製造業"
+  },
+  "314Z": {
+   "sector": "MFG",
+   "en": "Textile Product Mills, Except Carpet And Rug",
+   "ja": "その他の繊維製品製造業"
+  },
+  "315M": {
+   "sector": "MFG",
+   "en": "Cut And Sew, And Apparel Accessories And Other Apparel",
+   "ja": "衣服・服飾雑貨製造業"
+  },
+  "3162": {
+   "sector": "MFG",
+   "en": "Footwear",
+   "ja": "履物製造業"
+  },
+  "316M": {
+   "sector": "MFG",
+   "en": "Leather And Hide Tanning And Finishing, And Other Leather And Allied Product",
+   "ja": "なめし革・革製品製造業"
+  },
+  "31M": {
+   "sector": "MFG",
+   "en": "Knit Fabric Mills, And Apparel Knitting Mills",
+   "ja": "ニット生地・ニット衣服製造業"
+  },
+  "3211": {
+   "sector": "MFG",
+   "en": "Sawmills And Wood Preservation",
+   "ja": "製材業・木材防腐処理業"
+  },
+  "3212": {
+   "sector": "MFG",
+   "en": "Veneer, Plywood, And Engineered Wood Product",
+   "ja": "合板・集成材製造業"
+  },
+  "32199M": {
+   "sector": "MFG",
+   "en": "Manufactured Home (Mobile Home) And Prefabricated Wood Building",
+   "ja": "プレハブ住宅・移動住宅製造業"
+  },
+  "3219ZM": {
+   "sector": "MFG",
+   "en": "Miscellaneous Wood Product",
+   "ja": "その他の木製品製造業"
+  },
+  "3221": {
+   "sector": "MFG",
+   "en": "Pulp, Paper, And Paperboard Mills",
+   "ja": "パルプ・紙・板紙製造業"
+  },
+  "32221": {
+   "sector": "MFG",
+   "en": "Paperboard Container",
+   "ja": "段ボール箱・紙器製造業"
+  },
+  "3222M": {
+   "sector": "MFG",
+   "en": "Miscellaneous Paper And Pulp Products",
+   "ja": "その他の紙製品製造業"
+  },
+  "3231": {
+   "sector": "MFG",
+   "en": "Printing And Related Support Activities",
+   "ja": "印刷・同関連業"
+  },
+  "32411": {
+   "sector": "MFG",
+   "en": "Petroleum Refineries",
+   "ja": "石油精製業"
+  },
+  "3241M": {
+   "sector": "MFG",
+   "en": "Petroleum And Coal Products Manufacturing, Except Petroleum Refineries",
+   "ja": "石油・石炭製品製造業（精製除く）"
+  },
+  "3252": {
+   "sector": "MFG",
+   "en": "Resin, Synthetic Rubber, And Artificial And Synthetic Fibers And Filaments",
+   "ja": "合成樹脂・合成ゴム・化学繊維製造業"
+  },
+  "3253": {
+   "sector": "MFG",
+   "en": "Pesticide, Fertilizer, And Other Agricultural Chemical",
+   "ja": "農薬・肥料製造業"
+  },
+  "3254": {
+   "sector": "MFG",
+   "en": "Pharmaceutical And Medicine",
+   "ja": "医薬品製造業"
+  },
+  "3255": {
+   "sector": "MFG",
+   "en": "Paint, Coating, And Adhesive",
+   "ja": "塗料・接着剤製造業"
+  },
+  "3256": {
+   "sector": "MFG",
+   "en": "Soap, Cleaning Compound, And Toilet Preparation",
+   "ja": "石けん・洗剤・化粧品製造業"
+  },
+  "325M": {
+   "sector": "MFG",
+   "en": "Basic Chemical, And Other Chemical Product And Preparation",
+   "ja": "基礎化学品・その他の化学製品製造業"
+  },
+  "3261": {
+   "sector": "MFG",
+   "en": "Plastics Product",
+   "ja": "プラスチック製品製造業"
+  },
+  "32621": {
+   "sector": "MFG",
+   "en": "Tire",
+   "ja": "タイヤ製造業"
+  },
+  "3262M": {
+   "sector": "MFG",
+   "en": "Rubber Products, Except Tires",
+   "ja": "ゴム製品製造業（タイヤを除く）"
+  },
+  "32711": {
+   "sector": "MFG",
+   "en": "Pottery, Ceramics, And Plumbing Fixture",
+   "ja": "陶磁器・衛生陶器製造業"
+  },
+  "32712": {
+   "sector": "MFG",
+   "en": "Clay Building Material And Refractories",
+   "ja": "粘土建材・耐火物製造業"
+  },
+  "3272": {
+   "sector": "MFG",
+   "en": "Glass And Glass Product",
+   "ja": "ガラス・同製品製造業"
+  },
+  "3279": {
+   "sector": "MFG",
+   "en": "Other Nonmetallic Mineral Product",
+   "ja": "その他の窯業・土石製品製造業"
+  },
+  "327M": {
+   "sector": "MFG",
+   "en": "Cement, Concrete, Lime, And Gypsum Product",
+   "ja": "セメント・コンクリート・石灰・石膏製品製造業"
+  },
+  "3313": {
+   "sector": "MFG",
+   "en": "Alumina And Aluminum Production And Processing",
+   "ja": "アルミニウム製造・加工業"
+  },
+  "3314": {
+   "sector": "MFG",
+   "en": "Nonferrous Metal (Except Aluminum) Production And Processing",
+   "ja": "非鉄金属製造業（アルミ除く）"
+  },
+  "3315": {
+   "sector": "MFG",
+   "en": "Foundries",
+   "ja": "鋳造業"
+  },
+  "331M": {
+   "sector": "MFG",
+   "en": "Iron And Steel Mills And Steel Product",
+   "ja": "鉄鋼業"
+  },
+  "3321": {
+   "sector": "MFG",
+   "en": "Forging And Stamping",
+   "ja": "鍛造・プレス業"
+  },
+  "3322": {
+   "sector": "MFG",
+   "en": "Cutlery And Handtool",
+   "ja": "刃物・手道具製造業"
+  },
+  "3327": {
+   "sector": "MFG",
+   "en": "Machine Shops; Turned Product; Screw, Nut, And Bolt",
+   "ja": "機械加工・ねじ・ボルト製造業"
+  },
+  "3328": {
+   "sector": "MFG",
+   "en": "Coating, Engraving, Heat Treating, And Allied Activities",
+   "ja": "金属表面処理・熱処理業"
+  },
+  "33299M": {
+   "sector": "MFG",
+   "en": "Ordnance",
+   "ja": "武器製造業"
+  },
+  "332M": {
+   "sector": "MFG",
+   "en": "Architectural And Structural Metals, And Boiler, Tank, And Shipping Container",
+   "ja": "建設用金属製品・ボイラ・タンク製造業"
+  },
+  "332MZ": {
+   "sector": "MFG",
+   "en": "Miscellaneous Fabricated Metal Product",
+   "ja": "その他の金属製品製造業"
+  },
+  "33311": {
+   "sector": "MFG",
+   "en": "Agricultural Implement",
+   "ja": "農業用機械製造業"
+  },
+  "3331M": {
+   "sector": "MFG",
+   "en": "Construction, And Mining And Oil And Gas Field Machinery",
+   "ja": "建設・鉱山・油田用機械製造業"
+  },
+  "3333": {
+   "sector": "MFG",
+   "en": "Commercial And Service Industry Machinery",
+   "ja": "商業・サービス用機械製造業"
+  },
+  "3335": {
+   "sector": "MFG",
+   "en": "Metalworking Machinery",
+   "ja": "金属加工機械製造業"
+  },
+  "3336": {
+   "sector": "MFG",
+   "en": "Engine, Turbine, And Power Transmission Equipment",
+   "ja": "原動機・動力伝導装置製造業"
+  },
+  "333MS": {
+   "sector": "MFG",
+   "en": "Machinery, N.E.C. Or Not Specified",
+   "ja": "その他の機械製造業（不詳含む）"
+  },
+  "3341": {
+   "sector": "MFG",
+   "en": "Computer And Peripheral Equipment",
+   "ja": "電子計算機・周辺機器製造業"
+  },
+  "3345": {
+   "sector": "MFG",
+   "en": "Navigational, Measuring, Electromedical, And Control Instruments",
+   "ja": "計測・制御・電子医療機器製造業"
+  },
+  "334M1": {
+   "sector": "MFG",
+   "en": "Communications, Audio, And Video Equipment",
+   "ja": "通信・映像・音響機器製造業"
+  },
+  "334M2": {
+   "sector": "MFG",
+   "en": "Semiconductor, Magnetic And Optical Media, And Other Electronic Component",
+   "ja": "半導体・電子部品製造業"
+  },
+  "3352": {
+   "sector": "MFG",
+   "en": "Household Appliance",
+   "ja": "家庭用電気機器製造業"
+  },
+  "335M": {
+   "sector": "MFG",
+   "en": "Electric Lighting And Electrical Equipment, And Other Electrical Component, N.E.C.",
+   "ja": "照明・電気機械器具製造業"
+  },
+  "33641M1": {
+   "sector": "MFG",
+   "en": "Aircraft, Aircraft Engine, And Aircraft Parts",
+   "ja": "航空機・同部品製造業"
+  },
+  "33641M2": {
+   "sector": "MFG",
+   "en": "Guided Missile And Space Vehicle And Parts",
+   "ja": "ミサイル・宇宙機製造業"
+  },
+  "3365": {
+   "sector": "MFG",
+   "en": "Railroad Rolling Stock",
+   "ja": "鉄道車両製造業"
+  },
+  "3366": {
+   "sector": "MFG",
+   "en": "Ship And Boat Building",
+   "ja": "造船業"
+  },
+  "3369": {
+   "sector": "MFG",
+   "en": "Other Transportation Equipment",
+   "ja": "その他の輸送用機械製造業"
+  },
+  "336M": {
+   "sector": "MFG",
+   "en": "Motor Vehicles And Motor Vehicle Equipment",
+   "ja": "自動車・同附属品製造業"
+  },
+  "337": {
+   "sector": "MFG",
+   "en": "Furniture And Related Product",
+   "ja": "家具・装備品製造業"
+  },
+  "3391": {
+   "sector": "MFG",
+   "en": "Medical Equipment And Supplies",
+   "ja": "医療用機械器具・用品製造業"
+  },
+  "3399M": {
+   "sector": "MFG",
+   "en": "Sporting And Athletic Goods, And Doll, Toy And Game",
+   "ja": "運動用具・玩具製造業"
+  },
+  "3399ZM": {
+   "sector": "MFG",
+   "en": "Miscellaneous Manufacturing, N.E.C.",
+   "ja": "その他の製造業"
+  },
+  "33MS": {
+   "sector": "MFG",
+   "en": "Not Specified Metal Industries",
+   "ja": "金属関連製造業（不詳）"
+  },
+  "3MS": {
+   "sector": "MFG",
+   "en": "Not Specified Manufacturing Industries",
+   "ja": "製造業（不詳）"
+  },
+  "4231": {
+   "sector": "WHL",
+   "en": "Motor Vehicle And Motor Vehicle Parts And Supplies Merchant Wholesalers",
+   "ja": "自動車・同部品卸売業"
+  },
+  "4232": {
+   "sector": "WHL",
+   "en": "Furniture And Home Furnishing Merchant Wholesalers",
+   "ja": "家具・建具卸売業"
+  },
+  "4233": {
+   "sector": "WHL",
+   "en": "Lumber And Other Construction Materials Merchant Wholesalers",
+   "ja": "木材・建築材料卸売業"
+  },
+  "4234": {
+   "sector": "WHL",
+   "en": "Professional And Commercial Equipment And Supplies Merchant Wholesalers",
+   "ja": "業務用機器卸売業"
+  },
+  "4235": {
+   "sector": "WHL",
+   "en": "Metal And Mineral, Except Petroleum, Merchant Wholesalers",
+   "ja": "金属・鉱物卸売業（石油除く）"
+  },
+  "4236": {
+   "sector": "WHL",
+   "en": "Household Appliances And Electrical And Electronic Goods Merchant Wholesalers",
+   "ja": "家電・電気機器卸売業"
+  },
+  "4237": {
+   "sector": "WHL",
+   "en": "Hardware, And Plumbing And Heating Equipment, And Supplies Merchant Wholesalers",
+   "ja": "金物・配管・暖房機器卸売業"
+  },
+  "4238": {
+   "sector": "WHL",
+   "en": "Machinery, Equipment, And Supplies Merchant Wholesalers",
+   "ja": "産業機械器具卸売業"
+  },
+  "42393": {
+   "sector": "WHL",
+   "en": "Recyclable Material Merchant Wholesalers",
+   "ja": "再生資源卸売業"
+  },
+  "4239Z": {
+   "sector": "WHL",
+   "en": "Miscellaneous Durable Goods, Except Recyclable Material, Merchant Wholesalers",
+   "ja": "その他の耐久財卸売業"
+  },
+  "4241": {
+   "sector": "WHL",
+   "en": "Paper And Paper Product Merchant Wholesalers",
+   "ja": "紙・紙製品卸売業"
+  },
+  "4243": {
+   "sector": "WHL",
+   "en": "Apparel, Piece Goods, And Notions Merchant Wholesalers",
+   "ja": "衣服・繊維品卸売業"
+  },
+  "4244": {
+   "sector": "WHL",
+   "en": "Grocery And Related Product Merchant Wholesalers",
+   "ja": "食料品卸売業"
+  },
+  "4245": {
+   "sector": "WHL",
+   "en": "Farm Product Raw Material Merchant Wholesalers",
+   "ja": "農畜産物原料卸売業"
+  },
+  "4247": {
+   "sector": "WHL",
+   "en": "Petroleum And Petroleum Products Merchant Wholesalers",
+   "ja": "石油製品卸売業"
+  },
+  "4248": {
+   "sector": "WHL",
+   "en": "Beer, Wine, And Distilled Alcoholic Beverage Merchant Wholesalers",
+   "ja": "酒類卸売業"
+  },
+  "42491": {
+   "sector": "WHL",
+   "en": "Farm Supplies Merchant Wholesalers",
+   "ja": "農業資材卸売業"
+  },
+  "4249Z": {
+   "sector": "WHL",
+   "en": "Miscellaneous Nondurable Goods Merchant, Except Farm Supplies, Wholesalers",
+   "ja": "その他の非耐久財卸売業"
+  },
+  "424M": {
+   "sector": "WHL",
+   "en": "Drugs, Druggists' Sundries, And Chemical And Allied Products Merchant Wholesalers",
+   "ja": "医薬品・化学製品卸売業"
+  },
+  "4251": {
+   "sector": "WHL",
+   "en": "Wholesale Trade Agents And Brokers",
+   "ja": "卸売代理・仲立業"
+  },
+  "42S": {
+   "sector": "WHL",
+   "en": "Not Specified Wholesale Trade",
+   "ja": "卸売業（不詳）"
+  },
+  "4411": {
+   "sector": "RET",
+   "en": "Automobile Dealers",
+   "ja": "自動車ディーラー"
+  },
+  "4412": {
+   "sector": "RET",
+   "en": "Other Motor Vehicle Dealers",
+   "ja": "その他の自動車小売業"
+  },
+  "4413": {
+   "sector": "RET",
+   "en": "Automotive Parts, Accessories, And Tire Retailers",
+   "ja": "自動車部品・タイヤ小売業"
+  },
+  "44414": {
+   "sector": "RET",
+   "en": "Hardware Retailers",
+   "ja": "金物小売業"
+  },
+  "4441Z": {
+   "sector": "RET",
+   "en": "Building Material And Supplies Dealers, Except Hardware Retailers",
+   "ja": "建築材料小売業（金物除く）"
+  },
+  "4442": {
+   "sector": "RET",
+   "en": "Lawn And Garden Equipment And Supplies Retailers",
+   "ja": "園芸用品小売業"
+  },
+  "44511": {
+   "sector": "RET",
+   "en": "Supermarkets And Other Grocery (Except Convenience) Retailers",
+   "ja": "スーパーマーケット・食料品小売業"
+  },
+  "44513": {
+   "sector": "RET",
+   "en": "Convenience Retailers And Vending Machine Operators",
+   "ja": "コンビニエンスストア・自販機業"
+  },
+  "4452": {
+   "sector": "RET",
+   "en": "Specialty Food Retailers",
+   "ja": "専門食料品小売業"
+  },
+  "4453": {
+   "sector": "RET",
+   "en": "Beer, Wine, And Liquor Retailers",
+   "ja": "酒小売業"
+  },
+  "4491": {
+   "sector": "RET",
+   "en": "Furniture And Home Furnishings Retailers",
+   "ja": "家具・インテリア小売業"
+  },
+  "4492": {
+   "sector": "RET",
+   "en": "Electronics And Appliance Retailers",
+   "ja": "家電小売業"
+  },
+  "4551": {
+   "sector": "RET",
+   "en": "Department Stores",
+   "ja": "百貨店"
+  },
+  "4552": {
+   "sector": "RET",
+   "en": "Warehouse Clubs, Supercenters, And Other General Merchandise Retailers",
+   "ja": "総合スーパー・会員制卸売店"
+  },
+  "45611": {
+   "sector": "RET",
+   "en": "Pharmacies And Drug Retailers",
+   "ja": "ドラッグストア・薬局"
+  },
+  "4561Z": {
+   "sector": "RET",
+   "en": "Health And Personal Care, Except Pharmacies And Drug, Retailers",
+   "ja": "化粧品・健康用品小売業"
+  },
+  "4571": {
+   "sector": "RET",
+   "en": "Gasoline Stations",
+   "ja": "ガソリンスタンド"
+  },
+  "4572": {
+   "sector": "RET",
+   "en": "Fuel Dealers",
+   "ja": "燃料小売業"
+  },
+  "4581": {
+   "sector": "RET",
+   "en": "Clothing And Clothing Accessories Retailers",
+   "ja": "衣服・服飾品小売業"
+  },
+  "4582": {
+   "sector": "RET",
+   "en": "Shoe Retailers",
+   "ja": "靴小売業"
+  },
+  "4583": {
+   "sector": "RET",
+   "en": "Jewelry, Luggage, And Leather Goods retailers",
+   "ja": "宝飾品・かばん・革製品小売業"
+  },
+  "45913": {
+   "sector": "RET",
+   "en": "Sewing, Needlework, And Piece Goods Retailers",
+   "ja": "手芸用品・生地小売業"
+  },
+  "45914": {
+   "sector": "RET",
+   "en": "Musical Instrument And Supplies Retailers",
+   "ja": "楽器小売業"
+  },
+  "4591M": {
+   "sector": "RET",
+   "en": "Sporting Goods, And Hobby, Toy, And Game Retailers",
+   "ja": "スポーツ用品・玩具・ホビー小売業"
+  },
+  "45921": {
+   "sector": "RET",
+   "en": "Book Retailers And News Dealers",
+   "ja": "書籍・新聞小売業"
+  },
+  "4593": {
+   "sector": "RET",
+   "en": "Florists",
+   "ja": "花小売業"
+  },
+  "45941": {
+   "sector": "RET",
+   "en": "Office Supplies And Stationery Retailers",
+   "ja": "事務用品・文房具小売業"
+  },
+  "45942": {
+   "sector": "RET",
+   "en": "Gift, Novelty, And Souvenir Retailers",
+   "ja": "ギフト・土産物小売業"
+  },
+  "4595": {
+   "sector": "RET",
+   "en": "Used Merchandise Retailers",
+   "ja": "中古品小売業"
+  },
+  "4599": {
+   "sector": "RET",
+   "en": "Other Miscellaneous Retailers",
+   "ja": "その他の小売業"
+  },
+  "481": {
+   "sector": "TRN",
+   "en": "Air Transportation",
+   "ja": "航空運輸業"
+  },
+  "482": {
+   "sector": "TRN",
+   "en": "Rail Transportation",
+   "ja": "鉄道業"
+  },
+  "483": {
+   "sector": "TRN",
+   "en": "Water Transportation",
+   "ja": "水運業"
+  },
+  "484": {
+   "sector": "TRN",
+   "en": "Truck Transportation",
+   "ja": "道路貨物運送業"
+  },
+  "4853": {
+   "sector": "TRN",
+   "en": "Taxi And Limousine Service",
+   "ja": "タクシー・ハイヤー業"
+  },
+  "485M": {
+   "sector": "TRN",
+   "en": "Transit And Ground Passenger Transportation, Except Taxi And Limousine Service",
+   "ja": "旅客自動車運送業（タクシー除く）"
+  },
+  "486": {
+   "sector": "TRN",
+   "en": "Pipeline Transportation",
+   "ja": "パイプライン輸送業"
+  },
+  "487": {
+   "sector": "TRN",
+   "en": "Scenic And Sightseeing Transportation",
+   "ja": "観光用運送業"
+  },
+  "488": {
+   "sector": "TRN",
+   "en": "Support Activities For Transportation",
+   "ja": "運輸付帯サービス業"
+  },
+  "491": {
+   "sector": "TRN",
+   "en": "Postal Service",
+   "ja": "郵便業"
+  },
+  "492": {
+   "sector": "TRN",
+   "en": "Couriers And Messengers",
+   "ja": "宅配・メッセンジャー業"
+  },
+  "493": {
+   "sector": "TRN",
+   "en": "Warehousing And Storage",
+   "ja": "倉庫業"
+  },
+  "4MS": {
+   "sector": "RET",
+   "en": "Not Specified Retail Trade",
+   "ja": "小売業（不詳）"
+  },
+  "5121": {
+   "sector": "INF",
+   "en": "Motion Pictures And Video Industries",
+   "ja": "映画・映像制作業"
+  },
+  "5122": {
+   "sector": "INF",
+   "en": "Sound Recording Industries",
+   "ja": "音声情報制作業"
+  },
+  "51311": {
+   "sector": "INF",
+   "en": "Newspaper Publishers",
+   "ja": "新聞業"
+  },
+  "5131Z": {
+   "sector": "INF",
+   "en": "Periodical, Book, And Directory And Mailing List, And Other Publishers",
+   "ja": "出版業（新聞・ソフトウェア除く）"
+  },
+  "5132": {
+   "sector": "INF",
+   "en": "Software Publishers",
+   "ja": "ソフトウェア出版業"
+  },
+  "516": {
+   "sector": "INF",
+   "en": "Broadcasting And Content Providers",
+   "ja": "放送業・コンテンツ配信業"
+  },
+  "517111": {
+   "sector": "INF",
+   "en": "Wired Telecommunications Carriers",
+   "ja": "固定電気通信業"
+  },
+  "517Z": {
+   "sector": "INF",
+   "en": "Telecommunications, Except Wired Telecommunications Carriers",
+   "ja": "電気通信業（固定通信除く）"
+  },
+  "5182": {
+   "sector": "INF",
+   "en": "Computing Infrastructure Providers, Data Processing, Web Hosting, And Related Services",
+   "ja": "データ処理・ホスティング業"
+  },
+  "51921": {
+   "sector": "INF",
+   "en": "Libraries And Archives",
+   "ja": "図書館・公文書館"
+  },
+  "51929": {
+   "sector": "INF",
+   "en": "Web Search Portals And All Other Information Services",
+   "ja": "ポータルサイト・その他の情報サービス業"
+  },
+  "5221M": {
+   "sector": "FIN",
+   "en": "Credit Unions, And Savings Institutions And Other Depository Credit Intermediation",
+   "ja": "信用組合・その他の預金取扱機関"
+  },
+  "522M": {
+   "sector": "FIN",
+   "en": "Nondepository Credit Intermediation And Related Activities",
+   "ja": "貸金業等非預金信用機関"
+  },
+  "5241": {
+   "sector": "FIN",
+   "en": "Insurance Carriers",
+   "ja": "保険業"
+  },
+  "5242": {
+   "sector": "FIN",
+   "en": "Agencies, Brokerages, And Other Insurance Related Activities",
+   "ja": "保険代理店・保険サービス業"
+  },
+  "52M2": {
+   "sector": "FIN",
+   "en": "Securities, Commodities, Funds, Trusts, And Other Financial Investments",
+   "ja": "金融商品取引業・投資業"
+  },
+  "52M3": {
+   "sector": "FIN",
+   "en": "Monetary Authorities-Central Bank, And Commercial Banking",
+   "ja": "中央銀行・銀行業"
+  },
+  "5313": {
+   "sector": "FIN",
+   "en": "Activities Related To Real Estate",
+   "ja": "不動産関連サービス業"
+  },
+  "531M": {
+   "sector": "FIN",
+   "en": "Lessors Of Real Estate, And Offices Of Real Estate Agents And Brokers",
+   "ja": "不動産賃貸業・仲介業"
+  },
+  "5321": {
+   "sector": "FIN",
+   "en": "Automotive Equipment Rental And Leasing",
+   "ja": "自動車賃貸業"
+  },
+  "532M2": {
+   "sector": "FIN",
+   "en": "Consumer Goods Rental, And General Rental Centers",
+   "ja": "物品賃貸業（消費者向け）"
+  },
+  "53M": {
+   "sector": "FIN",
+   "en": "Commercial And Industrial Machinery And Equipment, And Nonfinancial Intangible Assets Rental And Leasing",
+   "ja": "産業用機械リース・無形資産賃貸業"
+  },
+  "5411": {
+   "sector": "PRF",
+   "en": "Legal Services",
+   "ja": "法律事務所"
+  },
+  "5412": {
+   "sector": "PRF",
+   "en": "Accounting, Tax Preparation, Bookkeeping, And Payroll Services",
+   "ja": "会計・税理士事務所"
+  },
+  "5413": {
+   "sector": "PRF",
+   "en": "Architectural, Engineering, And Related Services",
+   "ja": "建築設計・エンジニアリング業"
+  },
+  "5414": {
+   "sector": "PRF",
+   "en": "Specialized Design Services",
+   "ja": "デザイン業"
+  },
+  "5415": {
+   "sector": "PRF",
+   "en": "Computer Systems Design And Related Services",
+   "ja": "情報システム設計・開発業"
+  },
+  "5416": {
+   "sector": "PRF",
+   "en": "Management, Scientific, And Technical Consulting Services",
+   "ja": "経営・技術コンサルタント業"
+  },
+  "5417": {
+   "sector": "PRF",
+   "en": "Scientific Research And Development Services",
+   "ja": "学術・開発研究機関"
+  },
+  "5418": {
+   "sector": "PRF",
+   "en": "Advertising, Public Relations, And Related Services",
+   "ja": "広告業"
+  },
+  "54194": {
+   "sector": "PRF",
+   "en": "Veterinary Services",
+   "ja": "獣医業"
+  },
+  "5419Z": {
+   "sector": "PRF",
+   "en": "Other Professional, Scientific, And Technical, Except Veterinary, Services",
+   "ja": "その他の専門・技術サービス業"
+  },
+  "55": {
+   "sector": "PRF",
+   "en": "Management Of Companies And Enterprises",
+   "ja": "持株会社・本社機能"
+  },
+  "5613": {
+   "sector": "PRF",
+   "en": "Employment Services",
+   "ja": "職業紹介・労働者派遣業"
+  },
+  "5614": {
+   "sector": "PRF",
+   "en": "Business Support Services",
+   "ja": "事務支援サービス業"
+  },
+  "5615": {
+   "sector": "PRF",
+   "en": "Travel Arrangements And Reservation Services",
+   "ja": "旅行業"
+  },
+  "5616": {
+   "sector": "PRF",
+   "en": "Investigation And Security Services",
+   "ja": "警備・調査業"
+  },
+  "56173": {
+   "sector": "PRF",
+   "en": "Landscaping Services",
+   "ja": "造園業"
+  },
+  "5617Z": {
+   "sector": "PRF",
+   "en": "Services To Buildings And Dwellings, Except Landscaping Services",
+   "ja": "建物サービス業（造園除く）"
+  },
+  "561M": {
+   "sector": "PRF",
+   "en": "Other Administrative And Other Support Services",
+   "ja": "その他の事業支援サービス業"
+  },
+  "562": {
+   "sector": "PRF",
+   "en": "Waste Management And Remediation Services",
+   "ja": "廃棄物処理業"
+  },
+  "6111": {
+   "sector": "EDU",
+   "en": "Elementary And Secondary Schools",
+   "ja": "小・中・高等学校"
+  },
+  "611M1": {
+   "sector": "EDU",
+   "en": "Junior Colleges, Colleges, Universities, And Professional Schools",
+   "ja": "大学・短期大学・専門職大学院"
+  },
+  "611M2": {
+   "sector": "EDU",
+   "en": "Business, Trade And Technical Schools, And Computer And Management Training",
+   "ja": "専修学校・職業訓練校"
+  },
+  "611M3": {
+   "sector": "EDU",
+   "en": "Other Schools And Instruction, And Educational Support Services",
+   "ja": "その他の教育・学習支援業"
+  },
+  "6211": {
+   "sector": "MED",
+   "en": "Offices Of Physicians",
+   "ja": "一般診療所"
+  },
+  "6212": {
+   "sector": "MED",
+   "en": "Offices Of Dentists",
+   "ja": "歯科診療所"
+  },
+  "62131": {
+   "sector": "MED",
+   "en": "Offices Of Chiropractors",
+   "ja": "カイロプラクティック"
+  },
+  "62132": {
+   "sector": "MED",
+   "en": "Offices Of Optometrists",
+   "ja": "検眼所"
+  },
+  "6213ZM": {
+   "sector": "MED",
+   "en": "Offices Of Other Health Practitioners",
+   "ja": "その他の医療従事者の事業所"
+  },
+  "6214": {
+   "sector": "MED",
+   "en": "Outpatient Care Centers",
+   "ja": "外来医療センター"
+  },
+  "6216": {
+   "sector": "MED",
+   "en": "Home Health Care Services",
+   "ja": "訪問看護・在宅医療サービス"
+  },
+  "621M": {
+   "sector": "MED",
+   "en": "Other Health Care Services",
+   "ja": "その他の医療サービス"
+  },
+  "6222": {
+   "sector": "MED",
+   "en": "Psychiatric And Substance Abuse Hospitals",
+   "ja": "精神科・依存症病院"
+  },
+  "622M": {
+   "sector": "MED",
+   "en": "General Medical And Surgical Hospitals, And Specialty (Except Psychiatric And Substance Abuse) Hospitals",
+   "ja": "一般病院・専門病院"
+  },
+  "6231": {
+   "sector": "MED",
+   "en": "Nursing Care Facilities (Skilled Nursing Facilities)",
+   "ja": "看護・介護施設（高度看護）"
+  },
+  "623M": {
+   "sector": "MED",
+   "en": "Residential Care Facilities, Except Skilled Nursing Facilities",
+   "ja": "居住型介護施設"
+  },
+  "6241": {
+   "sector": "SCA",
+   "en": "Individual And Family Services",
+   "ja": "個人・家族向け福祉サービス"
+  },
+  "6242": {
+   "sector": "SCA",
+   "en": "Community Food And Housing, And Emergency And Other Relief Services",
+   "ja": "食料・住宅・緊急支援サービス"
+  },
+  "6243": {
+   "sector": "SCA",
+   "en": "Vocational Rehabilitation Services",
+   "ja": "職業リハビリテーション"
+  },
+  "6244": {
+   "sector": "SCA",
+   "en": "Child Care Services",
+   "ja": "保育所・児童福祉事業"
+  },
+  "7111": {
+   "sector": "ENT",
+   "en": "Performing Arts Companies",
+   "ja": "舞台芸術団体"
+  },
+  "7112": {
+   "sector": "ENT",
+   "en": "Spectator Sports",
+   "ja": "プロスポーツ・興行"
+  },
+  "7115": {
+   "sector": "ENT",
+   "en": "Independent Artists, Writers, And Performers",
+   "ja": "フリーランスの芸術家・作家"
+  },
+  "711M": {
+   "sector": "ENT",
+   "en": "Promoters Of Performing Arts, Sports, And Similar Events, Agents And Managers For Artists, Athletes, Entertainers, And Other Public Figures",
+   "ja": "興行・芸能マネジメント業"
+  },
+  "712": {
+   "sector": "ENT",
+   "en": "Museums, Historical Sites, And Similar Institutions",
+   "ja": "博物館・史跡等"
+  },
+  "71395": {
+   "sector": "ENT",
+   "en": "Bowling Centers",
+   "ja": "ボウリング場"
+  },
+  "713Z": {
+   "sector": "ENT",
+   "en": "Other Amusement, Gambling, And Recreation Industries",
+   "ja": "その他の娯楽・遊技・レクリエーション業"
+  },
+  "7211": {
+   "sector": "ENT",
+   "en": "Traveler Accommodation",
+   "ja": "宿泊業（ホテル・旅館等）"
+  },
+  "721M": {
+   "sector": "ENT",
+   "en": "Recreational Vehicle Parks And Camps, And Rooming And Boarding Houses, Dormitories, And Workers' Camps",
+   "ja": "キャンプ場・下宿・寮等"
+  },
+  "7224": {
+   "sector": "ENT",
+   "en": "Drinking Places (Alcoholic Beverages)",
+   "ja": "酒場・ビヤホール"
+  },
+  "722Z": {
+   "sector": "ENT",
+   "en": "Food Services And Drinking Places, Except Alcoholic Beverages",
+   "ja": "飲食店（酒場を除く）"
+  },
+  "811192": {
+   "sector": "SRV",
+   "en": "Car Washes",
+   "ja": "洗車業"
+  },
+  "8111Z": {
+   "sector": "SRV",
+   "en": "Automotive Repair And Maintenance",
+   "ja": "自動車整備業"
+  },
+  "8112": {
+   "sector": "SRV",
+   "en": "Electronic And Precision Equipment Repair And Maintenance",
+   "ja": "電子・精密機器修理業"
+  },
+  "8113": {
+   "sector": "SRV",
+   "en": "Commercial And Industrial Machinery And Equipment Repair And Maintenance",
+   "ja": "産業機械修理業"
+  },
+  "8114": {
+   "sector": "SRV",
+   "en": "Personal And Household Goods Repair And Maintenance",
+   "ja": "家庭用品修理業"
+  },
+  "812111": {
+   "sector": "SRV",
+   "en": "Barber Shops",
+   "ja": "理容業"
+  },
+  "812112": {
+   "sector": "SRV",
+   "en": "Beauty Salons",
+   "ja": "美容業"
+  },
+  "8121M": {
+   "sector": "SRV",
+   "en": "Nail Salons And Other Personal Care Services",
+   "ja": "ネイルサロン・その他の美容サービス"
+  },
+  "8122": {
+   "sector": "SRV",
+   "en": "Death Care Services",
+   "ja": "葬儀業"
+  },
+  "8123": {
+   "sector": "SRV",
+   "en": "Drycleaning And Laundry Services",
+   "ja": "クリーニング業"
+  },
+  "8129": {
+   "sector": "SRV",
+   "en": "Other Personal Services",
+   "ja": "その他の生活関連サービス業"
+  },
+  "8131": {
+   "sector": "SRV",
+   "en": "Religious Organizations",
+   "ja": "宗教団体"
+  },
+  "81393": {
+   "sector": "SRV",
+   "en": "Labor Unions And Similar Labor Organizations",
+   "ja": "労働組合"
+  },
+  "8139Z": {
+   "sector": "SRV",
+   "en": "Business, Professional, Political, And Similar Organizations",
+   "ja": "経済団体・職業団体・政治団体"
+  },
+  "813M": {
+   "sector": "SRV",
+   "en": "Civic, Social, Advocacy Organizations, And Grantmaking And Giving Services",
+   "ja": "市民団体・助成団体"
+  },
+  "814": {
+   "sector": "SRV",
+   "en": "Private Households",
+   "ja": "家事サービス業（個人世帯）"
+  },
+  "92113": {
+   "sector": "ADM",
+   "en": "Public Finance Activities",
+   "ja": "財政・税務行政"
+  },
+  "92119": {
+   "sector": "ADM",
+   "en": "Other General Government And Support",
+   "ja": "その他の一般行政"
+  },
+  "9211MP": {
+   "sector": "ADM",
+   "en": "Executive Offices And Legislative Bodies",
+   "ja": "行政府・立法機関"
+  },
+  "923": {
+   "sector": "ADM",
+   "en": "Administration Of Human Resource Programs",
+   "ja": "人的資源関連行政"
+  },
+  "92811P1": {
+   "sector": "MIL",
+   "en": "U.S. Army",
+   "ja": "米陸軍"
+  },
+  "92811P2": {
+   "sector": "MIL",
+   "en": "U.S. Air Force",
+   "ja": "米空軍"
+  },
+  "92811P3": {
+   "sector": "MIL",
+   "en": "U.S. Navy",
+   "ja": "米海軍"
+  },
+  "92811P4": {
+   "sector": "MIL",
+   "en": "U.S. Marines",
+   "ja": "米海兵隊"
+  },
+  "92811P5": {
+   "sector": "MIL",
+   "en": "U.S. Coast Guard",
+   "ja": "米沿岸警備隊"
+  },
+  "92811P6": {
+   "sector": "MIL",
+   "en": "Armed Forces, Branch Not Specified",
+   "ja": "軍（所属不詳）"
+  },
+  "92811P7": {
+   "sector": "MIL",
+   "en": "Military Reserves Or National Guard",
+   "ja": "予備役・州兵"
+  },
+  "9281P": {
+   "sector": "ADM",
+   "en": "National Security And International Affairs",
+   "ja": "国家安全保障・国際関係"
+  },
+  "92M1": {
+   "sector": "ADM",
+   "en": "Administration Of Environmental Quality, And Housing Programs, Urban Planning And Community Development",
+   "ja": "環境・住宅・都市計画行政"
+  },
+  "92M2": {
+   "sector": "ADM",
+   "en": "Administration Of Economic Programs And Space Research And Technology",
+   "ja": "経済行政・宇宙研究行政"
+  },
+  "92MP": {
+   "sector": "ADM",
+   "en": "Justice, Public Order, And Safety Activities",
+   "ja": "司法・治安・安全行政"
+  }
+ }
+}

@@ -1,4 +1,4 @@
-"""US: job mobility from the CPS Annual Social and Economic Supplement (ASEC), 2024 + 2025 pooled.
+"""US: job mobility from the CPS Annual Social and Economic Supplement (ASEC), 2025 + 2026 pooled.
 
 Input (data/raw/us/cps/): asecpub{24,25}csv.zip from
   https://www2.census.gov/programs-surveys/cps/datasets/{year}/march/asecpub{yy}csv.zip  (no key)
@@ -21,7 +21,7 @@ import requests
 
 from .common import RAW_DIR, WEB_DATA_DIR, write_json
 
-YEARS = {2024: "24", 2025: "25"}
+YEARS = {2025: "25", 2026: "26"}
 CPS_RAW = RAW_DIR / "us" / "cps"
 URL = "https://www2.census.gov/programs-surveys/cps/datasets/{year}/march/asecpub{yy}csv.zip"
 MIN_N = 100
@@ -114,8 +114,8 @@ def build() -> None:
                 ]
     write_json(WEB_DATA_DIR / "us" / "mobility.json", {
         "source": {
-            "name": {"en": "U.S. Census Bureau, Current Population Survey ASEC 2024–2025 (pooled)",
-                     "ja": "米国国勢調査局 人口動態調査 年次社会経済補足調査（ASEC）2024〜2025年を合算"},
+            "name": {"en": f"U.S. Census Bureau, Current Population Survey ASEC {min(YEARS)}–{max(YEARS)} (pooled)",
+                     "ja": f"米国国勢調査局 人口動態調査 年次社会経済補足調査（ASEC）{min(YEARS)}〜{max(YEARS)}年を合算"},
             "url": "https://www.census.gov/data/datasets/time-series/demo/cps/cps-asec.html",
         },
         "ages": [a for a, _, _ in AGES],

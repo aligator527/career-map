@@ -7,7 +7,7 @@ import { crosswalk, rate, type CommonOccupation, type Conversion } from './compa
 import { COUNTRIES, MANAGER_CODES, mapEducation } from './countries'
 import { ageBand, cellKey, findCell } from './lookup'
 import { percentileOf } from './stats'
-import type { Cell, Cells, CountryCode, CountryMeta, Dim, Education, FxData, Profile } from './types'
+import type { Cell, Cells, CellTuple, CountryCode, CountryMeta, Dim, Education, FxData, Profile } from './types'
 
 export type Goal = { kind: 'income'; amount: number; age: number } | { kind: 'manager'; age: number }
 
@@ -226,3 +226,39 @@ export function achievers(goal: Extract<Goal, { kind: 'income' }>, g: GoalInputs
   return { occupations, educations, educationAllAges }
 }
 
+
+// ---------------------------------------------------------------- self-employment (US, Canada)
+
+/**
+ * Share of full-time, full-year workers who are self-employed or run their own business, from the
+ * `employment` facet: pop(self_employed) / (pop(employee) + pop(self_employed)) for the same group.
+ */
+export function selfEmployedShare(meta: CountryMeta, facets: Cells, p: Profile): GoalResult | null {
+  const band = p.age != null ? ageBand(p.age, meta.ages) : null
+  const major = p.occupation ? (p.occupation.startsWith('M') ? p.occupation : majorOfCode(meta, p.occupation)) : null
+  const opts = (v: string | null, w: number): [string, number][] => (v ? [[v, w], ['*', 0]] : [['*', 0]])
+  let best: (GoalResult & { score: number }) | null = null
+  for (const [occ, ow] of opts(major, 3))
+    for (const [age, aw] of opts(band, 3))
+      for (const [sex, sw] of opts(p.sex, 1)) {
+        const se = facets[`employment=self_employed|${occ}|${age}|${sex}`]
+        const em = facets[`employment=employee|${occ}|${age}|${sex}`]
+        if (!se || !em) continue
+        const score = ow + aw + sw
+        if (best && score <= best.score) continue
+        const pop = (t: CellTuple) => t[8] ?? t[0]
+        const dropped: Dim[] = []
+        if (p.occupation && occ === '*') dropped.push('occupation')
+        if (band && age === '*') dropped.push('age')
+        if (p.sex && sex === '*') dropped.push('sex')
+        best = { score, share: pop(se) / (pop(se) + pop(em)), pop: pop(se) + pop(em), key: `${occ}|${age}|${sex}|*`, regional: false, dropped }
+      }
+  if (!best) return null
+  const { score: _score, ...r } = best
+  return r
+}
+
+function majorOfCode(meta: CountryMeta, occ: string): string | null {
+  const o = meta.occupations.find((x) => x.code === occ)
+  return o ? `M${o.major}` : null
+}

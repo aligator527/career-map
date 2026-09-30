@@ -286,3 +286,31 @@ button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 .deletion-code { display: inline-block; font-size: 1.05rem; letter-spacing: 0.04em; padding: 8px 12px; margin: 4px 8px 4px 0; background: var(--surface-2); border-radius: 8px; overflow-wrap: anywhere; }
 .code-label { margin: 8px 0 0; font-weight: 600; }
 .delete-row { display: flex; gap: 8px; max-width: 520px; }
+
+.header-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.main-tabs { position: sticky; top: 0; z-index: 4; background: var(--page); padding: 6px 0; margin-bottom: 12px; border-bottom: 1px solid var(--grid); }
+@media (max-width: 860px) {
+  .main-tabs { overflow-x: auto; flex-wrap: nowrap; }
+  .main-tabs button { white-space: nowrap; }
+}
+@media print {
+  .header-actions, .main-tabs, .metric-bar .seg button[aria-pressed='false'], .contribute, .ghost { display: none !important; }
+  .layout { grid-template-columns: 1fr; }
+  .form { position: static; }
+  .card { break-inside: avoid; }
+  body { background: #fff; }
+}
+
+.facet-fields { display: grid; gap: 10px; border-top: 1px solid var(--grid); padding-top: 10px; }
+.facet-fields summary { cursor: pointer; font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; }
+.facet-fields select { width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--axis); background: var(--surface); }
+
+.visa-dest { max-width: 320px; margin: 8px 0 12px; }
+.visa-dest select { width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--axis); background: var(--surface); }
+.visa-summary { margin: 4px 0; font-size: 0.88rem; }
+.visa-reqs { margin: 4px 0; padding-left: 1.2em; font-size: 0.82rem; color: var(--text-secondary); }
+.visa-check { margin: 4px 0; font-size: 0.85rem; font-weight: 600; }
+.visa-check.ok::before { content: '✓ '; color: var(--div-up-strong); }
+.visa-check.below::before { content: '! '; color: var(--div-down-strong); }
+.stat .v.small { font-size: 0.85rem; font-weight: 500; }
+.visas .visa-reqs li { border-top: 0; padding-top: 0; }

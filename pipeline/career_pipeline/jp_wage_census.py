@@ -91,6 +91,17 @@ METHOD_HISTOGRAM = 1
 METHOD_LOGNORMAL = 2
 
 OCC_CODE = {o["ja"]: f"J{i + 1:03d}" for i, o in enumerate(LABELS["occupations"])}
+
+# 日本標準産業分類 大分類 (sheets of 学歴 第1表) and 企業規模 column blocks of the Layout-A tables
+INDUSTRY_EN = {
+    "C": "Mining and quarrying", "D": "Construction", "E": "Manufacturing", "F": "Electricity, gas, heat and water",
+    "G": "Information and communications", "H": "Transport and postal", "I": "Wholesale and retail",
+    "J": "Finance and insurance", "K": "Real estate and leasing", "L": "Scientific research, professional and technical services",
+    "M": "Accommodation and food services", "N": "Living-related services and amusement", "O": "Education and learning support",
+    "P": "Medical, health care and welfare", "Q": "Compound services", "R": "Other services",
+}
+SIZES = {"1000+": (12, "1,000人以上", "1,000+ employees"), "100-999": (20, "100〜999人", "100–999 employees"),
+         "10-99": (28, "10〜99人", "10–99 employees")}
 MAJOR_CODE = {m["ja"]: f"M{k}" for k, m in LABELS["majors"].items()}
 
 
@@ -414,8 +425,50 @@ def build() -> None:
                 if mcode and (c := occ_cell(mcode, r)) is not None:
                     regions[code][key(mcode, r.age, r.sex)] = c
 
+    # --- facets: industry (学歴 第1表 industry sheets) and company size (column blocks)
+    facets: Cells = {}
+    wb_edu = open_book(T_EDU_AGE)
+    industries: dict[str, str] = {}
+
+    def scaled(r: MeanRow) -> list | None:
+        """National distribution shape for the same sex × age, rescaled to this group's mean."""
+        nat = national_means.get((r.sex, r.age))
+        mq = hist_q.get((r.sex, "*", r.age))
+        if not nat or not mq or r.workers < MIN_WORKERS_10:
+            return None
+        c = cell_histogram(nat.workers, nat.annual, nat.shoteinai, mq)
+        c[0], c[1] = round(r.workers * 10), int(round(r.annual, -3))
+        c[2:7] = [int(round(x * r.annual / nat.annual, -3)) for x in c[2:7]]
+        return c
+
+    for sheet in wb_edu.sheetnames:
+        name = norm(sheet)
+        if name.startswith("(") or name == "産業計":
+            continue
+        code, label = name[0], name[1:]
+        industries[code] = label
+        for r in parse_layout_a(wb_edu[sheet], label_col=3, first_row=13):
+            if r.group == "学歴計" and (c := scaled(r)) is not None:
+                facets[f"industry={code}|*|{r.age}|{r.sex}"] = c
+    for size, (col, _, _) in SIZES.items():
+        for r in parse_layout_a(wb_edu["産業計"], label_col=3, first_row=13, value_col=col):
+            if r.group == "学歴計" and (c := scaled(r)) is not None:
+                facets[f"size={size}|*|{r.age}|{r.sex}"] = c
+        size_rows = parse_layout_a(open_book(T_OCC_AGE).worksheets[0], label_col=2, value_col=col)
+        wb7 = open_book(T_OCC_SEX_AGE)
+        for sheet, sex in (("男", "M"), ("女", "F")):
+            size_rows += parse_layout_a(wb7[sheet], label_col=2, sex=sex, value_col=col)
+        wb6 = open_book(T_MAJOR_SEX_AGE)
+        for sheet, sex in (("男女計", "*"), ("男", "M"), ("女", "F")):
+            size_rows += parse_layout_a(wb6[sheet], label_col=2, sex=sex, value_col=col)
+        for r in size_rows:
+            code = OCC_CODE.get(r.group or "") or MAJOR_CODE.get(r.group or "")
+            if code and (c := occ_cell(code, r)) is not None:
+                facets[f"size={size}|{code}|{r.age}|{r.sex}"] = c
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     write_json(OUT_DIR / "national.json", national)
+    write_json(OUT_DIR / "facets.json", facets)
     for code, cells in sorted(regions.items()):
         write_json(OUT_DIR / f"region-{code}.json", cells)
 
@@ -445,6 +498,12 @@ def build() -> None:
         ],
         "ages": AGE_BANDS,
         "educations": ["secondary", "short_tertiary", "bachelor", "graduate"],
+        "facets": {
+            "industry": {"label": {"ja": "業界", "en": "Industry"},
+                         "values": [{"code": k, "label": {"ja": v, "en": INDUSTRY_EN.get(k, v)}} for k, v in industries.items()]},
+            "size": {"label": {"ja": "企業規模", "en": "Company size"},
+                     "values": [{"code": k, "label": {"ja": ja, "en": en}} for k, (_, ja, en) in SIZES.items()]},
+        },
     }
     write_json(OUT_DIR / "meta.json", meta)
     write_region_summary(OUT_DIR)

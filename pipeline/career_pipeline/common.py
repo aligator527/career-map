@@ -40,8 +40,10 @@ def write_region_summary(country_dir: Path, max_dims: int = 2) -> None:
     or unspecified, and at most `max_dims` conditioned dimensions (keeps the file small)."""
     out = {}
     for f in sorted(country_dir.glob("region-*.json")):
-        cells = json.loads(f.read_text())
         code = f.stem.removeprefix("region-")
+        if code.startswith(("CBSA", "CMA")):
+            continue  # metropolitan areas are not drawn on the tile map
+        cells = json.loads(f.read_text())
         out[code] = {
             k: v
             for k, v in cells.items()

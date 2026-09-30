@@ -3,6 +3,7 @@ import { percentileOf } from '../engine/stats'
 import type { Cell, CountryMeta, Match, Profile } from '../engine/types'
 import { formatCount, formatMoney, formatPct, label, labeled, paren } from '../i18n'
 import { DistributionChart } from './DistributionChart'
+import { FacetPanel } from './FacetPanel'
 import { ctxFor, describeGroup, droppedText, type Env } from './env'
 
 export function InfoIcon() {
@@ -62,6 +63,8 @@ export function ResultCard({ env, meta, match, profile }: { env: Env; meta: Coun
           <div className="v">{cell.n > 0 ? `${formatCount(cell.n, lang)}${t.people}` : '—'}</div>
         </div>
       </div>
+
+      <FacetPanel env={env} meta={meta} profile={profile} groupMedian={raw.q[2]} />
 
       <div className="breakdown">
         <h3>{labeled(t.takeHomeTitle, formatMoney(th.gross, cur, lang), lang)}</h3>

@@ -8,6 +8,7 @@ import { MobilityCard } from './components/MobilityCard'
 import { ProfileForm } from './components/ProfileForm'
 import { ResearchCard } from './components/ResearchCard'
 import { ResultCard } from './components/ResultCard'
+import { VisaCard } from './components/VisaCard'
 import { crosswalk, type CommonOccupation } from './engine/compare'
 import { COUNTRIES, HAS_PRICES, mapEducation } from './engine/countries'
 import { loadCaTax, loadCommonOccupations, loadFx, loadMeta, loadNational, loadPrices, loadRegion, loadStateTax, type Prices } from './engine/data'
@@ -15,6 +16,7 @@ import { findCell } from './engine/lookup'
 import type { Metric, TaxTables } from './engine/metric'
 import type { Cells, CountryCode, CountryMeta, FxData, Lang, Profile } from './engine/types'
 import { detectLang, dicts } from './i18n'
+import { readUrlState, TABS, writeUrlState, type Tab } from './urlState'
 
 const STORAGE_KEY = 'career-map:profile'
 const DEFAULT_PROFILE: Profile = {
@@ -68,13 +70,30 @@ async function loadShared(): Promise<Shared> {
   return { fx, metas, prices, taxes: { us: usTax, ca: caTax }, common: common ?? [] }
 }
 
+type Theme = 'auto' | 'light' | 'dark'
+const THEMES: Theme[] = ['auto', 'light', 'dark']
+
+function readTheme(): Theme {
+  try {
+    const v = localStorage.getItem('career-map:theme')
+    return THEMES.includes(v as Theme) ? (v as Theme) : 'auto'
+  } catch {
+    return 'auto'
+  }
+}
+
 export default function App() {
-  const [lang, setLang] = useState<Lang>(detectLang)
-  const t = dicts[lang]
+  // A shared link (URL fragment) wins over inputs remembered on this device
+  const fromUrl = useMemo(() => readUrlState(location.hash), [])
   const stored = useMemo(readStored, [])
-  const [profile, setProfile] = useState<Profile>(stored ?? DEFAULT_PROFILE)
+  const [lang, setLang] = useState<Lang>(fromUrl?.lang ?? detectLang())
+  const t = dicts[lang]
+  const [profile, setProfile] = useState<Profile>(fromUrl ? { ...DEFAULT_PROFILE, ...fromUrl.profile } : stored ?? DEFAULT_PROFILE)
   const [remember, setRemember] = useState(stored != null)
-  const [metric, setMetric] = useState<Metric>('gross')
+  const [metric, setMetric] = useState<Metric>(fromUrl?.metric ?? 'gross')
+  const [tab, setTab] = useState<Tab>(fromUrl?.tab ?? 'position')
+  const [theme, setTheme] = useState<Theme>(readTheme)
+  const [copied, setCopied] = useState(false)
   const [shared, setShared] = useState<Shared | null>(null)
   const [national, setNational] = useState<{ country: CountryCode; cells: Cells } | null>(null)
   const [regional, setRegional] = useState<{ key: string; cells: Cells } | null>(null)
@@ -86,6 +105,30 @@ export default function App() {
   }, [lang, t])
 
   useEffect(() => writeStored(remember ? profile : null), [remember, profile])
+
+  useEffect(() => {
+    history.replaceState(null, '', writeUrlState({ profile, metric, tab, lang }))
+  }, [profile, metric, tab, lang])
+
+  useEffect(() => {
+    if (theme === 'auto') delete document.documentElement.dataset.theme
+    else document.documentElement.dataset.theme = theme
+    try {
+      localStorage.setItem('career-map:theme', theme)
+    } catch {
+      /* not remembered */
+    }
+  }, [theme])
+
+  const share = async () => {
+    try {
+      await navigator.clipboard.writeText(location.href)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      /* clipboard unavailable: the address bar already has the link */
+    }
+  }
 
   useEffect(() => {
     loadShared().then(setShared).catch((e) => setError(String(e)))
@@ -114,7 +157,7 @@ export default function App() {
   const regionalCells = regionKey && regional?.key === regionKey ? regional.cells : null
   const ready = !!meta && !!nationalCells && (!regionKey || !!regionalCells)
   const match = ready ? findCell(meta!, nationalCells!, regionalCells, profile) : null
-  const env: Env | null = shared ? { lang, t, metric, ...shared } : null
+  const env: Env | null = useMemo(() => (shared ? { lang, t, metric, ...shared } : null), [lang, t, metric, shared])
 
   const switchCountry = (c: CountryCode) => {
     if (c === profile.country || !shared) return
@@ -124,7 +167,11 @@ export default function App() {
     const occupation = crosswalk(shared.common, from, to, profile.occupation)
     const income = profile.income != null ? Math.round(profile.income * (shared.fx.ppp[to.currency] / shared.fx.ppp[from.currency])) : null
     const education = mapEducation(profile.education, to.educations)
-    setProfile({ ...profile, country: c, region: null, occupation, education, income })
+    // keep only conditions the other country publishes (e.g. field of study exists in the US and Canada)
+    const facets = Object.fromEntries(
+      Object.entries(profile.facets ?? {}).filter(([dim, v]) => to.facets?.[dim]?.values.some((x) => x.code === v)),
+    )
+    setProfile({ ...profile, country: c, region: null, occupation, education, income, facets })
   }
 
   return (
@@ -134,9 +181,16 @@ export default function App() {
           <h1>{t.appName}</h1>
           <p>{t.tagline}</p>
         </div>
-        <button className="ghost" type="button" onClick={() => setLang(lang === 'ja' ? 'en' : 'ja')} lang={lang === 'ja' ? 'en' : 'ja'}>
-          {t.lang}
-        </button>
+        <div className="header-actions">
+          <button className="ghost" type="button" onClick={share} title={t.shareNote}>{copied ? t.shareCopied : t.share}</button>
+          <button className="ghost" type="button" onClick={() => window.print()}>{t.print}</button>
+          <button className="ghost" type="button" onClick={() => setTheme(THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length])}>
+            {t.theme[theme]}
+          </button>
+          <button className="ghost" type="button" onClick={() => setLang(lang === 'ja' ? 'en' : 'ja')} lang={lang === 'ja' ? 'en' : 'ja'}>
+            {t.lang}
+          </button>
+        </div>
       </header>
 
       <div className="layout">
@@ -159,13 +213,28 @@ export default function App() {
             <section className="card">{t.loading}</section>
           ) : match ? (
             <>
-              <ResultCard env={env} meta={meta} match={match} profile={profile} />
-              <CompareCard env={env} profile={profile} />
-              <GoalCard env={env} profile={profile} national={nationalCells!} regional={regionalCells} />
-              <MobilityCard env={env} profile={profile} />
-              <ResearchCard env={env} country={profile.country} median={match.cell.q[2]} currency={meta.currency} />
-              <MapCard env={env} profile={profile} onSelectRegion={(region) => setProfile({ ...profile, region })} />
-              <CommunityCard env={env} profile={profile} />
+              <nav className="tabs main-tabs" role="tablist" aria-label={t.appName}>
+                {TABS.map((k) => (
+                  <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)}>{t.tabs[k]}</button>
+                ))}
+              </nav>
+              {/* Only the active tab is rendered, so its data (e.g. other countries for goals) loads on demand */}
+              {tab === 'position' && (
+                <>
+                  <ResultCard env={env} meta={meta} match={match} profile={profile} />
+                  <CompareCard env={env} profile={profile} />
+                </>
+              )}
+              {tab === 'goal' && <GoalCard env={env} profile={profile} national={nationalCells!} regional={regionalCells} />}
+              {tab === 'career' && (
+                <>
+                  <MobilityCard env={env} profile={profile} />
+                  <ResearchCard env={env} country={profile.country} median={match.cell.q[2]} currency={meta.currency} />
+                </>
+              )}
+              {tab === 'abroad' && <VisaCard env={env} profile={profile} />}
+              {tab === 'map' && <MapCard env={env} profile={profile} onSelectRegion={(region) => setProfile({ ...profile, region })} />}
+              {tab === 'community' && <CommunityCard env={env} profile={profile} />}
             </>
           ) : (
             <section className="card">{t.noData}</section>

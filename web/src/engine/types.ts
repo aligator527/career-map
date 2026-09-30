@@ -30,11 +30,14 @@ export interface CountryMeta {
   wageDefinition: Label
   nKind?: 'population'
   source: Source
-  regions: { code: string; abbr?: string; label: Label }[]
+  /** kind 'metro' = metropolitan area (in addition to states / provinces) */
+  regions: { code: string; abbr?: string; kind?: 'metro'; label: Label }[]
   occupationMajor: { code: string; label: Label }[]
   occupations: Occupation[]
   ages: string[]
   educations: Education[]
+  /** extra dimensions published in facets.json (industry, company size, field of study, …) */
+  facets?: Record<string, { label: Label; values: { code: string; label: Label }[] }>
 }
 
 /** [n, mean, p10, p25, p50, p75, p90, method?, pop?] — pop (weighted population) only for microdata; otherwise n is already a population estimate */
@@ -70,6 +73,8 @@ export interface Profile {
   education: Education | null
   /** annual income in the country's currency */
   income: number | null
+  /** selected facet values, e.g. { industry: 'G', size: '1000+' } */
+  facets?: Record<string, string>
 }
 
 export type Dim = 'region' | 'occupation' | 'age' | 'sex' | 'education'

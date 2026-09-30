@@ -1,0 +1,914 @@
+{
+ "_groups": {
+  "stem_cs": {
+   "ja": "情報・コンピュータ",
+   "en": "Computing & IT"
+  },
+  "stem_eng": {
+   "ja": "工学・技術",
+   "en": "Engineering & Technology"
+  },
+  "stem_sci": {
+   "ja": "理学・農学",
+   "en": "Natural Sciences & Agriculture"
+  },
+  "health": {
+   "ja": "医療・保健",
+   "en": "Health"
+  },
+  "business": {
+   "ja": "経営・商学",
+   "en": "Business"
+  },
+  "social_sci": {
+   "ja": "社会科学",
+   "en": "Social Sciences"
+  },
+  "humanities": {
+   "ja": "人文科学",
+   "en": "Humanities"
+  },
+  "education": {
+   "ja": "教育学",
+   "en": "Education"
+  },
+  "arts": {
+   "ja": "芸術",
+   "en": "Arts"
+  },
+  "other": {
+   "ja": "その他",
+   "en": "Other"
+  }
+ },
+ "1100": {
+  "en": "General Agriculture",
+  "ja": "農学（一般）",
+  "group": "stem_sci"
+ },
+ "1101": {
+  "en": "Agriculture Production And Management",
+  "ja": "農業生産・経営",
+  "group": "stem_sci"
+ },
+ "1102": {
+  "en": "Agricultural Economics",
+  "ja": "農業経済学",
+  "group": "social_sci"
+ },
+ "1103": {
+  "en": "Animal Sciences",
+  "ja": "畜産学",
+  "group": "stem_sci"
+ },
+ "1104": {
+  "en": "Food Science",
+  "ja": "食品科学",
+  "group": "stem_sci"
+ },
+ "1105": {
+  "en": "Plant Science And Agronomy",
+  "ja": "植物科学・作物学",
+  "group": "stem_sci"
+ },
+ "1106": {
+  "en": "Soil Science",
+  "ja": "土壌学",
+  "group": "stem_sci"
+ },
+ "1107": {
+  "en": "Veterinary Medicine",
+  "ja": "獣医学",
+  "group": "health"
+ },
+ "1199": {
+  "en": "Miscellaneous Agriculture",
+  "ja": "その他の農学",
+  "group": "stem_sci"
+ },
+ "1301": {
+  "en": "Environmental Science",
+  "ja": "環境科学",
+  "group": "stem_sci"
+ },
+ "1302": {
+  "en": "Forestry",
+  "ja": "林学",
+  "group": "stem_sci"
+ },
+ "1303": {
+  "en": "Natural Resources Management",
+  "ja": "天然資源管理",
+  "group": "stem_sci"
+ },
+ "1401": {
+  "en": "Architecture",
+  "ja": "建築学",
+  "group": "stem_eng"
+ },
+ "1501": {
+  "en": "Area Ethnic And Civilization Studies",
+  "ja": "地域・民族・文明研究",
+  "group": "humanities"
+ },
+ "1901": {
+  "en": "Communications",
+  "ja": "コミュニケーション学",
+  "group": "social_sci"
+ },
+ "1902": {
+  "en": "Journalism",
+  "ja": "ジャーナリズム",
+  "group": "social_sci"
+ },
+ "1903": {
+  "en": "Mass Media",
+  "ja": "マスメディア",
+  "group": "social_sci"
+ },
+ "1904": {
+  "en": "Advertising And Public Relations",
+  "ja": "広告・広報",
+  "group": "business"
+ },
+ "2001": {
+  "en": "Communication Technologies",
+  "ja": "コミュニケーション技術",
+  "group": "stem_eng"
+ },
+ "2100": {
+  "en": "Computer And Information Systems",
+  "ja": "コンピュータ・情報システム",
+  "group": "stem_cs"
+ },
+ "2101": {
+  "en": "Computer Programming And Data Processing",
+  "ja": "プログラミング・データ処理",
+  "group": "stem_cs"
+ },
+ "2102": {
+  "en": "Computer Science",
+  "ja": "コンピュータサイエンス",
+  "group": "stem_cs"
+ },
+ "2105": {
+  "en": "Information Sciences",
+  "ja": "情報科学",
+  "group": "stem_cs"
+ },
+ "2106": {
+  "en": "Computer Administration Management And Security",
+  "ja": "コンピュータ管理・セキュリティ",
+  "group": "stem_cs"
+ },
+ "2107": {
+  "en": "Computer Networking And Telecommunications",
+  "ja": "コンピュータネットワーク・通信",
+  "group": "stem_cs"
+ },
+ "2201": {
+  "en": "Cosmetology Services And Culinary Arts",
+  "ja": "美容・調理",
+  "group": "other"
+ },
+ "2300": {
+  "en": "General Education",
+  "ja": "教育学（一般）",
+  "group": "education"
+ },
+ "2301": {
+  "en": "Educational Administration And Supervision",
+  "ja": "教育行政・管理",
+  "group": "education"
+ },
+ "2303": {
+  "en": "School Student Counseling",
+  "ja": "学校カウンセリング",
+  "group": "education"
+ },
+ "2304": {
+  "en": "Elementary Education",
+  "ja": "初等教育",
+  "group": "education"
+ },
+ "2305": {
+  "en": "Mathematics Teacher Education",
+  "ja": "数学科教育",
+  "group": "education"
+ },
+ "2306": {
+  "en": "Physical And Health Education Teaching",
+  "ja": "体育・保健科教育",
+  "group": "education"
+ },
+ "2307": {
+  "en": "Early Childhood Education",
+  "ja": "幼児教育",
+  "group": "education"
+ },
+ "2308": {
+  "en": "Science And Computer Teacher Education",
+  "ja": "理科・情報科教育",
+  "group": "education"
+ },
+ "2309": {
+  "en": "Secondary Teacher Education",
+  "ja": "中等教育",
+  "group": "education"
+ },
+ "2310": {
+  "en": "Special Needs Education",
+  "ja": "特別支援教育",
+  "group": "education"
+ },
+ "2311": {
+  "en": "Social Science Or History Teacher Education",
+  "ja": "社会科・歴史科教育",
+  "group": "education"
+ },
+ "2312": {
+  "en": "Teacher Education: Multiple Levels",
+  "ja": "教員養成（複数段階）",
+  "group": "education"
+ },
+ "2313": {
+  "en": "Language And Drama Education",
+  "ja": "国語・演劇教育",
+  "group": "education"
+ },
+ "2314": {
+  "en": "Art And Music Education",
+  "ja": "美術・音楽教育",
+  "group": "education"
+ },
+ "2399": {
+  "en": "Miscellaneous Education",
+  "ja": "その他の教育学",
+  "group": "education"
+ },
+ "2400": {
+  "en": "General Engineering",
+  "ja": "工学（一般）",
+  "group": "stem_eng"
+ },
+ "2401": {
+  "en": "Aerospace Engineering",
+  "ja": "航空宇宙工学",
+  "group": "stem_eng"
+ },
+ "2402": {
+  "en": "Biological Engineering",
+  "ja": "生物工学",
+  "group": "stem_eng"
+ },
+ "2403": {
+  "en": "Architectural Engineering",
+  "ja": "建築工学",
+  "group": "stem_eng"
+ },
+ "2404": {
+  "en": "Biomedical Engineering",
+  "ja": "生体医工学",
+  "group": "stem_eng"
+ },
+ "2405": {
+  "en": "Chemical Engineering",
+  "ja": "化学工学",
+  "group": "stem_eng"
+ },
+ "2406": {
+  "en": "Civil Engineering",
+  "ja": "土木工学",
+  "group": "stem_eng"
+ },
+ "2407": {
+  "en": "Computer Engineering",
+  "ja": "コンピュータ工学",
+  "group": "stem_eng"
+ },
+ "2408": {
+  "en": "Electrical Engineering",
+  "ja": "電気工学",
+  "group": "stem_eng"
+ },
+ "2409": {
+  "en": "Engineering Mechanics Physics And Science",
+  "ja": "工学基礎・応用物理",
+  "group": "stem_eng"
+ },
+ "2410": {
+  "en": "Environmental Engineering",
+  "ja": "環境工学",
+  "group": "stem_eng"
+ },
+ "2411": {
+  "en": "Geological And Geophysical Engineering",
+  "ja": "地質・地球物理工学",
+  "group": "stem_eng"
+ },
+ "2412": {
+  "en": "Industrial And Manufacturing Engineering",
+  "ja": "産業・生産工学",
+  "group": "stem_eng"
+ },
+ "2413": {
+  "en": "Materials Engineering And Materials Science",
+  "ja": "材料工学・材料科学",
+  "group": "stem_eng"
+ },
+ "2414": {
+  "en": "Mechanical Engineering",
+  "ja": "機械工学",
+  "group": "stem_eng"
+ },
+ "2415": {
+  "en": "Metallurgical Engineering",
+  "ja": "金属工学",
+  "group": "stem_eng"
+ },
+ "2416": {
+  "en": "Mining And Mineral Engineering",
+  "ja": "鉱山・資源工学",
+  "group": "stem_eng"
+ },
+ "2417": {
+  "en": "Naval Architecture And Marine Engineering",
+  "ja": "船舶海洋工学",
+  "group": "stem_eng"
+ },
+ "2418": {
+  "en": "Nuclear Engineering",
+  "ja": "原子力工学",
+  "group": "stem_eng"
+ },
+ "2419": {
+  "en": "Petroleum Engineering",
+  "ja": "石油工学",
+  "group": "stem_eng"
+ },
+ "2499": {
+  "en": "Miscellaneous Engineering",
+  "ja": "その他の工学",
+  "group": "stem_eng"
+ },
+ "2500": {
+  "en": "Engineering Technologies",
+  "ja": "工業技術",
+  "group": "stem_eng"
+ },
+ "2501": {
+  "en": "Engineering And Industrial Management",
+  "ja": "工学・生産管理",
+  "group": "stem_eng"
+ },
+ "2502": {
+  "en": "Electrical Engineering Technology",
+  "ja": "電気工学技術",
+  "group": "stem_eng"
+ },
+ "2503": {
+  "en": "Industrial Production Technologies",
+  "ja": "生産技術",
+  "group": "stem_eng"
+ },
+ "2504": {
+  "en": "Mechanical Engineering Related Technologies",
+  "ja": "機械関連技術",
+  "group": "stem_eng"
+ },
+ "2599": {
+  "en": "Miscellaneous Engineering Technologies",
+  "ja": "その他の工業技術",
+  "group": "stem_eng"
+ },
+ "2601": {
+  "en": "Linguistics And Comparative Language And Literature",
+  "ja": "言語学・比較文学",
+  "group": "humanities"
+ },
+ "2602": {
+  "en": "French German Latin And Other Common Foreign Language Studies",
+  "ja": "主要外国語（仏・独・ラテン語等）",
+  "group": "humanities"
+ },
+ "2603": {
+  "en": "Other Foreign Languages",
+  "ja": "その他の外国語",
+  "group": "humanities"
+ },
+ "2901": {
+  "en": "Family And Consumer Sciences",
+  "ja": "家政学",
+  "group": "other"
+ },
+ "3202": {
+  "en": "Pre-Law And Legal Studies",
+  "ja": "法学（プレロー）",
+  "group": "social_sci"
+ },
+ "3301": {
+  "en": "English Language And Literature",
+  "ja": "英語・英文学",
+  "group": "humanities"
+ },
+ "3302": {
+  "en": "Composition And Rhetoric",
+  "ja": "作文・修辞学",
+  "group": "humanities"
+ },
+ "3401": {
+  "en": "Liberal Arts",
+  "ja": "リベラルアーツ",
+  "group": "humanities"
+ },
+ "3402": {
+  "en": "Humanities",
+  "ja": "人文学",
+  "group": "humanities"
+ },
+ "3501": {
+  "en": "Library Science",
+  "ja": "図書館学",
+  "group": "humanities"
+ },
+ "3600": {
+  "en": "Biology",
+  "ja": "生物学",
+  "group": "stem_sci"
+ },
+ "3601": {
+  "en": "Biochemical Sciences",
+  "ja": "生化学",
+  "group": "stem_sci"
+ },
+ "3602": {
+  "en": "Botany",
+  "ja": "植物学",
+  "group": "stem_sci"
+ },
+ "3603": {
+  "en": "Molecular Biology",
+  "ja": "分子生物学",
+  "group": "stem_sci"
+ },
+ "3604": {
+  "en": "Ecology",
+  "ja": "生態学",
+  "group": "stem_sci"
+ },
+ "3605": {
+  "en": "Genetics",
+  "ja": "遺伝学",
+  "group": "stem_sci"
+ },
+ "3606": {
+  "en": "Microbiology",
+  "ja": "微生物学",
+  "group": "stem_sci"
+ },
+ "3607": {
+  "en": "Pharmacology",
+  "ja": "薬理学",
+  "group": "stem_sci"
+ },
+ "3608": {
+  "en": "Physiology",
+  "ja": "生理学",
+  "group": "stem_sci"
+ },
+ "3609": {
+  "en": "Zoology",
+  "ja": "動物学",
+  "group": "stem_sci"
+ },
+ "3611": {
+  "en": "Neuroscience",
+  "ja": "神経科学",
+  "group": "stem_sci"
+ },
+ "3699": {
+  "en": "Miscellaneous Biology",
+  "ja": "その他の生物学",
+  "group": "stem_sci"
+ },
+ "3700": {
+  "en": "Mathematics",
+  "ja": "数学",
+  "group": "stem_sci"
+ },
+ "3701": {
+  "en": "Applied Mathematics",
+  "ja": "応用数学",
+  "group": "stem_sci"
+ },
+ "3702": {
+  "en": "Statistics And Decision Science",
+  "ja": "統計学・意思決定科学",
+  "group": "stem_sci"
+ },
+ "3801": {
+  "en": "Military Technologies",
+  "ja": "軍事技術",
+  "group": "other"
+ },
+ "4000": {
+  "en": "Multi/Interdisciplinary Studies",
+  "ja": "学際研究",
+  "group": "other"
+ },
+ "4001": {
+  "en": "Intercultural And International Studies",
+  "ja": "国際・異文化研究",
+  "group": "social_sci"
+ },
+ "4002": {
+  "en": "Nutrition Sciences",
+  "ja": "栄養学",
+  "group": "health"
+ },
+ "4005": {
+  "en": "Mathematics And Computer Science",
+  "ja": "数学・コンピュータサイエンス",
+  "group": "stem_cs"
+ },
+ "4006": {
+  "en": "Cognitive Science And Biopsychology",
+  "ja": "認知科学・生物心理学",
+  "group": "stem_sci"
+ },
+ "4007": {
+  "en": "Interdisciplinary Social Sciences",
+  "ja": "学際的社会科学",
+  "group": "social_sci"
+ },
+ "4009": {
+  "en": "Data Science and Data Analytics",
+  "ja": "データサイエンス",
+  "group": "stem_cs"
+ },
+ "4101": {
+  "en": "Physical Fitness Parks Recreation And Leisure",
+  "ja": "体育・スポーツ・レジャー",
+  "group": "other"
+ },
+ "4801": {
+  "en": "Philosophy And Religious Studies",
+  "ja": "哲学・宗教学",
+  "group": "humanities"
+ },
+ "4901": {
+  "en": "Theology And Religious Vocations",
+  "ja": "神学",
+  "group": "humanities"
+ },
+ "5000": {
+  "en": "Physical Sciences",
+  "ja": "物理科学（一般）",
+  "group": "stem_sci"
+ },
+ "5001": {
+  "en": "Astronomy And Astrophysics",
+  "ja": "天文学・天体物理学",
+  "group": "stem_sci"
+ },
+ "5002": {
+  "en": "Atmospheric Sciences And Meteorology",
+  "ja": "大気科学・気象学",
+  "group": "stem_sci"
+ },
+ "5003": {
+  "en": "Chemistry",
+  "ja": "化学",
+  "group": "stem_sci"
+ },
+ "5004": {
+  "en": "Geology And Earth Science",
+  "ja": "地質学・地球科学",
+  "group": "stem_sci"
+ },
+ "5005": {
+  "en": "Geosciences",
+  "ja": "地球科学",
+  "group": "stem_sci"
+ },
+ "5006": {
+  "en": "Oceanography",
+  "ja": "海洋学",
+  "group": "stem_sci"
+ },
+ "5007": {
+  "en": "Physics",
+  "ja": "物理学",
+  "group": "stem_sci"
+ },
+ "5008": {
+  "en": "Materials Science",
+  "ja": "材料科学",
+  "group": "stem_sci"
+ },
+ "5098": {
+  "en": "Multi-Disciplinary Or General Science",
+  "ja": "総合科学",
+  "group": "stem_sci"
+ },
+ "5102": {
+  "en": "Nuclear, Industrial Radiology, And Biological Technologies",
+  "ja": "原子力・放射線・生物技術",
+  "group": "stem_sci"
+ },
+ "5200": {
+  "en": "Psychology",
+  "ja": "心理学",
+  "group": "social_sci"
+ },
+ "5201": {
+  "en": "Educational Psychology",
+  "ja": "教育心理学",
+  "group": "social_sci"
+ },
+ "5202": {
+  "en": "Clinical Psychology",
+  "ja": "臨床心理学",
+  "group": "social_sci"
+ },
+ "5203": {
+  "en": "Counseling Psychology",
+  "ja": "カウンセリング心理学",
+  "group": "social_sci"
+ },
+ "5205": {
+  "en": "Industrial And Organizational Psychology",
+  "ja": "産業・組織心理学",
+  "group": "social_sci"
+ },
+ "5206": {
+  "en": "Social Psychology",
+  "ja": "社会心理学",
+  "group": "social_sci"
+ },
+ "5299": {
+  "en": "Miscellaneous Psychology",
+  "ja": "その他の心理学",
+  "group": "social_sci"
+ },
+ "5301": {
+  "en": "Criminal Justice And Fire Protection",
+  "ja": "刑事司法・消防",
+  "group": "social_sci"
+ },
+ "5401": {
+  "en": "Public Administration",
+  "ja": "行政学",
+  "group": "social_sci"
+ },
+ "5402": {
+  "en": "Public Policy",
+  "ja": "公共政策",
+  "group": "social_sci"
+ },
+ "5403": {
+  "en": "Human Services And Community Organization",
+  "ja": "福祉サービス・地域組織",
+  "group": "social_sci"
+ },
+ "5404": {
+  "en": "Social Work",
+  "ja": "社会福祉学",
+  "group": "social_sci"
+ },
+ "5500": {
+  "en": "General Social Sciences",
+  "ja": "社会科学（一般）",
+  "group": "social_sci"
+ },
+ "5501": {
+  "en": "Economics",
+  "ja": "経済学",
+  "group": "social_sci"
+ },
+ "5502": {
+  "en": "Anthropology And Archeology",
+  "ja": "人類学・考古学",
+  "group": "social_sci"
+ },
+ "5503": {
+  "en": "Criminology",
+  "ja": "犯罪学",
+  "group": "social_sci"
+ },
+ "5504": {
+  "en": "Geography",
+  "ja": "地理学",
+  "group": "social_sci"
+ },
+ "5505": {
+  "en": "International Relations",
+  "ja": "国際関係論",
+  "group": "social_sci"
+ },
+ "5506": {
+  "en": "Political Science And Government",
+  "ja": "政治学",
+  "group": "social_sci"
+ },
+ "5507": {
+  "en": "Sociology",
+  "ja": "社会学",
+  "group": "social_sci"
+ },
+ "5599": {
+  "en": "Miscellaneous Social Sciences",
+  "ja": "その他の社会科学",
+  "group": "social_sci"
+ },
+ "5601": {
+  "en": "Construction Services",
+  "ja": "建設技術",
+  "group": "stem_eng"
+ },
+ "5701": {
+  "en": "Electrical, Mechanical, And Precision Technologies And Production",
+  "ja": "電気・機械・精密技術",
+  "group": "stem_eng"
+ },
+ "5901": {
+  "en": "Transportation Sciences And Technologies",
+  "ja": "交通・輸送技術",
+  "group": "stem_eng"
+ },
+ "6000": {
+  "en": "Fine Arts",
+  "ja": "美術（一般）",
+  "group": "arts"
+ },
+ "6001": {
+  "en": "Drama And Theater Arts",
+  "ja": "演劇",
+  "group": "arts"
+ },
+ "6002": {
+  "en": "Music",
+  "ja": "音楽",
+  "group": "arts"
+ },
+ "6003": {
+  "en": "Visual And Performing Arts",
+  "ja": "視覚・舞台芸術",
+  "group": "arts"
+ },
+ "6004": {
+  "en": "Commercial Art And Graphic Design",
+  "ja": "商業美術・グラフィックデザイン",
+  "group": "arts"
+ },
+ "6005": {
+  "en": "Film Video And Photographic Arts",
+  "ja": "映画・映像・写真",
+  "group": "arts"
+ },
+ "6006": {
+  "en": "Art History And Criticism",
+  "ja": "美術史・美術批評",
+  "group": "humanities"
+ },
+ "6007": {
+  "en": "Studio Arts",
+  "ja": "スタジオアート（実技）",
+  "group": "arts"
+ },
+ "6099": {
+  "en": "Miscellaneous Fine Arts",
+  "ja": "その他の芸術",
+  "group": "arts"
+ },
+ "6100": {
+  "en": "General Medical And Health Services",
+  "ja": "医療・保健（一般）",
+  "group": "health"
+ },
+ "6102": {
+  "en": "Communication Disorders Sciences And Services",
+  "ja": "コミュニケーション障害学",
+  "group": "health"
+ },
+ "6103": {
+  "en": "Health And Medical Administrative Services",
+  "ja": "医療管理",
+  "group": "health"
+ },
+ "6104": {
+  "en": "Medical Assisting Services",
+  "ja": "医療補助",
+  "group": "health"
+ },
+ "6105": {
+  "en": "Medical Technologies Technicians",
+  "ja": "医療技術",
+  "group": "health"
+ },
+ "6106": {
+  "en": "Health And Medical Preparatory Programs",
+  "ja": "医療系進学準備課程",
+  "group": "health"
+ },
+ "6107": {
+  "en": "Nursing",
+  "ja": "看護学",
+  "group": "health"
+ },
+ "6108": {
+  "en": "Pharmacy Pharmaceutical Sciences And Administration",
+  "ja": "薬学",
+  "group": "health"
+ },
+ "6109": {
+  "en": "Treatment Therapy Professions",
+  "ja": "リハビリテーション・療法",
+  "group": "health"
+ },
+ "6110": {
+  "en": "Community And Public Health",
+  "ja": "公衆衛生学",
+  "group": "health"
+ },
+ "6199": {
+  "en": "Miscellaneous Health Medical Professions",
+  "ja": "その他の医療・保健",
+  "group": "health"
+ },
+ "6200": {
+  "en": "General Business",
+  "ja": "経営学（一般）",
+  "group": "business"
+ },
+ "6201": {
+  "en": "Accounting",
+  "ja": "会計学",
+  "group": "business"
+ },
+ "6202": {
+  "en": "Actuarial Science",
+  "ja": "保険数理学",
+  "group": "business"
+ },
+ "6203": {
+  "en": "Business Management And Administration",
+  "ja": "経営管理",
+  "group": "business"
+ },
+ "6204": {
+  "en": "Operations Logistics And E-Commerce",
+  "ja": "オペレーション・物流・EC",
+  "group": "business"
+ },
+ "6205": {
+  "en": "Business Economics",
+  "ja": "ビジネス経済学",
+  "group": "business"
+ },
+ "6206": {
+  "en": "Marketing And Marketing Research",
+  "ja": "マーケティング",
+  "group": "business"
+ },
+ "6207": {
+  "en": "Finance",
+  "ja": "金融・ファイナンス",
+  "group": "business"
+ },
+ "6209": {
+  "en": "Human Resources And Personnel Management",
+  "ja": "人的資源管理",
+  "group": "business"
+ },
+ "6210": {
+  "en": "International Business",
+  "ja": "国際ビジネス",
+  "group": "business"
+ },
+ "6211": {
+  "en": "Hospitality Management",
+  "ja": "ホスピタリティ・マネジメント",
+  "group": "business"
+ },
+ "6212": {
+  "en": "Management Information Systems And Statistics",
+  "ja": "経営情報システム・統計",
+  "group": "business"
+ },
+ "6299": {
+  "en": "Miscellaneous Business And Medical Administration",
+  "ja": "その他の経営・医療管理",
+  "group": "business"
+ },
+ "6402": {
+  "en": "History",
+  "ja": "歴史学",
+  "group": "humanities"
+ },
+ "6403": {
+  "en": "United States History",
+  "ja": "アメリカ史",
+  "group": "humanities"
+ }
+}

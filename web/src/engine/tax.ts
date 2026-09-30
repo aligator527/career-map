@@ -185,12 +185,16 @@ export function takeHomeDE(gross: number): TakeHome {
   const health = Math.min(gross, s.healthCap) * s.health
   const care = Math.min(gross, s.healthCap) * s.care
   const social = pension + unemployment + health + care
-  // Werbungskostenpauschale 1,230, Sonderausgabenpauschale 36, Vorsorgeaufwendungen:
-  // Rentenbeiträge voll, Basis-Kranken- (ohne 4% Krankengeldanteil) und Pflegeversicherung
-  const zve = Math.max(gross - 1_230 - 36 - pension - health * 0.96 - care, 0)
+  // Vorsorgepauschale as in the official payroll algorithm (PAP 2025): pension share, plus health at the
+  // reduced rate 14%/2 + half the average Zusatzbeitrag, plus care; no deduction for unemployment insurance.
+  const vsp1 = Math.min(gross, s.pensionCap) * s.pension
+  const vsp3 = Math.min(gross, s.healthCap) * (0.07 + 0.025 / 2 + s.care)
+  const vsp = Math.ceil(Math.max(vsp1 + vsp3, vsp1 + Math.min(Math.min(gross, s.pensionCap) * 0.12, 1_900)))
+  // Arbeitnehmer-Pauschbetrag 1,230 and Sonderausgaben-Pauschbetrag 36
+  const zve = Math.max(gross - 1_230 - 36 - vsp, 0)
   const est = deIncomeTax(zve)
-  // Solidaritätszuschlag: Freigrenze 19,950 EUR ESt, Milderungszone 11.9%
-  const soli = est <= 19_950 ? 0 : Math.min(est * 0.055, (est - 19_950) * 0.119)
+  // Solidaritätszuschlag: Freigrenze 19,950 EUR Lohnsteuer, Milderungszone 11.9%
+  const soli = est <= 19_950 ? 0 : Math.floor(Math.min(est * 0.055, (est - 19_950) * 0.119) * 100) / 100
   const incomeTax = est + soli
   return { gross, social, incomeTax, localTax: 0, net: gross - social - incomeTax }
 }

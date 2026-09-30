@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { achievers, ageCurve, goalOptions, goalResult, shareAbove, type GoalInputs } from './goal'
+import { achievers, ageCurve, goalOptions, goalResult, selfEmployedShare, shareAbove, type GoalInputs } from './goal'
 import { LEVELS, normInv } from './stats'
 import type { CellTuple, CountryMeta, FxData, Profile } from './types'
 
@@ -78,5 +78,20 @@ describe('goal options consistency', () => {
     const regions = { '13': { '*|*|*|*': cell(6_000_000, 100), 'MA|*|*|*': cell(9_000_000, 10) } }
     const opts = goalOptions({ kind: 'manager', age: 32 }, { ...inputs, regions })
     expect(opts.filter((o) => o.kind === 'region')).toEqual([])
+  })
+})
+
+describe('self-employment share', () => {
+  it('divides self-employed by all full-time workers of the same group', () => {
+    const m = { ...meta, occupations: [{ code: 'J012', major: 'B', label: {} }] } as unknown as CountryMeta
+    const tuple = (pop: number) => [10, 1, 1, 1, 1, 1, 1, 0, pop] as unknown as CellTuple
+    const facets = {
+      'employment=self_employed|MB|30-34|*': tuple(30), 'employment=employee|MB|30-34|*': tuple(270),
+      'employment=self_employed|*|*|*': tuple(100), 'employment=employee|*|*|*': tuple(900),
+    }
+    const r = selfEmployedShare(m, facets, { ...profile, age: 32 })!
+    expect(r.key).toBe('MB|30-34|*|*')
+    expect(r.share).toBeCloseTo(0.1, 6)
+    expect(selfEmployedShare(m, facets, { ...profile, occupation: null, age: null })!.share).toBeCloseTo(0.1, 6)
   })
 })

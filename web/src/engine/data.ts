@@ -57,3 +57,22 @@ export interface ResearchEffect {
 }
 export const loadResearch = () => load<{ compiled: string; effects: ResearchEffect[] }>('research.json')
 export const loadCommunity = () => load<import('./community').CommunityData>('community.json')
+export const loadFacets = (c: CountryCode) => load<Cells>(`${dir(c)}/facets.json`)
+
+type L = import('./types').Label
+export interface VisaRoute {
+  id: string
+  name: L
+  summary: L
+  requirements: L[]
+  salaryThreshold?: { amount: number; currency: string; period: 'year'; note?: string }
+  processingNote?: L
+  source: { title: string; url: string }
+  asOf: string
+}
+export interface VisaData {
+  compiled: string
+  disclaimer: L
+  countries: Partial<Record<CountryCode, { freeMovement: L | null; routes: VisaRoute[] }>>
+}
+export const loadVisas = () => load<VisaData>('visas.json')

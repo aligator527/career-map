@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { COUNTRIES, INCOME_UNIT } from '../engine/countries'
-import { loadNational, loadRegions } from '../engine/data'
-import { achievers, ageCurve, goalOptions, goalResult, type CountryData, type Goal, type GoalInputs, type GoalOption } from '../engine/goal'
+import { loadFacets, loadNational, loadRegions } from '../engine/data'
+import { achievers, ageCurve, goalOptions, goalResult, selfEmployedShare, type CountryData, type Goal, type GoalInputs, type GoalOption } from '../engine/goal'
 import { ageBand } from '../engine/lookup'
 import type { Cells, CountryCode, Profile } from '../engine/types'
 import { formatCount, formatMoney, formatPct, label, labeled, paren } from '../i18n'
@@ -9,7 +9,7 @@ import { BarList, Columns } from './BarList'
 import { InfoIcon } from './ResultCard'
 import { ageLabel, describeGroup, droppedText, metaOf, type Env } from './env'
 
-type Kind = Goal['kind']
+type Kind = Goal['kind'] | 'founder'
 
 /** A round default target: the all-worker p90, snapped to 1 / 1.5 / 2 / 2.5 / 3 / 5 / 7.5 × 10^k. */
 function niceTarget(x: number): number {
@@ -37,29 +37,62 @@ export function GoalCard({ env, profile, national, regional }: { env: Env; profi
   const amount = amounts[profile.country] ?? (all ? niceTarget(all[6]) : 0)
   const age = targetAge ?? Math.min(Math.max((profile.age ?? 30) + 5, 20), 64)
 
+  // Home-country results first; other countries (large files) are added when they arrive
   useEffect(() => {
     let live = true
+    setLoaded(null)
+    loadRegions(profile.country).catch(() => null).then((regions) => {
+      if (live) setLoaded({ country: profile.country, regions, others: {} })
+    })
     const others = COUNTRIES.filter((c) => c !== profile.country && env.metas[c])
-    Promise.all([
-      loadRegions(profile.country).catch(() => null),
-      Promise.all(others.map((c) => loadNational(c).catch(() => null))),
-    ]).then(([regions, nationals]) => {
+    Promise.all(others.map((c) => loadNational(c).catch(() => null))).then((nationals) => {
       if (!live) return
       const o: Loaded['others'] = {}
       others.forEach((c, i) => {
-        if (nationals[i]) o[c] = { meta: metaOf(env, c), national: nationals[i]! }
+        if (nationals[i]) o[c] = { meta: env.metas[c]!, national: nationals[i]! }
       })
-      setLoaded({ country: profile.country, regions, others: o })
+      setLoaded((prev) => (prev && prev.country === profile.country ? { ...prev, others: o } : prev))
     })
     return () => { live = false }
-  }, [profile.country, env])
+  }, [profile.country, env.metas])
 
-  const goal: Goal = kind === 'income' ? { kind, amount, age } : { kind, age }
+  // Self-employment goal: US and Canada publish an `employment` facet
+  const [facets, setFacets] = useState<{ country: string; cells: Cells } | null>(null)
+  const founderAvailable = !!meta.facets?.employment
+  useEffect(() => {
+    if (kind !== 'founder' || !founderAvailable) return
+    let live = true
+    loadFacets(profile.country).then((c) => live && setFacets({ country: profile.country, cells: c })).catch(() => {})
+    return () => { live = false }
+  }, [kind, founderAvailable, profile.country])
+  useEffect(() => {
+    if (kind === 'founder' && !founderAvailable) setKind('income')
+  }, [kind, founderAvailable])
+
+  const goal: Goal = kind === 'income' ? { kind, amount, age } : { kind: 'manager', age }
   const inputs: GoalInputs | null = loaded && loaded.country === profile.country
     ? { profile, home: { meta, national }, regional, regions: loaded.regions, others: loaded.others, fx: env.fx, conversion: 'ppp', common: env.common }
     : null
 
   const computed = useMemo(() => {
+    if (kind === 'founder') {
+      if (!facets || facets.country !== profile.country) return null
+      const f = facets.cells
+      const at = { ...profile, age }
+      return {
+        base: selfEmployedShare(meta, f, at),
+        curve: meta.ages.flatMap((band) => {
+          const r = selfEmployedShare(meta, f, { ...profile, age: Number(band.split('-')[0]) })
+          return r && !r.dropped.includes('age') ? [{ band, share: r.share, target: band === ageBand(age, meta.ages) }] : []
+        }),
+        options: meta.occupationMajor.flatMap((m): GoalOption[] => {
+          if (profile.occupation === m.code) return []
+          const r = selfEmployedShare(meta, f, { ...at, occupation: m.code })
+          return r && r.key.startsWith(`${m.code}|`) ? [{ kind: 'occupation', code: m.code, country: profile.country, result: r }] : []
+        }),
+        who: null,
+      }
+    }
     if (!inputs) return null
     return {
       base: goalResult(goal, inputs),
@@ -67,7 +100,7 @@ export function GoalCard({ env, profile, national, regional }: { env: Env; profi
       options: goalOptions(goal, inputs),
       who: goal.kind === 'income' ? achievers(goal, inputs) : null,
     }
-  }, [inputs?.home.national, inputs?.regional, inputs?.regions, inputs?.others, profile, kind, amount, age])
+  }, [inputs?.home.national, inputs?.regional, inputs?.regions, inputs?.others, profile, kind, amount, age, facets, meta])
 
   const money = (v: number) => formatMoney(v, meta.currency, lang)
   const pct = (v: number) => formatPct(v, lang)
@@ -87,7 +120,7 @@ export function GoalCard({ env, profile, national, regional }: { env: Env; profi
       <h2>{t.goalTitle}</h2>
       <div className="goal-controls">
         <div className="seg" role="group" aria-label={t.goalTitle}>
-          {(['income', 'manager'] as Kind[]).map((k) => (
+          {(['income', 'manager', ...(founderAvailable ? ['founder'] : [])] as Kind[]).map((k) => (
             <button key={k} type="button" aria-pressed={kind === k} onClick={() => setKind(k)}>{t.goalKinds[k]}</button>
           ))}
         </div>
@@ -145,7 +178,7 @@ export function GoalCard({ env, profile, national, regional }: { env: Env; profi
           {computed.options.length > 0 && (
             <div className="goal-section">
               <h3>{t.goalOptions}</h3>
-              <p className="note">{t.goalOptionsNote} {kind === 'income' ? t.goalCountryNote : t.goalManagerNoCountry}</p>
+              <p className="note">{t.goalOptionsNote} {kind === 'income' ? t.goalCountryNote : kind === 'manager' ? t.goalManagerNoCountry : t.goalFounderNote}</p>
               <BarList
                 ariaLabel={t.goalOptions}
                 format={pct}

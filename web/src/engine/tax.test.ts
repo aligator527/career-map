@@ -81,6 +81,13 @@ describe('other countries', () => {
     expect(deIncomeTax(100_000)).toBe(31_088)
   })
 
+  it('DE: matches the official 2025 payroll algorithm (BMF PAP 2025, Steuerklasse I, childless)', () => {
+    // Lohnsteuer + Soli from the PAP 2025 pseudocode
+    for (const [gross, official] of [[30_000, 2_336], [50_000, 6_927], [80_000, 16_104], [120_000, 32_224 + 1_460.6]]) {
+      expect(Math.abs(takeHomeDE(gross).incomeTax - official)).toBeLessThan(0.05)
+    }
+  })
+
   it('FR, IT, DE: net pay stays between 50% and 90% of gross for typical salaries', () => {
     for (const g of [30_000, 50_000, 80_000]) {
       for (const f of [takeHomeDE, takeHomeFR, takeHomeIT]) {

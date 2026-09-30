@@ -55,9 +55,16 @@ export function ProfileForm({ profile: p, countries, meta, lang, t, remember, on
         <span>{t.region}</span>
         <select value={p.region ?? ''} onChange={(e) => set({ region: e.target.value || null })}>
           <option value="">{t.anyRegion}</option>
-          {sorted.map((r) => (
+          {sorted.filter((r) => r.kind !== 'metro').map((r) => (
             <option key={r.code} value={r.code}>{label(r.label, lang)}</option>
           ))}
+          {sorted.some((r) => r.kind === 'metro') && (
+            <optgroup label={t.metros}>
+              {sorted.filter((r) => r.kind === 'metro').map((r) => (
+                <option key={r.code} value={r.code}>{label(r.label, lang)}</option>
+              ))}
+            </optgroup>
+          )}
         </select>
       </label>
 
@@ -110,6 +117,30 @@ export function ProfileForm({ profile: p, countries, meta, lang, t, remember, on
             ))}
           </select>
         </label>
+      )}
+
+      {meta?.facets && Object.keys(meta.facets).length > 0 && (
+        <details className="facet-fields" open={Object.keys(p.facets ?? {}).length > 0}>
+          <summary>{t.moreConditions}</summary>
+          {Object.entries(meta.facets).map(([dim, f]) => (
+            <label className="field" key={dim}>
+              <span>{label(f.label, lang)}</span>
+              <select
+                value={p.facets?.[dim] ?? ''}
+                onChange={(e) => {
+                  const next = { ...(p.facets ?? {}) }
+                  if (e.target.value) next[dim] = e.target.value
+                  else delete next[dim]
+                  set({ facets: next })
+                }}
+              >
+                <option value="">{t.unspecified}</option>
+                {f.values.map((v) => <option key={v.code} value={v.code}>{label(v.label, lang)}</option>)}
+              </select>
+            </label>
+          ))}
+          <small>{t.moreConditionsHint}</small>
+        </details>
       )}
 
       <label className="field">
