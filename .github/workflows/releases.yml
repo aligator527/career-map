@@ -1,0 +1,46 @@
+name: Check for new data releases
+
+# Monthly: probe every source for an edition newer than the one the site uses and open an issue
+# (one at a time) listing what is new. Updating the data itself stays a reviewed, manual step because
+# new editions often change table layouts or file identifiers.
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+      - name: Probe sources
+        id: probe
+        working-directory: pipeline
+        run: |
+          set +e
+          uv run python -m career_pipeline.releases | tee ../releases.txt
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+      - name: Open an issue when something new is out
+        if: steps.probe.outputs.status == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "$(gh issue list --label data-release --state open --json number -q '.[].number')" ]; then
+            echo "an open data-release issue already exists"; exit 0
+          fi
+          gh label create data-release --color 1d76db --description "New edition of a data source" 2>/dev/null || true
+          {
+            echo "The monthly check found new editions of data sources:"
+            echo
+            echo '```'
+            cat releases.txt
+            echo '```'
+            echo
+            echo "Update the source identifiers in pipeline/career_pipeline, rebuild with \`uv run python -m career_pipeline\`, and check \`uv run pytest\` before committing."
+          } > body.md
+          gh issue create --title "New data releases available" --label data-release --body-file body.md

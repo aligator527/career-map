@@ -12,6 +12,15 @@ import polars as pl
 from .common import MIN_N, QUANTILES
 
 
+# Full-time, full-year workers reporting less than this per year are treated as misreports and dropped
+MIN_ANNUAL = 1_000
+
+
+def rounded(x: float) -> int:
+    """Round to 100 currency units, never down to zero (the web app works on log pay)."""
+    return max(100, int(round(x, -2)))
+
+
 def weighted_cells(df: pl.DataFrame, keys: list[str]) -> pl.DataFrame:
     """Weighted mean and quantiles of wage per group of `keys`."""
     wage_sorted = pl.col("wage").sort_by("wage")
@@ -21,6 +30,7 @@ def weighted_cells(df: pl.DataFrame, keys: list[str]) -> pl.DataFrame:
         pl.col("w").sum().alias("pop"),
         ((pl.col("wage") * pl.col("w")).sum() / pl.col("w").sum()).alias("mean"),
     ] + [wage_sorted.filter(cw >= q).first().alias(f"p{int(q * 100)}") for q in QUANTILES]
+    df = df.filter(pl.col("wage") >= MIN_ANNUAL)
     g = df.group_by(keys).agg(aggs) if keys else df.select(aggs)
     return g.filter(pl.col("n") >= MIN_N)
 
@@ -50,8 +60,8 @@ def build_cells(df: pl.DataFrame) -> dict[str, list]:
                         for d in KEY_DIMS
                     )
                     out[key] = (
-                        [row["n"], int(round(row["mean"], -2))]
-                        + [int(round(row[f"p{int(q * 100)}"], -2)) for q in QUANTILES]
+                        [row["n"], rounded(row["mean"])]
+                        + [rounded(row[f"p{int(q * 100)}"]) for q in QUANTILES]
                         + [0, int(round(row["pop"], -2))]
                     )
     return out
@@ -77,8 +87,8 @@ def build_facets(df: pl.DataFrame, facets: list[str]) -> dict[str, list]:
                     age = row["age"] if "age" in subset else "*"
                     sex = row["sex"] if "sex" in subset else "*"
                     out[f"{facet}={row[facet]}|{occ}|{age}|{sex}"] = (
-                        [row["n"], int(round(row["mean"], -2))]
-                        + [int(round(row[f"p{int(q * 100)}"], -2)) for q in QUANTILES]
+                        [row["n"], rounded(row["mean"])]
+                        + [rounded(row[f"p{int(q * 100)}"]) for q in QUANTILES]
                         + [0, int(round(row["pop"], -2))]
                     )
     return out
