@@ -25,7 +25,7 @@ from pathlib import Path
 import openpyxl
 import requests
 
-from .common import RAW_DIR, WEB_DATA_DIR, write_json, write_region_summary
+from .common import RAW_DIR, WEB_DATA_DIR, write_json, write_national, write_region_summary
 
 EDITION = "2025provisional"
 BASE = "https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets"
@@ -202,7 +202,7 @@ def build() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for f in OUT_DIR.glob("region-*.json"):
         f.unlink()
-    write_json(OUT_DIR / "national.json", national.cells)
+    write_national(OUT_DIR, national.cells, lambda occ: occ[:2])
     for code, cells in regions.items():
         write_json(OUT_DIR / f"region-{code}.json", cells.cells)
     write_json(OUT_DIR / "meta.json", {

@@ -54,3 +54,16 @@ test('community submissions stay closed without a configured database', async ({
   await page.getByText('あなたのデータを匿名で提供する').click()
   await expect(page.getByText('データの受け付けは準備中です')).toBeVisible()
 })
+
+test('has no serious accessibility violations on the main tabs', async ({ page }) => {
+  const { default: AxeBuilder } = await import('@axe-core/playwright')
+  for (const tab of ['position', 'goal', 'scenario', 'career', 'abroad', 'map', 'community']) {
+    await page.goto(`/#c=JP&o=J012&a=32&i=6500000&t=${tab}&l=ja`)
+    await page.reload()
+    await expect(page.locator('main section.card').first()).toBeVisible()
+    await page.waitForTimeout(300)
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze()
+    const serious = results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical')
+    expect(serious.map((v) => `${tab}: ${v.id} (${v.nodes.length}) ${v.nodes[0]?.target}`)).toEqual([])
+  }
+})

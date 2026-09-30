@@ -17,7 +17,7 @@ from pathlib import Path
 import polars as pl
 import requests
 
-from .common import AGE_BANDS, RAW_DIR, WEB_DATA_DIR, write_json, write_region_summary
+from .common import AGE_BANDS, RAW_DIR, WEB_DATA_DIR, write_json, write_national, write_region_summary
 from .microdata import build_cells, build_facets
 
 INCOME_YEAR = 2020
@@ -235,7 +235,7 @@ def build() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for f in OUT_DIR.glob("region-*.json"):
         f.unlink()
-    write_json(OUT_DIR / "national.json", build_cells(df))
+    write_national(OUT_DIR, build_cells(df), lambda occ: NOC[int(occ[1:])][0])
     facets = build_facets(df, ["industry", "field", "citizenship", "language"])
     facets.update(build_facets(everyone, ["employment"]))
     write_json(OUT_DIR / "facets.json", facets)

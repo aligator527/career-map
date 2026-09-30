@@ -1,5 +1,5 @@
 import { convert, takeHome } from '../engine/metric'
-import { percentileOf } from '../engine/stats'
+import { medianCI, percentileOf } from '../engine/stats'
 import type { Cell, CountryMeta, Match, Profile } from '../engine/types'
 import { formatCount, formatMoney, formatPct, label, labeled, paren } from '../i18n'
 import { DistributionChart } from './DistributionChart'
@@ -27,6 +27,9 @@ export function ResultCard({ env, meta, match, profile }: { env: Env; meta: Coun
   // The transform is monotone, so quantiles map directly; the mean is an approximation.
   const cell: Cell = { ...raw, mean: f(raw.mean), q: raw.q.map(f) as Cell['q'] }
   const income = profile.income != null && profile.income > 0 ? profile.income : null
+  // Sampling uncertainty is only computable where n is a sample count (US, Canada microdata)
+  const ciRaw = meta.nKind !== 'population' && raw.method === 0 ? medianCI(raw.q, raw.n) : null
+  const ci = ciRaw ? (ciRaw.map(f) as [number, number]) : null
   const pct = income != null ? percentileOf(income, raw.q) : null
   const th = takeHome(ctx, raw.q[2])
   const parts = [
@@ -58,6 +61,12 @@ export function ResultCard({ env, meta, match, profile }: { env: Env; meta: Coun
         <div className="stat"><div className="k">{t.middleHalf}</div><div className="v">{formatMoney(cell.q[1], cur, lang)}–{formatMoney(cell.q[3], cur, lang)}</div></div>
         <div className="stat"><div className="k">{t.middle80}</div><div className="v">{formatMoney(cell.q[0], cur, lang)}–{formatMoney(cell.q[4], cur, lang)}</div></div>
         <div className="stat"><div className="k">{t.mean}</div><div className="v">{formatMoney(cell.mean, cur, lang)}</div></div>
+        {ci && (
+          <div className="stat" title={t.ciNote}>
+            <div className="k">{t.ci}</div>
+            <div className="v">{formatMoney(ci[0], cur, lang)}–{formatMoney(ci[1], cur, lang)}</div>
+          </div>
+        )}
         <div className="stat">
           <div className="k">{meta.nKind === 'population' ? t.population : t.sample}</div>
           <div className="v">{cell.n > 0 ? `${formatCount(cell.n, lang)}${t.people}` : '—'}</div>

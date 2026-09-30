@@ -46,6 +46,10 @@ def test_country_files(country: str):
     lo, hi = MEDIAN_RANGE[meta["currency"]]
     assert lo <= national["*|*|*|*"][4] <= hi, f"{country}: national median {national['*|*|*|*'][4]}"
 
+    for part in sorted(d.glob("occ-*.json")):
+        detail = load(part)
+        assert not set(detail) & set(national), f"{country}: {part.name} overlaps national.json"
+        national = {**national, **detail}
     for key, cell in national.items():
         assert KEY.match(key), f"{country}: bad key {key}"
         assert key.split("|")[0] in occ_codes, f"{country}: unknown occupation in {key}"

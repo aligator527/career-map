@@ -95,3 +95,17 @@ export function lognormalPdf(x: number, mu: number, sigma: number): number {
   const z = (Math.log(x) - mu) / sigma
   return Math.exp(-(z * z) / 2) / (x * sigma * Math.sqrt(2 * Math.PI))
 }
+
+/** Design effect assumed for household-survey microdata (clustering, weighting). ACS and Census PUMF docs put it around 1.5–2. */
+export const DESIGN_EFFECT = 2
+
+/**
+ * Approximate 90% confidence interval of a median from the sample size: the ranks
+ * n/2 ± 1.645·√(deff·n)/2 (order-statistic method), mapped to incomes through the group's
+ * fitted distribution. Only meaningful when n is an unweighted sample count (microdata).
+ */
+export function medianCI(q: readonly number[], n: number, deff = DESIGN_EFFECT): [number, number] | null {
+  if (n <= 0) return null
+  const half = 1.645 * Math.sqrt((deff * 0.25) / n)
+  return [incomeAt(Math.max(0.5 - half, 0.001), q), incomeAt(Math.min(0.5 + half, 0.999), q)]
+}

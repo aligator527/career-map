@@ -30,7 +30,7 @@ from pathlib import Path
 import openpyxl
 import requests
 
-from .common import AGE_BANDS, QUANTILES, RAW_DIR, WEB_DATA_DIR, write_json, write_region_summary
+from .common import AGE_BANDS, QUANTILES, RAW_DIR, WEB_DATA_DIR, write_json, write_national, write_region_summary
 
 YEAR = 2025  # 令和7年
 JP_RAW = RAW_DIR / "jp"
@@ -48,12 +48,13 @@ T_MAJOR_SEX_AGE = "000040421121"  # 職種（大分類）×性×年齢 第6表
 T_OCC_DIST = ["000040421132", "000040421133"]  # 職種（小分類）分布特性値 第17表（男女計）
 T_OCC_SEX_DIST = ["000040421135", "000040421136"]  # 職種（特掲）×性 分布特性値 第19表
 T_MAJOR_DIST = "000040421134"  # 職種（大分類）×性 分布特性値 第18表
+T_OCC_EXPERIENCE = "000040421129"  # 職種（小分類）×性×経験年数 第14表
 T_EDU_AGE = "000040420843"  # 学歴×性×年齢 第1表
 T_EDU_AGE_DIST = "000040420874"  # 学歴×性×年齢 所定内給与額階級 第3表
 T_PREF_AGE = [f"0000404211{n}" for n in range(67, 91)]  # 都道府県別第1表（2県ずつ）
 T_PREF_MAJOR = ["000040421191", "000040421192", "000040421193", "000040421194"]  # 都道府県別第2表
 ALL_TABLES = [
-    T_OCC_SEX_AGE, T_OCC_AGE, T_OCC_SEX, T_MAJOR_SEX_AGE, *T_OCC_DIST, *T_OCC_SEX_DIST,
+    T_OCC_EXPERIENCE, T_OCC_SEX_AGE, T_OCC_AGE, T_OCC_SEX, T_MAJOR_SEX_AGE, *T_OCC_DIST, *T_OCC_SEX_DIST,
     T_MAJOR_DIST, T_EDU_AGE, T_EDU_AGE_DIST, *T_PREF_AGE, *T_PREF_MAJOR,
 ]
 
@@ -103,6 +104,7 @@ INDUSTRY_EN = {
 SIZES = {"1000+": (12, "1,000人以上", "1,000+ employees"), "100-999": (20, "100〜999人", "100–999 employees"),
          "10-99": (28, "10〜99人", "10–99 employees")}
 MAJOR_CODE = {m["ja"]: f"M{k}" for k, m in LABELS["majors"].items()}
+MAJOR_OF_CODE = {OCC_CODE[o["ja"]]: o["major"] for o in LABELS["occupations"]}
 
 
 # ---------------------------------------------------------------- fetch
@@ -466,8 +468,34 @@ def build() -> None:
             if code and (c := occ_cell(code, r)) is not None:
                 facets[f"size={size}|{code}|{r.age}|{r.sex}"] = c
 
+    # --- pay by years of experience in the occupation (職種 第14表, 企業規模計)
+    experience: dict[str, list] = {}
+    bands = ["*", "0", "1-4", "5-9", "10-14", "15+"]
+    sex, group = "*", None
+    for row in open_book(T_OCC_EXPERIENCE)["(規模計)"].iter_rows(min_row=10, values_only=True):
+        label = row[1]
+        if label is None:
+            continue
+        for part in str(label).split("\n"):
+            tok = norm(part)
+            if tok in SEX:
+                sex = SEX[tok]
+            elif tok:
+                group = tok
+        code = OCC_CODE.get(group or "")
+        if not code:
+            continue
+        points = []
+        for i, band in enumerate(bands):
+            shoteinai, bonus, workers = (num(x) for x in row[3 + 3 * i : 6 + 3 * i])
+            if None not in (shoteinai, bonus, workers) and workers >= 10:
+                points.append([band, round(workers * 10), int(round((12 * shoteinai + bonus) * 1000, -3))])
+        if len(points) >= 3:
+            experience[f"{code}|{sex}"] = points
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    write_json(OUT_DIR / "national.json", national)
+    write_json(OUT_DIR / "experience.json", experience)
+    write_national(OUT_DIR, national, lambda occ: MAJOR_OF_CODE[occ])
     write_json(OUT_DIR / "facets.json", facets)
     for code, cells in sorted(regions.items()):
         write_json(OUT_DIR / f"region-{code}.json", cells)

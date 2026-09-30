@@ -50,3 +50,22 @@ def write_region_summary(country_dir: Path, max_dims: int = 2) -> None:
             if (k.startswith("*") or k.startswith("M")) and sum(p != "*" for p in k.split("|")) <= max_dims
         }
     write_json(country_dir / "regions.json", out)
+
+
+def write_national(country_dir: Path, cells: dict, major_of) -> None:
+    """Write national cells split for lazy loading: national.json holds cells for all occupations and
+    major groups ("*" / "M…"); occ-<major>.json holds the detailed occupations of one major group.
+    `major_of(code)` returns the major-group code (without "M") of a detailed occupation code."""
+    core: dict = {}
+    detail: dict[str, dict] = {}
+    for key, cell in cells.items():
+        occ = key.split("|", 1)[0]
+        if occ == "*" or occ.startswith("M"):
+            core[key] = cell
+        else:
+            detail.setdefault(major_of(occ), {})[key] = cell
+    for f in country_dir.glob("occ-*.json"):
+        f.unlink()
+    write_json(country_dir / "national.json", core)
+    for major, part in sorted(detail.items()):
+        write_json(country_dir / f"occ-{major}.json", part)

@@ -1,5 +1,5 @@
 import { findCell } from './lookup'
-import { loadMeta, loadNational, loadRegion } from './data'
+import { detailMajor, loadMeta, loadNational, loadRegion } from './data'
 import { MAJOR_REGIONS, mapEducation } from './countries'
 import type { CountryCode, CountryMeta, Education, FxData, Label, Match, Profile } from './types'
 
@@ -61,7 +61,7 @@ export async function buildComparison(
   kind: CompareKind, p: Profile, fx: FxData, conv: Conversion, countries: CountryCode[], common: CommonOccupation[],
 ): Promise<CompareRow[]> {
   const meta = await loadMeta(p.country)
-  const national = await loadNational(p.country)
+  const national = await loadNational(p.country, [detailMajor(meta, p.occupation)])
   const regional = p.region ? await loadRegion(p.country, p.region) : null
   const rows: CompareRow[] = []
   const push = (
@@ -95,8 +95,8 @@ export async function buildComparison(
         continue
       }
       const otherMeta = await loadMeta(c)
-      const other = await loadNational(c)
       const occupation = crosswalk(common, meta, otherMeta, p.occupation)
+      const other = await loadNational(c, [detailMajor(otherMeta, occupation)])
       const education = mapEducation(p.education, otherMeta.educations)
       const match = findCell(otherMeta, other, null, { ...p, country: c, region: null, occupation, education })
       if (match && p.occupation && !occupation && !match.dropped.includes('occupation')) match.dropped.push('occupation')

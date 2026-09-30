@@ -19,7 +19,24 @@ function load<T>(path: string): Promise<T> {
 const dir = (c: CountryCode) => c.toLowerCase()
 
 export const loadMeta = (c: CountryCode) => load<CountryMeta>(`${dir(c)}/meta.json`)
-export const loadNational = (c: CountryCode) => load<Cells>(`${dir(c)}/national.json`)
+/**
+ * National cells: the core file (all occupations and major groups) plus the detailed occupations of
+ * the given major groups (occ-<major>.json, split out to keep the first load small).
+ */
+export async function loadNational(c: CountryCode, majors: (string | null | undefined)[] = []): Promise<Cells> {
+  const wanted = [...new Set(majors.filter((m): m is string => !!m))]
+  const [core, ...parts] = await Promise.all([
+    load<Cells>(`${dir(c)}/national.json`),
+    ...wanted.map((m) => load<Cells>(`${dir(c)}/occ-${m}.json`).catch(() => ({}))),
+  ])
+  return parts.length ? Object.assign({}, core, ...parts) : core
+}
+
+/** Major-group key (without "M") of a detailed occupation, for loadNational; null for "*" or a major group. */
+export function detailMajor(meta: CountryMeta, occupation: string | null | undefined): string | null {
+  if (!occupation || occupation.startsWith('M')) return null
+  return meta.occupations.find((o) => o.code === occupation)?.major ?? null
+}
 export const loadRegion = (c: CountryCode, region: string) => load<Cells>(`${dir(c)}/region-${region}.json`)
 export const loadFx = () => load<FxData>('fx.json')
 
@@ -76,3 +93,13 @@ export interface VisaData {
   countries: Partial<Record<CountryCode, { freeMovement: L | null; routes: VisaRoute[] }>>
 }
 export const loadVisas = () => load<VisaData>('visas.json')
+export const loadExperience = () => load<Record<string, [string, number, number][]>>('jp/experience.json')
+
+export interface RentData {
+  source: { name: import('./types').Label; url: string }
+  period: string
+  /** typical monthly rent (local currency) nationally and per region code */
+  national: number
+  regions: Record<string, number>
+}
+export const loadRent = (c: CountryCode) => load<RentData>(`${dir(c)}/rent.json`)

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { COUNTRIES, INCOME_UNIT } from '../engine/countries'
-import { loadFacets, loadNational, loadRegions } from '../engine/data'
+import { crosswalk } from '../engine/compare'
+import { detailMajor, loadFacets, loadNational, loadRegions } from '../engine/data'
 import { achievers, ageCurve, goalOptions, goalResult, selfEmployedShare, type CountryData, type Goal, type GoalInputs, type GoalOption } from '../engine/goal'
 import { ageBand } from '../engine/lookup'
 import type { Cells, CountryCode, Profile } from '../engine/types'
@@ -45,7 +46,11 @@ export function GoalCard({ env, profile, national, regional }: { env: Env; profi
       if (live) setLoaded({ country: profile.country, regions, others: {} })
     })
     const others = COUNTRIES.filter((c) => c !== profile.country && env.metas[c])
-    Promise.all(others.map((c) => loadNational(c).catch(() => null))).then((nationals) => {
+    const home = env.metas[profile.country]!
+    Promise.all(others.map((c) => {
+      const to = env.metas[c]!
+      return loadNational(c, [detailMajor(to, crosswalk(env.common, home, to, profile.occupation))]).catch(() => null)
+    })).then((nationals) => {
       if (!live) return
       const o: Loaded['others'] = {}
       others.forEach((c, i) => {
@@ -54,7 +59,7 @@ export function GoalCard({ env, profile, national, regional }: { env: Env; profi
       setLoaded((prev) => (prev && prev.country === profile.country ? { ...prev, others: o } : prev))
     })
     return () => { live = false }
-  }, [profile.country, env.metas])
+  }, [profile.country, profile.occupation, env.metas, env.common])
 
   // Self-employment goal: US and Canada publish an `employment` facet
   const [facets, setFacets] = useState<{ country: string; cells: Cells } | null>(null)

@@ -3,14 +3,17 @@ import { CommunityCard } from './components/CommunityCard'
 import { CompareCard } from './components/CompareCard'
 import type { Env } from './components/env'
 import { GoalCard } from './components/GoalCard'
+import { GrowthCard } from './components/GrowthCard'
 import { MapCard } from './components/MapCard'
 import { MobilityCard } from './components/MobilityCard'
 import { ProfileForm } from './components/ProfileForm'
 import { ResearchCard } from './components/ResearchCard'
 import { ResultCard } from './components/ResultCard'
+import { defaultScenario, ScenarioCard } from './components/ScenarioCard'
 import { VisaCard } from './components/VisaCard'
 import { crosswalk, type CommonOccupation } from './engine/compare'
 import { COUNTRIES, HAS_PRICES, mapEducation } from './engine/countries'
+import { detailMajor } from './engine/data'
 import { loadCaTax, loadCommonOccupations, loadFx, loadMeta, loadNational, loadPrices, loadRegion, loadStateTax, type Prices } from './engine/data'
 import { findCell } from './engine/lookup'
 import type { Metric, TaxTables } from './engine/metric'
@@ -92,10 +95,13 @@ export default function App() {
   const [remember, setRemember] = useState(stored != null)
   const [metric, setMetric] = useState<Metric>(fromUrl?.metric ?? 'gross')
   const [tab, setTab] = useState<Tab>(fromUrl?.tab ?? 'position')
+  const [scenario, setScenario] = useState<Profile | null>(
+    fromUrl?.scenario ? { ...DEFAULT_PROFILE, income: null, ...fromUrl.scenario } : null,
+  )
   const [theme, setTheme] = useState<Theme>(readTheme)
   const [copied, setCopied] = useState(false)
   const [shared, setShared] = useState<Shared | null>(null)
-  const [national, setNational] = useState<{ country: CountryCode; cells: Cells } | null>(null)
+  const [national, setNational] = useState<{ country: CountryCode; cells: Cells; major: string | null } | null>(null)
   const [regional, setRegional] = useState<{ key: string; cells: Cells } | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -107,8 +113,8 @@ export default function App() {
   useEffect(() => writeStored(remember ? profile : null), [remember, profile])
 
   useEffect(() => {
-    history.replaceState(null, '', writeUrlState({ profile, metric, tab, lang }))
-  }, [profile, metric, tab, lang])
+    history.replaceState(null, '', writeUrlState({ profile, metric, tab, lang, scenario }))
+  }, [profile, metric, tab, lang, scenario])
 
   useEffect(() => {
     if (theme === 'auto') delete document.documentElement.dataset.theme
@@ -134,13 +140,14 @@ export default function App() {
     loadShared().then(setShared).catch((e) => setError(String(e)))
   }, [])
 
+  const detailMajorKey = shared?.metas[profile.country] ? detailMajor(shared.metas[profile.country]!, profile.occupation) : null
   useEffect(() => {
     let live = true
-    loadNational(profile.country)
-      .then((cells) => live && setNational({ country: profile.country, cells }))
+    loadNational(profile.country, [detailMajorKey])
+      .then((cells) => live && setNational({ country: profile.country, cells, major: detailMajorKey }))
       .catch((e) => live && setError(String(e)))
     return () => { live = false }
-  }, [profile.country])
+  }, [profile.country, detailMajorKey])
 
   const regionKey = profile.region ? `${profile.country}-${profile.region}` : null
   useEffect(() => {
@@ -153,7 +160,7 @@ export default function App() {
   }, [profile.country, profile.region])
 
   const meta = shared?.metas[profile.country] ?? null
-  const nationalCells = national?.country === profile.country ? national.cells : null
+  const nationalCells = national?.country === profile.country && national.major === detailMajorKey ? national.cells : null
   const regionalCells = regionKey && regional?.key === regionKey ? regional.cells : null
   const ready = !!meta && !!nationalCells && (!regionKey || !!regionalCells)
   const match = ready ? findCell(meta!, nationalCells!, regionalCells, profile) : null
@@ -222,8 +229,12 @@ export default function App() {
               {tab === 'position' && (
                 <>
                   <ResultCard env={env} meta={meta} match={match} profile={profile} />
+                  <GrowthCard env={env} meta={meta} profile={profile} national={nationalCells!} regional={regionalCells} />
                   <CompareCard env={env} profile={profile} />
                 </>
+              )}
+              {tab === 'scenario' && (
+                <ScenarioCard env={env} a={profile} b={scenario ?? defaultScenario(env, profile)} onChangeB={setScenario} />
               )}
               {tab === 'goal' && <GoalCard env={env} profile={profile} national={nationalCells!} regional={regionalCells} />}
               {tab === 'career' && (

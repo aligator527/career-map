@@ -35,7 +35,14 @@ export function takeHome(ctx: MetricContext, gross: number): TakeHome {
 
 /** Regional price level relative to the national average (1 = average). */
 export function priceLevel(ctx: MetricContext): number {
-  const p = ctx.region ? ctx.prices?.regions[ctx.region]?.all : null
+  if (!ctx.region || !ctx.prices) return 1
+  let p: number | undefined = ctx.prices.regions[ctx.region]?.all
+  if (p == null) {
+    // Metropolitan areas have no index of their own: use the state / province they belong to
+    const metro = ctx.meta.regions.find((r) => r.code === ctx.region)
+    const parent = metro?.kind === 'metro' ? ctx.meta.regions.find((r) => r.kind !== 'metro' && r.abbr === metro.abbr) : null
+    p = parent ? ctx.prices.regions[parent.code]?.all : undefined
+  }
   return p ? p / 100 : 1
 }
 

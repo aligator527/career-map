@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { crosswalk, rate } from '../engine/compare'
 import { COUNTRIES, mapEducation } from '../engine/countries'
-import { loadNational, loadVisas, type VisaData } from '../engine/data'
+import { detailMajor, loadNational, loadVisas, type VisaData } from '../engine/data'
 import { findCell } from '../engine/lookup'
 import type { CountryCode, Match, Profile } from '../engine/types'
 import { formatMoney, label, labeled } from '../i18n'
@@ -24,9 +24,9 @@ export function VisaCard({ env, profile }: { env: Env; profile: Profile }) {
     let live = true
     const from = metaOf(env, profile.country)
     const to = metaOf(env, dest)
-    loadNational(dest).then((national) => {
+    const occupation = dest === profile.country ? profile.occupation : crosswalk(env.common, from, to, profile.occupation)
+    loadNational(dest, [detailMajor(to, occupation)]).then((national) => {
       if (!live) return
-      const occupation = dest === profile.country ? profile.occupation : crosswalk(env.common, from, to, profile.occupation)
       const p: Profile = { ...profile, country: dest, region: null, occupation, education: mapEducation(profile.education, to.educations) }
       setThere({ country: dest, match: findCell(to, national, null, p) })
     }).catch(() => live && setThere({ country: dest, match: null }))

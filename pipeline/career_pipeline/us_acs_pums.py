@@ -26,6 +26,7 @@ from .common import (
     age_band_expr,
     write_json,
     write_region_summary,
+    write_national,
 )
 from . import us_metros
 from .microdata import build_cells, build_facets
@@ -241,7 +242,7 @@ def build() -> None:
     print(f"US workers: {df.height:,} employees (+{everyone.height - df.height:,} self-employed), weighted {df['w'].sum():,.0f}")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    write_json(OUT_DIR / "national.json", build_cells(df))
+    write_national(OUT_DIR, build_cells(df), lambda occ: occ[:2])
     facets = build_facets(df, ["industry", "field", "citizenship", "english"])
     facets.update(build_facets(everyone, ["employment"]))
     write_json(OUT_DIR / "facets.json", facets)

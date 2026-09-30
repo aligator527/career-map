@@ -14,9 +14,14 @@ interface Props {
   onChange: (p: Profile) => void
   onCountry: (c: CountryCode) => void
   onRemember: (v: boolean) => void
+  /** 'scenario': compact form for the second scenario (no income, remember or extra conditions) */
+  variant?: 'main' | 'scenario'
+  title?: string
 }
 
-export function ProfileForm({ profile: p, countries, meta, lang, t, remember, onChange, onCountry, onRemember }: Props) {
+export function ProfileForm({ profile: p, countries, meta, lang, t, remember, onChange, onCountry, onRemember, variant = 'main', title }: Props) {
+  const main = variant === 'main'
+  const id = (s: string) => (main ? s : `b-${s}`)
   const [query, setQuery] = useState('')
   const set = (patch: Partial<Profile>) => onChange({ ...p, ...patch })
 
@@ -39,12 +44,12 @@ export function ProfileForm({ profile: p, countries, meta, lang, t, remember, on
   const sorted = meta ? [...meta.regions].sort((a, b) => (p.country === 'JP' ? 0 : label(a.label, lang).localeCompare(label(b.label, lang)))) : []
 
   return (
-    <form className="card form" onSubmit={(e) => e.preventDefault()} aria-label={t.profile}>
-      <h2>{t.profile}</h2>
+    <form className={main ? 'card form' : 'scenario-form'} onSubmit={(e) => e.preventDefault()} aria-label={title ?? t.profile}>
+      <h2>{title ?? t.profile}</h2>
 
       <div className="field">
-        <span id="country-label">{t.country}</span>
-        <select aria-labelledby="country-label" value={p.country} onChange={(e) => onCountry(e.target.value as CountryCode)}>
+        <span id={id("country-label")}>{t.country}</span>
+        <select aria-labelledby={id("country-label")} value={p.country} onChange={(e) => onCountry(e.target.value as CountryCode)}>
           {countries.map((c) => (
             <option key={c} value={c}>{t.countries[c]}</option>
           ))}
@@ -69,8 +74,8 @@ export function ProfileForm({ profile: p, countries, meta, lang, t, remember, on
       </label>
 
       <div className="field">
-        <label htmlFor="occ-search"><span>{t.occupation}</span></label>
-        <input id="occ-search" type="search" placeholder={t.occupationSearch} value={query} onChange={(e) => setQuery(e.target.value)} />
+        <label htmlFor={id("occ-search")}><span>{t.occupation}</span></label>
+        <input id={id("occ-search")} type="search" placeholder={t.occupationSearch} value={query} onChange={(e) => setQuery(e.target.value)} />
         <select aria-label={t.occupation} value={p.occupation ?? ''} onChange={(e) => set({ occupation: e.target.value || null })}>
           <option value="">{t.anyOccupation}</option>
           {groups.map(({ major, occs }) =>
@@ -119,7 +124,7 @@ export function ProfileForm({ profile: p, countries, meta, lang, t, remember, on
         </label>
       )}
 
-      {meta?.facets && Object.keys(meta.facets).length > 0 && (
+      {main && meta?.facets && Object.keys(meta.facets).length > 0 && (
         <details className="facet-fields" open={Object.keys(p.facets ?? {}).length > 0}>
           <summary>{t.moreConditions}</summary>
           {Object.entries(meta.facets).map(([dim, f]) => (
@@ -143,20 +148,24 @@ export function ProfileForm({ profile: p, countries, meta, lang, t, remember, on
         </details>
       )}
 
-      <label className="field">
-        <span>{paren(t.income, incomeUnitLabel, lang)}</span>
-        <input
-          type="number" inputMode="numeric" min={0}
-          value={p.income != null ? Math.round(p.income / incomeUnit) : ''}
-          onChange={(e) => set({ income: e.target.value ? Number(e.target.value) * incomeUnit : null })}
-        />
-        <small>{t.incomeHint}</small>
-      </label>
+      {main && (
+        <>
+          <label className="field">
+            <span>{paren(t.income, incomeUnitLabel, lang)}</span>
+            <input
+              type="number" inputMode="numeric" min={0}
+              value={p.income != null ? Math.round(p.income / incomeUnit) : ''}
+              onChange={(e) => set({ income: e.target.value ? Number(e.target.value) * incomeUnit : null })}
+            />
+            <small>{t.incomeHint}</small>
+          </label>
 
-      <label className="check">
-        <input type="checkbox" checked={remember} onChange={(e) => onRemember(e.target.checked)} />
-        {t.remember}
-      </label>
+          <label className="check">
+            <input type="checkbox" checked={remember} onChange={(e) => onRemember(e.target.checked)} />
+            {t.remember}
+          </label>
+        </>
+      )}
     </form>
   )
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { ageBand, findCell } from './lookup'
-import { LEVELS, fitLognormal, incomeAt, normCdf, normInv, percentileOf } from './stats'
+import { LEVELS, fitLognormal, incomeAt, medianCI, normCdf, normInv, percentileOf } from './stats'
 import type { Cells, CountryMeta, Profile } from './types'
 
 describe('stats', () => {
@@ -85,5 +85,16 @@ describe('fitLognormal', () => {
     const { mu, sigma } = fitLognormal(q)
     expect(mu).toBeCloseTo(15, 6)
     expect(sigma).toBeCloseTo(0.5, 6)
+  })
+})
+
+describe('medianCI', () => {
+  it('narrows with sample size and contains the median', () => {
+    const q = LEVELS.map((p) => Math.exp(Math.log(5e6) + 0.4 * normInv(p)))
+    const small = medianCI(q, 50)!
+    const large = medianCI(q, 5000)!
+    expect(small[0]).toBeLessThan(q[2])
+    expect(small[1]).toBeGreaterThan(q[2])
+    expect(large[1] - large[0]).toBeLessThan((small[1] - small[0]) / 5)
   })
 })

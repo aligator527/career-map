@@ -60,7 +60,7 @@ export function TileMap({ country, values, selected, currency, lang, t, onSelect
   return (
     <div className="chart tilemap" ref={ref}>
       {width > 0 && size > 0 && (
-        <svg width={pos(cols) - gap} height={pos(rows) - gap} role="img" aria-label={t.mapTitle}>
+        <svg width={pos(cols) - gap} height={pos(rows) - gap} role="group" aria-label={t.mapTitle}>
           {tiles.map((tile) => {
             const v = values[tile.code]
             const i = v ? bin(v.value) : -1

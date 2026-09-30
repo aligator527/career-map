@@ -7,7 +7,7 @@ import { COUNTRIES } from './engine/countries'
 import type { Metric } from './engine/metric'
 import type { CountryCode, Education, Lang, Profile, Sex } from './engine/types'
 
-export const TABS = ['position', 'goal', 'career', 'abroad', 'map', 'community'] as const
+export const TABS = ['position', 'goal', 'scenario', 'career', 'abroad', 'map', 'community'] as const
 export type Tab = (typeof TABS)[number]
 
 export interface UrlState {
@@ -15,6 +15,8 @@ export interface UrlState {
   metric?: Metric
   tab?: Tab
   lang?: Lang
+  /** second scenario for the side-by-side comparison */
+  scenario?: Partial<Profile>
 }
 
 const METRICS: Metric[] = ['gross', 'net', 'real']
@@ -38,6 +40,20 @@ function facetsFrom(q: URLSearchParams): { facets?: Record<string, string> } {
   return Object.keys(facets).length ? { facets } : {}
 }
 
+/** Scenario B travels as b.c, b.r, b.o, b.a, b.s, b.e */
+function scenarioFrom(q: URLSearchParams): Partial<Profile> | undefined {
+  const country = oneOf(q.get('b.c'), COUNTRIES as CountryCode[])
+  if (!country) return undefined
+  return {
+    country,
+    region: code(q.get('b.r')),
+    occupation: code(q.get('b.o')),
+    age: int(q.get('b.a'), 18, 69),
+    sex: oneOf(q.get('b.s'), SEXES) ?? null,
+    education: oneOf(q.get('b.e'), EDUCATIONS) ?? null,
+  }
+}
+
 export function readUrlState(hash: string): UrlState | null {
   const q = new URLSearchParams(hash.replace(/^#/, ''))
   const country = oneOf(q.get('c'), COUNTRIES as CountryCode[])
@@ -55,11 +71,12 @@ export function readUrlState(hash: string): UrlState | null {
     },
     metric: oneOf(q.get('m'), METRICS),
     tab: oneOf(q.get('t'), TABS),
+    scenario: scenarioFrom(q),
     lang: oneOf(q.get('l'), ['ja', 'en'] as const),
   }
 }
 
-export function writeUrlState(s: { profile: Profile; metric: Metric; tab: Tab; lang: Lang }): string {
+export function writeUrlState(s: { profile: Profile; metric: Metric; tab: Tab; lang: Lang; scenario?: Profile | null }): string {
   const q = new URLSearchParams()
   const p = s.profile
   q.set('c', p.country)
@@ -73,5 +90,14 @@ export function writeUrlState(s: { profile: Profile; metric: Metric; tab: Tab; l
   if (s.metric !== 'gross') q.set('m', s.metric)
   if (s.tab !== 'position') q.set('t', s.tab)
   q.set('l', s.lang)
+  const b = s.scenario
+  if (b) {
+    q.set('b.c', b.country)
+    if (b.region) q.set('b.r', b.region)
+    if (b.occupation) q.set('b.o', b.occupation)
+    if (b.age != null) q.set('b.a', String(b.age))
+    if (b.sex) q.set('b.s', b.sex)
+    if (b.education) q.set('b.e', b.education)
+  }
   return `#${q.toString()}`
 }
