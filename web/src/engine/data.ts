@@ -56,3 +56,4 @@ export interface ResearchEffect {
   notes?: string
 }
 export const loadResearch = () => load<{ compiled: string; effects: ResearchEffect[] }>('research.json')
+export const loadCommunity = () => load<import('./community').CommunityData>('community.json')

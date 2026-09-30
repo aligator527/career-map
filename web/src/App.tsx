@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { CommunityCard } from './components/CommunityCard'
 import { CompareCard } from './components/CompareCard'
 import type { Env } from './components/env'
 import { GoalCard } from './components/GoalCard'
@@ -164,6 +165,7 @@ export default function App() {
               <MobilityCard env={env} profile={profile} />
               <ResearchCard env={env} country={profile.country} median={match.cell.q[2]} currency={meta.currency} />
               <MapCard env={env} profile={profile} onSelectRegion={(region) => setProfile({ ...profile, region })} />
+              <CommunityCard env={env} profile={profile} />
             </>
           ) : (
             <section className="card">{t.noData}</section>
@@ -176,7 +178,12 @@ export default function App() {
           </section>
         </main>
       </div>
-      <footer className="footer">{t.footer}</footer>
+      <footer className="footer">
+        {t.footer}{' '}
+        <a href="https://github.com/aligator527/career-map/blob/main/docs/PRIVACY.md" target="_blank" rel="noreferrer">{t.privacyPolicy}</a>
+        {' · '}
+        <a href="https://github.com/aligator527/career-map" target="_blank" rel="noreferrer">GitHub</a>
+      </footer>
     </div>
   )
 }

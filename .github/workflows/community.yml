@@ -1,0 +1,41 @@
+name: Update community data
+
+# Nightly: read anonymous submissions with the service-role key, publish aggregates (groups of 10+ only)
+# to web/public/data/community.json and commit if they changed. Does nothing until Supabase is configured.
+on:
+  schedule:
+    - cron: "17 18 * * *" # 03:17 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: community
+  cancel-in-progress: false
+
+jobs:
+  aggregate:
+    if: vars.SUPABASE_URL != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Aggregate submissions
+        working-directory: pipeline
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: uv run python -m career_pipeline community
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # the pipeline leaves the file untouched when the published numbers did not change
+          if git diff --quiet -- web/public/data/community.json; then
+            echo "no change"
+          else
+            git add web/public/data/community.json
+            git commit -m "Update community aggregates"
+            git push
+          fi

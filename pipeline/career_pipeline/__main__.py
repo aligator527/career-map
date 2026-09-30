@@ -1,8 +1,8 @@
-"""Rebuild all published data: `uv run python -m career_pipeline [fx|prices|tax|jp|us|uk|ca|eu|occupations ...]`."""
+"""Rebuild all published data: `uv run python -m career_pipeline [fx|prices|tax|jp|us|uk|ca|eu|occupations|research|community ...]`."""
 
 import sys
 
-from . import ca_census, cost_of_living, eu_ses, fx_ppp, jp_mobility, jp_wage_census, occupations, research, tax_tables, uk_ashe, us_acs_pums, us_cps_mobility
+from . import ca_census, community, cost_of_living, eu_ses, fx_ppp, jp_mobility, jp_wage_census, occupations, research, tax_tables, uk_ashe, us_acs_pums, us_cps_mobility
 
 STEPS = {
     "fx": [fx_ppp.build],
@@ -18,6 +18,8 @@ STEPS = {
     # after all countries: validates codes against every meta.json
     "occupations": [occupations.build],
     "research": [research.build],
+    # needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY; skipped otherwise
+    "community": [community.build],
 }
 
 for name in sys.argv[1:] or list(STEPS):

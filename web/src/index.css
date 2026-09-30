@@ -273,3 +273,16 @@ table.data tr.current td { font-weight: 600; }
 .research details { margin-top: 4px; font-size: 0.8rem; color: var(--text-secondary); }
 .research details summary { cursor: pointer; color: var(--text-muted); }
 .research blockquote { margin: 4px 0; padding-left: 10px; border-left: 2px solid var(--axis); }
+
+/* Community */
+.contribute summary { cursor: pointer; }
+.contribute-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 12px 0; }
+.contribute-grid select, .delete-row input { width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--axis); background: var(--surface); }
+table.preview { max-width: 480px; margin-bottom: 12px; }
+table.preview td { text-align: left; }
+.consent { margin: 8px 0 12px; align-items: flex-start; }
+button.primary { border: 0; border-radius: 8px; padding: 10px 18px; background: var(--series-1); color: #fff; font-weight: 600; cursor: pointer; }
+button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.deletion-code { display: inline-block; font-size: 1.05rem; letter-spacing: 0.04em; padding: 8px 12px; margin: 4px 8px 4px 0; background: var(--surface-2); border-radius: 8px; overflow-wrap: anywhere; }
+.code-label { margin: 8px 0 0; font-weight: 600; }
+.delete-row { display: flex; gap: 8px; max-width: 520px; }
