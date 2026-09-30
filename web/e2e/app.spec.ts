@@ -31,9 +31,10 @@ test('entering income shows a percentile, and the URL follows the inputs', async
 })
 
 test('every tab renders for every country', async ({ page }) => {
+  test.setTimeout(120_000) // 11 countries × 7 tabs
   const errs = errors(page)
-  for (const c of ['JP', 'US', 'UK', 'CA', 'DE', 'FR', 'IT']) {
-    for (const tab of ['position', 'goal', 'career', 'abroad', 'map', 'community']) {
+  for (const c of ['JP', 'US', 'UK', 'CA', 'DE', 'FR', 'IT', 'NL', 'AU', 'SG', 'KR']) {
+    for (const tab of ['position', 'goal', 'scenario', 'career', 'abroad', 'map', 'community']) {
       await page.goto(`/#c=${c}&t=${tab}&l=en`)
       await page.reload()
       await expect(page.locator('main section.card').first()).toBeVisible()
@@ -66,4 +67,27 @@ test('has no serious accessibility violations on the main tabs', async ({ page }
     const serious = results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical')
     expect(serious.map((v) => `${tab}: ${v.id} (${v.nodes.length}) ${v.nodes[0]?.target}`)).toEqual([])
   }
+})
+
+test('switching to Chinese, Korean and Vietnamese translates the page accessibly', async ({ page }) => {
+  const { default: AxeBuilder } = await import('@axe-core/playwright')
+  const errs = errors(page)
+  const headings = { zh: '条件相似者的年收入', ko: '비슷한 조건인 사람들의 연봉', vi: 'Thu nhập năm của những người giống bạn' }
+  await page.goto('/#c=JP&o=J012&a=32&i=6500000&l=ja')
+  await page.reload()
+  for (const [lang, heading] of Object.entries(headings)) {
+    await page.getByRole('combobox', { name: /Language/ }).selectOption(lang)
+    await expect(page.getByRole('heading', { name: heading })).toBeVisible()
+    await expect(page.locator('html')).toHaveAttribute('lang', lang)
+    await expect(page).toHaveURL(new RegExp(`l=${lang}`))
+    await page.waitForTimeout(300)
+    const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze()
+    const serious = results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical')
+    expect(serious.map((v) => `${lang}: ${v.id} (${v.nodes.length}) ${v.nodes[0]?.target}`)).toEqual([])
+  }
+  // a direct link in a lazily loaded language renders in it too
+  await page.goto('/#c=JP&l=ko')
+  await page.reload()
+  await expect(page.getByRole('heading', { name: headings.ko })).toBeVisible()
+  expect(errs).toEqual([])
 })

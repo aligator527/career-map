@@ -4,7 +4,7 @@ import { COUNTRIES, mapEducation } from '../engine/countries'
 import { detailMajor, loadNational, loadVisas, type VisaData } from '../engine/data'
 import { findCell } from '../engine/lookup'
 import type { CountryCode, Match, Profile } from '../engine/types'
-import { formatMoney, label, labeled } from '../i18n'
+import { formatDate, formatMoney, label, labeled } from '../i18n'
 import { InfoIcon } from './ResultCard'
 import { describeGroup, metaOf, type Env } from './env'
 
@@ -91,7 +91,7 @@ export function VisaCard({ env, profile }: { env: Env; profile: Profile }) {
                   </ul>
                   {r.processingNote && <p className="note">{label(r.processingNote, lang)}</p>}
                   <div className="effect-source">
-                    <a href={r.source.url} target="_blank" rel="noreferrer">{r.source.title}</a> — {labeled(t.visaAsOf, r.asOf, lang)}
+                    <a href={r.source.url} target="_blank" rel="noreferrer">{r.source.title}</a> — {labeled(t.visaAsOf, formatDate(r.asOf, lang), lang)}
                   </div>
                 </li>
               )

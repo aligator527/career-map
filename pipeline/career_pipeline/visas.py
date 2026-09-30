@@ -13,8 +13,8 @@ from pathlib import Path
 from .common import WEB_DATA_DIR, write_json
 
 SOURCE = Path(__file__).parent / "labels" / "visas.json"
-COUNTRIES = {"JP", "US", "UK", "CA", "DE", "FR", "IT"}
-CURRENCIES = {"JPY", "USD", "GBP", "CAD", "EUR"}
+COUNTRIES = {"JP", "US", "UK", "CA", "DE", "FR", "IT", "AU", "SG", "NL", "KR"}
+CURRENCIES = {"JPY", "USD", "GBP", "CAD", "EUR", "AUD", "SGD", "KRW"}
 
 
 def build() -> None:

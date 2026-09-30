@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { bracketTax, deIncomeTax, takeHomeDE, takeHomeFR, takeHomeIT, takeHomeJP, takeHomeUK, takeHomeUS } from './tax'
+import { bracketTax, takeHomeAU, takeHomeKR, takeHomeNL, takeHomeSG, deIncomeTax, takeHomeDE, takeHomeFR, takeHomeIT, takeHomeJP, takeHomeUK, takeHomeUS } from './tax'
 
 describe('takeHomeJP', () => {
   it('matches a hand calculation for ¥5,000,000 at age 30', () => {
@@ -104,6 +104,43 @@ describe('other countries', () => {
       for (let g = 5_000; g <= 400_000; g += 1_000) {
         const n = f(g).net
         expect(n).toBeGreaterThan(prev)
+        prev = n
+      }
+    }
+  })
+})
+
+describe('AU / SG / NL / KR take-home', () => {
+  it('AU 2025–26: $100k pays $20,788 tax and $2,000 Medicare levy', () => {
+    const t = takeHomeAU(100_000)
+    expect(t.incomeTax).toBeCloseTo(20_788, 0)
+    expect(t.social).toBeCloseTo(2_000, 0)
+    expect(takeHomeAU(18_000).net).toBe(18_000)
+    expect(takeHomeAU(40_000).incomeTax).toBeCloseTo(3_488 - 575, 0) // LITO 700 - 5c × 2,500
+  })
+  it('SG YA2026: S$60k resident — CPF 20%, tax on chargeable income after relief', () => {
+    const t = takeHomeSG(60_000)
+    expect(t.social).toBe(12_000)
+    expect(t.incomeTax).toBeCloseTo(200 + 350 + 7_000 * 0.07, 6)
+    expect(takeHomeSG(200_000).social).toBe(19_200) // capped at S$8,000/month
+    expect(takeHomeSG(60_000, false).social).toBe(0)
+  })
+  it('NL 2025: €60k gross ≈ €43.7k after wage tax (before health premium)', () => {
+    const t = takeHomeNL(60_000)
+    expect(t.incomeTax).toBeGreaterThan(16_200)
+    expect(t.incomeTax).toBeLessThan(16_400)
+  })
+  it('KR 2025: ₩50m gross nets roughly ₩43m', () => {
+    const t = takeHomeKR(50_000_000)
+    expect(t.net).toBeGreaterThan(42_000_000)
+    expect(t.net).toBeLessThan(44_000_000)
+  })
+  it('take-home rises with gross in all four', () => {
+    for (const [f, lo, hi] of [[takeHomeAU, 10_000, 400_000], [takeHomeSG, 10_000, 600_000], [takeHomeNL, 10_000, 300_000], [takeHomeKR, 10_000_000, 400_000_000]] as const) {
+      let prev = -Infinity
+      for (let g = lo; g <= hi; g += (hi - lo) / 200) {
+        const n = f(g).net
+        expect(n).toBeGreaterThanOrEqual(prev - 1e-6)
         prev = n
       }
     }

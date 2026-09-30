@@ -6,7 +6,7 @@ import {
 import { loadCommunity } from '../engine/data'
 import { majorOf } from '../engine/lookup'
 import type { Profile } from '../engine/types'
-import { formatMoney, label, labeled } from '../i18n'
+import { formatDate, formatMoney, label, labeled } from '../i18n'
 import { BarList } from './BarList'
 import { InfoIcon } from './ResultCard'
 import { describeGroup, metaOf, type Env } from './env'
@@ -93,7 +93,7 @@ export function CommunityCard({ env, profile }: { env: Env; profile: Profile }) 
             </>
           )}
           <div className="notice" role="note"><InfoIcon /><div>{t.communityBias}</div></div>
-          {data.generatedOn && <p className="note">{labeled(t.communityUpdated, data.generatedOn, lang)}</p>}
+          {data.generatedOn && <p className="note">{labeled(t.communityUpdated, formatDate(data.generatedOn, lang), lang)}</p>}
         </div>
       )}
 

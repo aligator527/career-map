@@ -10,6 +10,12 @@ describe('url state', () => {
     expect(readUrlState(hash)).toEqual({ profile, metric: 'net', tab: 'goal', lang: 'ja' })
   })
 
+  it('accepts every UI language and rejects others', () => {
+    for (const lang of ['ja', 'en', 'zh', 'ko', 'vi'] as const)
+      expect(readUrlState(writeUrlState({ profile, metric: 'gross', tab: 'position', lang }))!.lang).toBe(lang)
+    expect(readUrlState('#c=JP&l=fr')!.lang).toBeUndefined()
+  })
+
   it('round-trips facets', () => {
     const p = { ...profile, facets: { industry: 'G', size: '1000+' } }
     expect(readUrlState(writeUrlState({ profile: p, metric: 'gross', tab: 'position', lang: 'en' }))!.profile.facets).toEqual(p.facets)

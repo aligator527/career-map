@@ -24,11 +24,12 @@ from collections import defaultdict
 
 import requests
 
+from . import nl_cbs
 from .common import RAW_DIR, WEB_DATA_DIR, write_json, write_region_summary
 
 API = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
 EU_RAW = RAW_DIR / "eu"
-COUNTRIES = ["DE", "FR", "IT"]
+COUNTRIES = ["DE", "FR", "IT", "NL"]
 YEAR = 2022
 SHAPE_YEAR = 2018
 METHOD_SHAPE = 3
@@ -80,6 +81,12 @@ REGIONS = {
         ("ITC", "North-West", "北西部"), ("ITH", "North-East", "北東部"), ("ITI", "Centre", "中部"),
         ("ITF", "South", "南部"), ("ITG", "Islands", "島嶼部"),
     ],
+    "NL": [
+        ("NL1", "North Netherlands", "北部（フローニンゲン・フリースラント・ドレンテ）"),
+        ("NL2", "East Netherlands", "東部（オーファーアイセル・ヘルダーラント・フレヴォラント）"),
+        ("NL3", "West Netherlands", "西部（ユトレヒト・北ホラント・南ホラント・ゼーラント）"),
+        ("NL4", "South Netherlands", "南部（北ブラバント・リンブルフ）"),
+    ],
 }
 NACE = {
     "B": ("Mining and quarrying", "鉱業"), "C": ("Manufacturing", "製造業"), "D": ("Electricity and gas", "電気・ガス"),
@@ -94,7 +101,7 @@ SIZES = {"10-49": "10-49", "50-249": "50-249", "250-499": "250-499", "500-999": 
 SIZE_LABELS = {"10-49": ("10–49 employees", "10〜49人"), "50-249": ("50–249 employees", "50〜249人"),
                "250-499": ("250–499 employees", "250〜499人"), "500-999": ("500–999 employees", "500〜999人"),
                "1000+": ("1,000+ employees", "1,000人以上")}
-NAMES = {"DE": ("Germany", "ドイツ"), "FR": ("France", "フランス"), "IT": ("Italy", "イタリア")}
+NAMES = {"DE": ("Germany", "ドイツ"), "FR": ("France", "フランス"), "IT": ("Italy", "イタリア"), "NL": ("Netherlands", "オランダ")}
 
 
 # ---------------------------------------------------------------- fetching (JSON-stat)
@@ -161,6 +168,7 @@ def queries(c: str) -> dict[str, dict]:
 def fetch() -> None:
     for c in COUNTRIES:
         queries(c)
+    nl_cbs.fetch()
 
 
 # ---------------------------------------------------------------- shapes
@@ -284,6 +292,7 @@ def build_country(c: str) -> None:
 def build() -> None:
     for c in COUNTRIES:
         build_country(c)
+    nl_cbs.build()  # NL: detailed occupations from CBS on top of the SES cells
 
 
 if __name__ == "__main__":

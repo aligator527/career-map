@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import { loadResearch, type ResearchEffect } from '../engine/data'
-import type { CountryCode } from '../engine/types'
+import type { CountryCode, Lang } from '../engine/types'
 import { formatMoney, label } from '../i18n'
 import type { Env } from './env'
 
 const TOPICS = ['schooling_year', 'degree_premium', 'graduate_premium', 'language', 'certification', 'job_change', 'city'] as const
 
-function formatEffect(e: ResearchEffect, lang: 'ja' | 'en'): string {
+const POINTS: Record<Lang, string> = { ja: 'ポイント', en: ' pp', zh: '个百分点', ko: '%p', vi: ' điểm %' }
+const ELASTICITY: Record<Lang, string> = { ja: '弾力性', en: 'elasticity', zh: '弹性', ko: '탄력성', vi: 'độ co giãn' }
+
+function formatEffect(e: ResearchEffect, lang: Lang): string {
   const { point, low, high, unit } = e.effect
   const pct = (x: number, digits = 1) => `${x >= 0 ? '+' : ''}${(x * 100).toFixed(digits)}%`
   const range = (f: (x: number) => string) => (low != null && high != null ? ` (${f(low)} – ${f(high)})` : '')
@@ -20,11 +23,11 @@ function formatEffect(e: ResearchEffect, lang: 'ja' | 'en'): string {
     case 'ratio':
       return `×${point.toFixed(2)} (${pct(point - 1, 0)})`
     case 'percentage_points':
-      return `${point >= 0 ? '+' : ''}${(point * 100).toFixed(1)}${lang === 'ja' ? 'ポイント' : ' pp'}`
+      return `${point >= 0 ? '+' : ''}${(point * 100).toFixed(1)}${POINTS[lang]}`
     case 'share':
       return `${(point * 100).toFixed(0)}%`
     case 'elasticity':
-      return `${lang === 'ja' ? '弾力性' : 'elasticity'} ${point}`
+      return `${ELASTICITY[lang]} ${point}`
   }
 }
 

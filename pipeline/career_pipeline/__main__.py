@@ -1,8 +1,8 @@
-"""Rebuild all published data: `uv run python -m career_pipeline [fx|prices|tax|jp|us|uk|ca|eu|occupations|research|community ...]`."""
+"""Rebuild all published data: `uv run python -m career_pipeline [fx|prices|tax|jp|us|uk|ca|eu|au|sg|kr|rent|occupations|research|community ...]`."""
 
 import sys
 
-from . import ca_census, community, insights, cost_of_living, eu_ses, fx_ppp, jp_mobility, jp_wage_census, occupations, research, tax_tables, visas, uk_ashe, us_acs_pums, us_cps_mobility
+from . import au_abs, ca_census, kr_kosis, sg_mom, community, insights, cost_of_living, eu_ses, fx_ppp, jp_mobility, jp_wage_census, occupations, rent, research, tax_tables, visas, uk_ashe, us_acs_pums, us_cps_mobility
 
 STEPS = {
     "fx": [fx_ppp.build],
@@ -15,6 +15,10 @@ STEPS = {
     "uk": [uk_ashe.fetch, uk_ashe.build],
     "ca": [ca_census.fetch, ca_census.build],
     "eu": [eu_ses.fetch, eu_ses.build],
+    "au": [au_abs.fetch, au_abs.build],
+    "sg": [sg_mom.fetch, sg_mom.build],
+    "kr": [kr_kosis.fetch, kr_kosis.build],
+    "rent": [rent.build],
     # after all countries: validates codes against every meta.json
     "occupations": [occupations.build],
     "research": [research.build],

@@ -7,6 +7,8 @@ import { COUNTRIES } from './engine/countries'
 import type { Metric } from './engine/metric'
 import type { CountryCode, Education, Lang, Profile, Sex } from './engine/types'
 
+export const LANGS: readonly Lang[] = ['ja', 'en', 'zh', 'ko', 'vi']
+
 export const TABS = ['position', 'goal', 'scenario', 'career', 'abroad', 'map', 'community'] as const
 export type Tab = (typeof TABS)[number]
 
@@ -72,7 +74,7 @@ export function readUrlState(hash: string): UrlState | null {
     metric: oneOf(q.get('m'), METRICS),
     tab: oneOf(q.get('t'), TABS),
     scenario: scenarioFrom(q),
-    lang: oneOf(q.get('l'), ['ja', 'en'] as const),
+    lang: oneOf(q.get('l'), LANGS),
   }
 }
 

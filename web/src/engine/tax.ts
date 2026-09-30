@@ -322,3 +322,109 @@ export function takeHomeCA(gross: number, province: string | null, table: CaTaxT
   }
   return { gross, social, incomeTax: federal, localTax: provincial, net: gross - social - federal - provincial }
 }
+
+// ---------------------------------------------------------------- Australia (2025–26, resident)
+
+const AU_BRACKETS: [number, number][] = [[0, 0], [18_200, 0.16], [45_000, 0.3], [135_000, 0.37], [190_000, 0.45]]
+const AU_MEDICARE = { rate: 0.02, lowIncomeThreshold: 28_011, phaseInRate: 0.1 }
+
+/** Low income tax offset: $700, less 5c per $ over $37,500, then 1.5c per $ over $45,000. */
+function auLito(income: number): number {
+  if (income <= 37_500) return 700
+  if (income <= 45_000) return 700 - (income - 37_500) * 0.05
+  return Math.max(325 - (income - 45_000) * 0.015, 0)
+}
+
+/** Salary excludes the employer's 12% superannuation, which is paid on top. */
+export function takeHomeAU(gross: number): TakeHome {
+  const incomeTax = Math.max(bracketTax(gross, AU_BRACKETS) - auLito(gross), 0)
+  const medicare = Math.min(gross * AU_MEDICARE.rate, Math.max(gross - AU_MEDICARE.lowIncomeThreshold, 0) * AU_MEDICARE.phaseInRate)
+  return { gross, social: medicare, incomeTax, localTax: 0, net: gross - medicare - incomeTax }
+}
+
+// ---------------------------------------------------------------- Singapore (YA2026, citizen or PR under 55)
+
+const SG_BRACKETS: [number, number][] = [
+  [0, 0], [20_000, 0.02], [30_000, 0.035], [40_000, 0.07], [80_000, 0.115], [120_000, 0.15], [160_000, 0.18],
+  [200_000, 0.19], [240_000, 0.195], [280_000, 0.2], [320_000, 0.22], [500_000, 0.23], [1_000_000, 0.24],
+]
+// Employee CPF 20% on ordinary wages up to S$8,000 a month (2026); foreigners on work passes pay none
+const SG_CPF = { rate: 0.2, annualCeiling: 8_000 * 12 }
+const SG_EARNED_INCOME_RELIEF = 1_000
+
+export function takeHomeSG(gross: number, cpf = true): TakeHome {
+  const social = cpf ? Math.min(gross, SG_CPF.annualCeiling) * SG_CPF.rate : 0
+  const incomeTax = bracketTax(Math.max(gross - social - SG_EARNED_INCOME_RELIEF, 0), SG_BRACKETS)
+  return { gross, social, incomeTax, localTax: 0, net: gross - social - incomeTax }
+}
+
+// ---------------------------------------------------------------- Netherlands (2025, below state pension age)
+
+// Box 1 on wage income; the first band includes national insurance premiums (AOW/Anw/Wlz 27.65%)
+const NL_BRACKETS: [number, number][] = [[0, 0.3582], [38_441, 0.3748], [76_817, 0.495]]
+// Mandatory basic health insurance, paid by the employee directly (estimated average premium 2025)
+const NL_HEALTH_PREMIUM = 1_868
+
+function nlGeneralCredit(income: number): number {
+  return Math.max(3_068 - Math.max(income - 28_406, 0) * 0.06337, 0)
+}
+
+function nlLabourCredit(wage: number): number {
+  if (wage <= 12_169) return wage * 0.08053
+  if (wage <= 26_288) return 980 + (wage - 12_169) * 0.3003
+  if (wage <= 43_071) return 5_220 + (wage - 26_288) * 0.02258
+  return Math.max(5_599 - (wage - 43_071) * 0.0651, 0)
+}
+
+export function takeHomeNL(gross: number): TakeHome {
+  const incomeTax = Math.max(bracketTax(gross, NL_BRACKETS) - nlGeneralCredit(gross) - nlLabourCredit(gross), 0)
+  const social = NL_HEALTH_PREMIUM
+  return { gross, social, incomeTax, localTax: 0, net: gross - social - incomeTax }
+}
+
+// ---------------------------------------------------------------- South Korea (2025)
+
+const KR_BRACKETS: [number, number][] = [
+  [0, 0.06], [14_000_000, 0.15], [50_000_000, 0.24], [88_000_000, 0.35], [150_000_000, 0.38],
+  [300_000_000, 0.4], [500_000_000, 0.42], [1_000_000_000, 0.45],
+]
+const KR_SOCIAL = {
+  pension: 0.045, pensionMonthlyCap: 6_370_000, health: 0.03545, longTermCareOfHealth: 0.1295, employment: 0.009,
+}
+const KR_MEAL_ALLOWANCE = 200_000 * 12 // tax-free
+const KR_PERSONAL_DEDUCTION = 1_500_000
+const KR_STANDARD_CREDIT = 130_000
+
+/** 근로소득공제, capped at ₩20m. */
+function krEmploymentDeduction(w: number): number {
+  const d =
+    w <= 5_000_000 ? w * 0.7
+    : w <= 15_000_000 ? 3_500_000 + (w - 5_000_000) * 0.4
+    : w <= 45_000_000 ? 7_500_000 + (w - 15_000_000) * 0.15
+    : w <= 100_000_000 ? 12_000_000 + (w - 45_000_000) * 0.05
+    : 14_750_000 + (w - 100_000_000) * 0.02
+  return Math.min(d, 20_000_000)
+}
+
+/** 근로소득세액공제 with its wage-dependent cap. */
+function krEmploymentCredit(tax: number, w: number): number {
+  const credit = tax <= 1_300_000 ? tax * 0.55 : 715_000 + (tax - 1_300_000) * 0.3
+  const cap =
+    w <= 33_000_000 ? 740_000
+    : w <= 70_000_000 ? Math.max(740_000 - (w - 33_000_000) * 0.008, 660_000)
+    : w <= 120_000_000 ? Math.max(660_000 - (w - 70_000_000) / 2, 500_000)
+    : Math.max(500_000 - (w - 120_000_000) / 2, 200_000)
+  return Math.min(credit, cap)
+}
+
+export function takeHomeKR(gross: number): TakeHome {
+  const taxable = Math.max(gross - KR_MEAL_ALLOWANCE, 0)
+  const pension = Math.min(taxable, KR_SOCIAL.pensionMonthlyCap * 12) * KR_SOCIAL.pension
+  const health = taxable * KR_SOCIAL.health
+  const social = pension + health * (1 + KR_SOCIAL.longTermCareOfHealth) + taxable * KR_SOCIAL.employment
+  const base = Math.max(taxable - krEmploymentDeduction(taxable) - KR_PERSONAL_DEDUCTION - social, 0)
+  const computed = bracketTax(base, KR_BRACKETS)
+  const incomeTax = Math.max(computed - krEmploymentCredit(computed, taxable) - KR_STANDARD_CREDIT, 0)
+  const localTax = incomeTax * 0.1
+  return { gross, social, incomeTax, localTax, net: gross - social - incomeTax - localTax }
+}

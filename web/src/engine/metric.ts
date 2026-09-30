@@ -1,5 +1,5 @@
 import type { Prices, StateTaxTable } from './data'
-import { takeHomeCA, takeHomeDE, takeHomeFR, takeHomeIT, takeHomeJP, takeHomeUK, takeHomeUS, type CaTaxTable, type TakeHome } from './tax'
+import { takeHomeAU, takeHomeCA, takeHomeDE, takeHomeKR, takeHomeNL, takeHomeSG, takeHomeFR, takeHomeIT, takeHomeJP, takeHomeUK, takeHomeUS, type CaTaxTable, type TakeHome } from './tax'
 import type { CountryCode, CountryMeta } from './types'
 
 /** Which amount to show: gross pay, take-home pay, or take-home adjusted for regional prices. */
@@ -30,6 +30,10 @@ export function takeHome(ctx: MetricContext, gross: number): TakeHome {
     case 'DE': return takeHomeDE(gross)
     case 'FR': return takeHomeFR(gross)
     case 'IT': return takeHomeIT(gross)
+    case 'NL': return takeHomeNL(gross)
+    case 'AU': return takeHomeAU(gross)
+    case 'SG': return takeHomeSG(gross)
+    case 'KR': return takeHomeKR(gross)
   }
 }
 

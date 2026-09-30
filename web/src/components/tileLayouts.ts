@@ -1,11 +1,11 @@
-import type { CountryCode, Lang } from '../engine/types'
+import type { CountryCode, Label } from '../engine/types'
 
 /** Tile-grid maps: every region gets the same-size square, placed roughly where it is. */
 export interface Tile {
   code: string
   col: number
   row: number
-  abbr: Record<Lang, string>
+  abbr: Label
 }
 
 // [code, col, row, short Japanese name, English abbreviation]
@@ -42,6 +42,25 @@ const US: [string, number, number, string][] = [
 
 // [region code, col, row, abbreviation (both languages; the tooltip shows the full name)]
 const OTHER: Partial<Record<CountryCode, [string, number, number, string][]>> = {
+  NL: [
+    ['NL1', 1, 0, 'N'],
+    ['NL3', 0, 1, 'W'], ['NL2', 1, 1, 'E'],
+    ['NL4', 0, 2, 'S'],
+  ],
+  AU: [
+    ['7', 1, 0, 'NT'], ['3', 2, 0, 'QLD'],
+    ['5', 0, 1, 'WA'], ['4', 1, 1, 'SA'], ['1', 2, 1, 'NSW'],
+    ['2', 1, 2, 'VIC'], ['8', 2, 2, 'ACT'],
+    ['6', 1, 3, 'TAS'],
+  ],
+  KR: [
+    ['23', 0, 0, 'ICN'], ['11', 1, 0, 'SEL'], ['32', 2, 0, 'GW'],
+    ['31', 1, 1, 'GG'], ['33', 2, 1, 'CB'],
+    ['34', 0, 2, 'CN'], ['29', 1, 2, 'SJ'], ['25', 2, 2, 'DJ'], ['37', 3, 2, 'GB'],
+    ['35', 0, 3, 'JB'], ['22', 2, 3, 'DG'], ['26', 3, 3, 'US'],
+    ['24', 0, 4, 'GJ'], ['36', 1, 4, 'JN'], ['38', 2, 4, 'GN'], ['21', 3, 4, 'BS'],
+    ['39', 0, 6, 'JJ'],
+  ],
   UK: [
     ['S92000003', 1, 0, 'SCO'],
     ['N92000002', 0, 1, 'NIR'], ['E12000001', 2, 1, 'NE'],

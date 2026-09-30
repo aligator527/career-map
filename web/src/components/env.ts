@@ -2,7 +2,7 @@ import type { Prices } from '../engine/data'
 import type { CommonOccupation } from '../engine/compare'
 import type { Metric, MetricContext, TaxTables } from '../engine/metric'
 import type { CountryCode, CountryMeta, FxData, Lang, Match, Profile } from '../engine/types'
-import { label, type T } from '../i18n'
+import { label, listSep, type T } from '../i18n'
 
 /** Everything the result cards need besides the profile: loaded once, shared by all cards. */
 export interface Env {
@@ -37,18 +37,24 @@ export function describeGroup(env: Env, meta: CountryMeta, key: string, region: 
     const o = occ.startsWith('M') ? meta.occupationMajor.find((m) => m.code === occ) : meta.occupations.find((x) => x.code === occ)
     parts.push(label(o?.label, lang))
   }
-  if (age !== '*') parts.push(lang === 'ja' ? `${age.replace('-', '〜')}歳` : `age ${age}`)
+  if (age !== '*') parts.push(lang === 'en' ? `age ${age}` : ageLabel(age, lang))
   if (sex !== '*') parts.push(t.sexes[sex as 'M' | 'F'])
   if (edu !== '*') parts.push(t.educations[edu as keyof T['educations']])
   return parts.join(' · ')
 }
 
 export function droppedText(env: Env, match: Pick<Match, 'dropped'>): string {
-  return match.dropped.map((d) => env.t.dims[d]).join(env.lang === 'ja' ? '、' : ', ')
+  return match.dropped.map((d) => env.t.dims[d]).join(listSep(env.lang))
 }
 
 export function ageLabel(band: string, lang: Lang): string {
-  return lang === 'ja' ? `${band.replace('-', '〜')}歳` : band
+  switch (lang) {
+    case 'ja': return `${band.replace('-', '〜')}歳`
+    case 'zh': return `${band.replace('-', '～')}岁`
+    case 'ko': return `${band.replace('-', '~')}세`
+    case 'vi': return `${band.replace('-', '–')} tuổi`
+    default: return band
+  }
 }
 
 export type { Profile }

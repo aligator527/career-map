@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { CountryCode, Lang } from '../engine/types'
-import { formatMoney, type T } from '../i18n'
+import { formatMoney, label, type T } from '../i18n'
 import { useWidth } from './chartUtils'
 import { TILES } from './tileLayouts'
 
@@ -75,7 +75,7 @@ export function TileMap({ country, values, selected, currency, lang, t, onSelect
                 style={{ cursor: 'pointer' }}
                 role="button"
                 tabIndex={0}
-                aria-label={`${v?.label ?? tile.abbr[lang]} ${v ? formatMoney(v.value, currency, lang) : t.noDataShort}`}
+                aria-label={`${v?.label ?? label(tile.abbr, lang)} ${v ? formatMoney(v.value, currency, lang) : t.noDataShort}`}
                 onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onSelect(tile.code)}
               >
                 <rect
@@ -88,7 +88,7 @@ export function TileMap({ country, values, selected, currency, lang, t, onSelect
                   x={size / 2} y={size / 2 + 4} textAnchor="middle"
                   style={{ fill: v ? INK_ON(i, dark) : 'var(--text-muted)', fontSize: size < 34 ? 9 : 11, fontWeight: isSel ? 700 : 500 }}
                 >
-                  {tile.abbr[lang]}
+                  {label(tile.abbr, lang)}
                 </text>
               </g>
             )
@@ -97,7 +97,7 @@ export function TileMap({ country, values, selected, currency, lang, t, onSelect
       )}
       {hovered && (
         <div className="tooltip" style={{ left: Math.min(pos(hovered.col) + size + 6, width - 200), top: pos(hovered.row) }}>
-          <b>{hv?.label ?? hovered.abbr[lang]}</b>
+          <b>{hv?.label ?? label(hovered.abbr, lang)}</b>
           <div className="tnum">{hv ? formatMoney(hv.value, currency, lang) : t.noDataShort}</div>
           {hv?.detail && <div className="muted">{hv.detail}</div>}
         </div>

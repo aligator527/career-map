@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { loadJpMobility, loadUsMobility } from '../engine/data'
 import { ageBand } from '../engine/lookup'
 import { jpJobChange, jpRanks, RANKS, usMobility, type JpMobility, type UsMobility } from '../engine/mobility'
-import type { Profile } from '../engine/types'
-import { formatCount, formatMoney, formatPct, label, labeled } from '../i18n'
+import type { Lang, Profile } from '../engine/types'
+import { formatCount, formatMoney, formatPct, label, labeled, listSep } from '../i18n'
 import { ageLabel, metaOf, type Env } from './env'
 import { StackedBar, StackedColumns } from './Stacked'
 
@@ -16,13 +16,15 @@ const RANK_COLORS = {
   shokucho: 'var(--rank-4)', other: 'var(--rank-5)', none: 'var(--rank-none)',
 }
 
+const EVERYONE: Record<Lang, string> = { ja: '全体', en: 'everyone', zh: '全体', ko: '전체', vi: 'mọi người' }
+
 /** "age|sex(|edu)" key → readable group description */
 function groupText(env: Env, key: string): string {
   const [age, sex, edu] = key.split('|')
   const { t, lang } = env
   const parts = [age === '*' ? '' : ageLabel(age, lang), sex === '*' ? '' : t.sexes[sex as 'M' | 'F'], !edu || edu === '*' ? '' : t.educations[edu as keyof typeof t.educations]]
-  const s = parts.filter(Boolean).join(lang === 'ja' ? '・' : ', ')
-  return s || (lang === 'ja' ? '全体' : 'everyone')
+  const s = parts.filter(Boolean).join(lang === 'ja' ? '・' : listSep(lang))
+  return s || EVERYONE[lang]
 }
 
 export function MobilityCard({ env, profile }: { env: Env; profile: Profile }) {

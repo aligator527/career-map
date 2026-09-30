@@ -13,12 +13,13 @@ from pathlib import Path
 import pytest
 
 DATA = Path(__file__).resolve().parents[2] / "web" / "public" / "data"
-COUNTRIES = ["jp", "us", "uk", "ca", "de", "fr", "it"]
+COUNTRIES = ["jp", "us", "uk", "ca", "de", "fr", "it", "nl", "au", "sg", "kr"]
 KEY = re.compile(r"^[A-Za-z0-9*_-]+\|[0-9+*-]+(?:-[0-9]+)?\|[MF*]\|[a-z_*]+$")
 FACET_KEY = re.compile(r"^([a-z_]+)=([A-Za-z0-9_+-]+)\|([A-Za-z0-9*]+)\|([0-9+*-]+)\|([MF*])$")
 # Plausible national median annual pay of all full-time workers, by currency
 MEDIAN_RANGE = {"JPY": (3_000_000, 7_000_000), "USD": (40_000, 90_000), "GBP": (25_000, 55_000),
-                "CAD": (45_000, 100_000), "EUR": (20_000, 70_000)}
+                "CAD": (45_000, 100_000), "EUR": (20_000, 70_000),
+                "AUD": (50_000, 110_000), "SGD": (40_000, 90_000), "KRW": (25_000_000, 70_000_000)}
 
 
 def load(path: Path):
@@ -73,7 +74,7 @@ def test_country_files(country: str):
 
 def test_shared_files():
     fx = load(DATA / "fx.json")
-    for cur in ("JPY", "USD", "GBP", "CAD", "EUR"):
+    for cur in ("JPY", "USD", "GBP", "CAD", "EUR", "AUD", "SGD", "KRW"):
         assert fx["fx"][cur] > 0 and fx["ppp"][cur] > 0
     roles = load(DATA / "occupations.json")
     assert len(roles) >= 20
@@ -96,3 +97,14 @@ def test_mobility_files():
     us = load(DATA / "us" / "mobility.json")
     for key, (n, multi, change, *_rest) in us["cells"].items():
         assert n >= 100 and 0 <= multi <= 1 and (change is None or 0 <= change <= 1), key
+
+
+@pytest.mark.parametrize("country", [c for c in COUNTRIES if (DATA / c / "rent.json").exists()])
+def test_rent_files(country: str):
+    rent = load(DATA / country / "rent.json")
+    codes = {r["code"] for r in load(DATA / country / "meta.json")["regions"]}
+    assert rent["basis"]["ja"] and rent["basis"]["en"]
+    assert set(rent["regions"]) <= codes, f"{country}: rent regions not in meta"
+    values = [rent["national"], *rent["regions"].values()]
+    assert all(v > 0 for v in values)
+    assert max(values) <= 4 * min(values), f"{country}: implausible rent spread {min(values)}..{max(values)}"

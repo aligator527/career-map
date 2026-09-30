@@ -5,7 +5,7 @@ import { loadFacets } from '../engine/data'
 import { facetRows } from '../engine/facets'
 import { convert } from '../engine/metric'
 import type { Profile } from '../engine/types'
-import { label, labeled } from '../i18n'
+import { label, labeled, listSep } from '../i18n'
 import { ageLabel, ctxFor, metaOf, type Env } from './env'
 import { RangeRows, RangeTable, type RangeRow } from './RangeRows'
 
@@ -44,7 +44,7 @@ export function CompareCard({ env, profile }: { env: Env; profile: Profile }) {
             current: profile.facets?.[facetDim] === value,
             q: match.cell.q.map(f),
             mean: f(match.cell.mean),
-            note: match.dropped.length ? `${t.dropped}：${match.dropped.map((d) => t.dims[d]).join(lang === 'ja' ? '、' : ', ')}` : undefined,
+            note: match.dropped.length ? `${t.dropped}：${match.dropped.map((d) => t.dims[d]).join(listSep(lang))}` : undefined,
           }
         }))
       }).catch(() => live && setFacetRows([]))
@@ -67,7 +67,7 @@ export function CompareCard({ env, profile }: { env: Env; profile: Profile }) {
       : l.kind === 'region' ? label(m.regions.find((x) => x.code === l.code)?.label, lang)
       : t.countries[l.country]
     const relaxed = r.match.dropped.filter((d) => !baseDropped.has(d) && !(kind === 'country' && d === 'region'))
-    const note = relaxed.length ? labeled(t.dropped, relaxed.map((d) => t.dims[d]).join(lang === 'ja' ? '、' : ', '), lang) : undefined
+    const note = relaxed.length ? labeled(t.dropped, relaxed.map((d) => t.dims[d]).join(listSep(lang)), lang) : undefined
     // Convert in the row's own country (its taxes and prices), then into the profile's currency
     const ctx = ctxFor(env, r.country, r.region, profile.age)
     const f = (v: number) => convert(metric, ctx, v) * r.factor

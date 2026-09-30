@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { detailMajor, loadInsights, loadNational, type Insight, type InsightsData } from '../engine/data'
+import { detailMajor, loadInsights, loadNational, loadRent, type Insight, type InsightsData, type RentData } from '../engine/data'
 import { findCell } from '../engine/lookup'
 import { takeHome } from '../engine/metric'
 import type { Cells, CountryCode, Profile } from '../engine/types'
@@ -12,7 +12,7 @@ type Verdict = { kind: 'consistent' | 'partly' | 'inconsistent' | 'none'; detail
  * Compare a claim's quantity with the site's own statistics for the same group:
  * a salary range against the group's percentiles, a net/gross share against the tax model.
  */
-function verdictFor(env: Env, ins: Insight, country: CountryCode, national: Cells | null): Verdict {
+function verdictFor(env: Env, ins: Insight, country: CountryCode, national: Cells | null, rent: RentData | null): Verdict {
   const q = ins.quantity
   if (!q) return { kind: 'none' }
   const meta = env.metas[country]
@@ -30,7 +30,16 @@ function verdictFor(env: Env, ins: Insight, country: CountryCode, national: Cell
     if (q.low <= p90 && q.high >= p10) return { kind: 'partly', detail }
     return { kind: 'inconsistent', detail }
   }
-  if (q.kind === 'net_share' && ['JP', 'US', 'UK', 'CA', 'DE', 'FR', 'IT'].includes(country)) {
+  if (q.kind === 'monthly_rent' && rent && q.currency === meta.currency) {
+    // Claims are about new lets, official figures mostly about existing tenancies: allow a wide band
+    const official = (q.region && rent.regions[q.region]) || rent.national
+    const detail = `${money(official)} (${label(rent.basis, env.lang)}, ${rent.period})`
+    const high = q.high ?? q.low
+    if (q.low <= official * 1.3 && high >= official * 0.8) return { kind: 'consistent', detail }
+    if (q.low <= official * 1.8 && high >= official * 0.6) return { kind: 'partly', detail }
+    return { kind: 'inconsistent', detail }
+  }
+  if (q.kind === 'net_share' && country) {
     const ctx = ctxFor(env, country, null, 30)
     const grossRange = q.grossLow != null && q.grossHigh != null ? [q.grossLow, q.grossHigh] : null
     if (!grossRange) return { kind: 'none' }
@@ -53,6 +62,14 @@ export function InsightsCard({ env, country, profile }: { env: Env; country: Cou
   }, [])
   const items = (data?.insights ?? []).filter((i) => i.countries.includes(country))
   const needsCells = items.some((i) => i.quantity?.kind === 'annual_salary')
+  const needsRent = items.some((i) => i.quantity?.kind === 'monthly_rent')
+  const [rent, setRent] = useState<{ country: CountryCode; data: RentData } | null>(null)
+  useEffect(() => {
+    if (!needsRent) return
+    let live = true
+    loadRent(country).then((data) => live && setRent({ country, data })).catch(() => {})
+    return () => { live = false }
+  }, [country, needsRent])
   useEffect(() => {
     if (!needsCells || !env.metas[country]) return
     const meta = metaOf(env, country)
@@ -71,7 +88,7 @@ export function InsightsCard({ env, country, profile }: { env: Env; country: Cou
       <p className="note">{t.insightsLead}</p>
       <ul className="effects">
         {items.map((ins) => {
-          const v = verdictFor(env, ins, country, cells)
+          const v = verdictFor(env, ins, country, cells, rent?.country === country ? rent.data : null)
           return (
             <li key={ins.id}>
               <div className="effect-head">

@@ -13,7 +13,7 @@ import requests
 from .common import WEB_DATA_DIR, write_json
 
 # ISO3 -> currency. Euro-area members share EUR; one representative country per currency.
-COUNTRIES = {"JPN": "JPY", "USA": "USD", "GBR": "GBP", "DEU": "EUR", "CAN": "CAD"}
+COUNTRIES = {"JPN": "JPY", "USA": "USD", "GBR": "GBP", "DEU": "EUR", "CAN": "CAD", "AUS": "AUD", "SGP": "SGD", "KOR": "KRW"}
 
 INDICATORS = {
     "fx": "PA.NUS.FCRF",  # official exchange rate, LCU per USD, period average

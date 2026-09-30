@@ -1,3 +1,4 @@
+import { HAS_RENT } from './countries'
 import type { Cells, CountryCode, CountryMeta, FxData } from './types'
 
 const base = import.meta.env.BASE_URL
@@ -98,11 +99,14 @@ export const loadExperience = () => load<Record<string, [string, number, number]
 export interface RentData {
   source: { name: import('./types').Label; url: string }
   period: string
+  /** what the figure measures (size, utilities, stock vs new listings) */
+  basis: import('./types').Label
   /** typical monthly rent (local currency) nationally and per region code */
   national: number
   regions: Record<string, number>
 }
-export const loadRent = (c: CountryCode) => load<RentData>(`${dir(c)}/rent.json`)
+export const loadRent = (c: CountryCode) =>
+  HAS_RENT.includes(c) ? load<RentData>(`${dir(c)}/rent.json`) : Promise.reject(new Error(`no rent data for ${c}`))
 
 export interface Insight {
   id: string
@@ -112,7 +116,7 @@ export interface Insight {
   claim: import('./types').Label
   quantity: null | {
     kind: string; currency: string | null; low: number; high: number
-    ageBand?: string | null; experienceYears?: [number, number] | null; grossLow?: number; grossHigh?: number
+    ageBand?: string | null; experienceYears?: [number, number] | null; grossLow?: number; grossHigh?: number; region?: string | null
   }
   caveats: import('./types').Label | null
   users: number

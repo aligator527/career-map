@@ -1,0 +1,11 @@
+{
+  "name": "キャリアマップ / Career Map",
+  "short_name": "Career Map",
+  "description": "Income distributions from official statistics: see where people like you stand.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1c5cab",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

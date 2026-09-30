@@ -1,12 +1,15 @@
+import { useEffect, useState } from 'react'
 import type { Label, Lang } from './engine/types'
 
 const ja = {
   appName: 'キャリアマップ',
   tagline: '似た条件の人が、社会の中でどの位置にいるか',
-  lang: 'English',
+  lang: '言語',
   profile: 'あなたの条件',
   country: '国',
-  countries: { JP: '日本', US: 'アメリカ', UK: 'イギリス', CA: 'カナダ', DE: 'ドイツ', FR: 'フランス', IT: 'イタリア' },
+  countries: { JP: '日本', US: 'アメリカ', UK: 'イギリス', CA: 'カナダ', DE: 'ドイツ', FR: 'フランス', IT: 'イタリア',
+    AU: 'オーストラリア', SG: 'シンガポール', NL: 'オランダ', KR: '韓国',
+  },
   region: '地域',
   anyRegion: '全国',
   occupation: '職業',
@@ -95,6 +98,10 @@ const ja = {
     DE: '2025年の所得税・連帯付加税・社会保険（子どもなし）で概算。教会税は含みません。',
     FR: '2025年の社会保険料・CSG/CRDS・所得税（単身1パート）で概算。非管理職（non-cadre）を想定。',
     IT: '2025年の IRPEF・INPS・地方付加税（全国平均で近似）で概算。',
+    NL: '2025年の給与税（国民保険料を含む）・一般税額控除・労働税額控除と、基礎医療保険の平均保険料で概算。30%ルールは含みません。',
+    AU: '2025–26年度の所得税・低所得者控除（LITO）・メディケア課税で概算。雇用主が上乗せする年金（スーパー、12%）は額面に含みません。',
+    SG: '賦課年度2026の所得税と CPF 本人拠出（20%、月S$8,000まで）で概算。55歳未満の国民・永住者を想定（就労パスの外国人は CPF なし）。',
+    KR: '2025年の所得税（勤労所得控除・税額控除）・地方所得税・国民年金・健康保険・長期療養・雇用保険で概算。単身・扶養なし。',
   },
   stateTaxMissing: '州所得税のデータがないため、連邦税と FICA のみで計算しています。',
   priceSource: '物価水準',
@@ -233,6 +240,7 @@ const ja = {
   scenarioAfterRent: (cur: string) => `家賃を払った後の手取り（${cur}換算）`,
   scenarioNote: '差は購買力平価で通貨をそろえて計算しています。似た条件の人の中央値どうしの比較で、あなたが移ったときの年収の予測ではありません。',
   rentSource: '家賃の出典',
+  rentCaveat: '国により定義（光熱費の有無、既存契約か新規募集か）が異なるため、目安として見てください。新しく借りる場合は既存契約の平均より高くなるのが普通です。',
   insightsTitle: (country: string) => `コミュニティの声（${country}）`,
   insightsLead: 'Reddit で複数の人が別々に語っていることを要約したものです（3人以上・2スレッド以上・2021年以降）。個人の体験談の集まりで、統計ではありません。数値がある場合は公的統計と照らし合わせています。',
   verdicts: { consistent: '公的統計と整合', partly: '公的統計と一部整合', inconsistent: '公的統計と食い違い', none: '照合できる統計なし' },
@@ -250,15 +258,17 @@ const ja = {
   footer: '公的統計をもとにした個人開発のプロトタイプです。',
 }
 
-type Dict = typeof ja
+export type Dict = typeof ja
 
 const en: Dict = {
   appName: 'Career Map',
   tagline: 'Where people like you stand in the labor market',
-  lang: '日本語',
+  lang: 'Language',
   profile: 'Your profile',
   country: 'Country',
-  countries: { JP: 'Japan', US: 'United States', UK: 'United Kingdom', CA: 'Canada', DE: 'Germany', FR: 'France', IT: 'Italy' },
+  countries: { JP: 'Japan', US: 'United States', UK: 'United Kingdom', CA: 'Canada', DE: 'Germany', FR: 'France', IT: 'Italy',
+    AU: 'Australia', SG: 'Singapore', NL: 'Netherlands', KR: 'South Korea',
+  },
   region: 'Region',
   anyRegion: 'Whole country',
   occupation: 'Occupation',
@@ -347,6 +357,10 @@ const en: Dict = {
     DE: '2025 income tax, solidarity surcharge and social insurance (childless). Church tax is not included.',
     FR: '2025 social contributions, CSG/CRDS and income tax (single, one part); non-executive employee.',
     IT: '2025 IRPEF, INPS and regional/municipal surcharges (national-average approximation).',
+    NL: 'Estimated with 2025 wage tax (including national insurance), the general and labour tax credits, and the average basic health insurance premium. The 30% ruling is not applied.',
+    AU: 'Estimated with 2025–26 income tax, the low income tax offset and the Medicare levy. The employer’s 12% superannuation is paid on top and is not part of the salary.',
+    SG: 'Estimated with YA2026 income tax and the employee CPF contribution (20%, up to S$8,000 a month), for a citizen or PR under 55 (foreigners on work passes pay no CPF).',
+    KR: 'Estimated with 2025 income tax (employment income deduction and credits), local income tax, national pension, health, long-term care and employment insurance. Single, no dependants.',
   },
   stateTaxMissing: 'State income tax data is unavailable, so only federal tax and FICA are applied.',
   priceSource: 'Price levels',
@@ -485,6 +499,7 @@ const en: Dict = {
   scenarioAfterRent: (cur: string) => `Take-home after rent (in ${cur})`,
   scenarioNote: 'Differences use purchasing power parity to put currencies on the same footing. They compare the medians of similar people; they do not predict your pay after a move.',
   rentSource: 'Rent source',
+  rentCaveat: 'Definitions differ by country (utilities, existing tenancies vs new listings), so treat it as a rough guide. New lets usually cost more than the average existing tenancy.',
   insightsTitle: (country: string) => `What people say (${country})`,
   insightsLead: 'Summaries of points that several people made independently on Reddit (3+ users, 2+ threads, since 2021). These are collected experiences, not statistics. Where a claim has numbers, it is checked against official data.',
   verdicts: { consistent: 'Matches official data', partly: 'Partly matches official data', inconsistent: 'Conflicts with official data', none: 'No official data to check' },
@@ -502,20 +517,75 @@ const en: Dict = {
   footer: 'A personal prototype built on public statistics.',
 }
 
-export const dicts: Record<Lang, Dict> = { ja, en }
+/** Languages offered in the switcher, with their names written in that language. */
+export const LANGS: readonly Lang[] = ['ja', 'en', 'zh', 'ko', 'vi']
+export const LANG_NAMES: Record<Lang, string> = { ja: '日本語', en: 'English', zh: '简体中文', ko: '한국어', vi: 'Tiếng Việt' }
+
+/** BCP 47 locale used for number/currency/date formatting */
+const LOCALES: Record<Lang, string> = { ja: 'ja-JP', en: 'en', zh: 'zh-CN', ko: 'ko-KR', vi: 'vi-VN' }
+export const locale = (lang: Lang) => LOCALES[lang]
+
+/** ja and en ship in the main bundle; the other dictionaries are split into their own chunks and loaded on demand. */
+const dicts: Partial<Record<Lang, Dict>> = { ja, en }
+const loaders: Partial<Record<Lang, () => Promise<{ default: Dict }>>> = {
+  zh: () => import('./i18n/zh'),
+  ko: () => import('./i18n/ko'),
+  vi: () => import('./i18n/vi'),
+}
+
+/** The dictionary if it is already loaded */
+export function getDict(lang: Lang): Dict | undefined {
+  return dicts[lang]
+}
+
+export async function loadDict(lang: Lang): Promise<Dict> {
+  const loaded = dicts[lang]
+  if (loaded) return loaded
+  const d = (await loaders[lang]!()).default
+  dicts[lang] = d
+  return d
+}
+
+/**
+ * The language actually rendered: `lang` once its dictionary is loaded, English until then
+ * (so the text, number formats and <html lang> always agree).
+ */
+export function useShownLang(lang: Lang): Lang {
+  const [, setLoaded] = useState(0)
+  const ready = !!dicts[lang]
+  useEffect(() => {
+    if (ready) return
+    let live = true
+    loadDict(lang).then(() => live && setLoaded((n) => n + 1), () => {})
+    return () => { live = false }
+  }, [lang, ready])
+  return ready ? lang : 'en'
+}
+
+export function dictFor(lang: Lang): Dict {
+  return dicts[lang] ?? en
+}
+
 export type T = Dict
 
+/** Data labels carry ja/en (possibly more); other languages fall back to English. */
 export function label(l: Label | undefined, lang: Lang): string {
   if (!l) return ''
   return l[lang] ?? l.en ?? l.ja ?? ''
 }
 
 export function detectLang(): Lang {
-  return navigator.language?.toLowerCase().startsWith('ja') ? 'ja' : 'en'
+  const langs = (navigator.languages?.length ? navigator.languages : [navigator.language]).filter(Boolean)
+  for (const raw of langs) {
+    const l = raw.toLowerCase()
+    const hit = LANGS.find((code) => l === code || l.startsWith(`${code}-`))
+    if (hit) return hit
+  }
+  return 'en'
 }
 
 export function formatMoney(value: number, currency: string, lang: Lang): string {
-  return new Intl.NumberFormat(lang, {
+  return new Intl.NumberFormat(locale(lang), {
     style: 'currency',
     currency,
     notation: 'compact',
@@ -524,19 +594,35 @@ export function formatMoney(value: number, currency: string, lang: Lang): string
 }
 
 export function formatPct(p: number, lang: Lang): string {
-  return new Intl.NumberFormat(lang, { style: 'percent', maximumFractionDigits: p < 0.1 || p > 0.9 ? 1 : 0 }).format(p)
+  return new Intl.NumberFormat(locale(lang), { style: 'percent', maximumFractionDigits: p < 0.1 || p > 0.9 ? 1 : 0 }).format(p)
 }
 
 export function formatCount(n: number, lang: Lang): string {
-  return new Intl.NumberFormat(lang, { notation: 'compact', maximumSignificantDigits: 3 }).format(n)
+  return new Intl.NumberFormat(locale(lang), { notation: 'compact', maximumSignificantDigits: 3 }).format(n)
 }
 
-/** Parenthetical in the language's own style: 「本文（補足）」 / "text (note)". */
+/** An ISO date (YYYY-MM-DD or YYYY-MM) in the language's style; anything else is returned as is. */
+export function formatDate(iso: string, lang: Lang): string {
+  const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(iso)
+  if (!m) return iso
+  const date = new Date(Date.UTC(+m[1], +m[2] - 1, m[3] ? +m[3] : 1))
+  return new Intl.DateTimeFormat(locale(lang), { year: 'numeric', month: 'short', ...(m[3] ? { day: 'numeric' } : {}), timeZone: 'UTC' }).format(date)
+}
+
+/** CJK languages use full-width punctuation: 「本文（補足）」 / "text (note)". */
+const fullWidth = (lang: Lang) => lang === 'ja' || lang === 'zh'
+
+/** Parenthetical in the language's own style */
 export function paren(text: string, note: string, lang: Lang): string {
-  return lang === 'ja' ? `${text}（${note}）` : `${text} (${note})`
+  return fullWidth(lang) ? `${text}（${note}）` : `${text} (${note})`
 }
 
 /** "label：value" / "label: value" */
 export function labeled(label: string, value: string, lang: Lang): string {
-  return lang === 'ja' ? `${label}：${value}` : `${label}: ${value}`
+  return fullWidth(lang) ? `${label}：${value}` : `${label}: ${value}`
+}
+
+/** Separator for inline lists: 「A、B」 / "A, B" */
+export function listSep(lang: Lang): string {
+  return fullWidth(lang) ? '、' : ', '
 }

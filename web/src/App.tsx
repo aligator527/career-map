@@ -19,7 +19,7 @@ import { loadCaTax, loadCommonOccupations, loadFx, loadMeta, loadNational, loadP
 import { findCell } from './engine/lookup'
 import type { Metric, TaxTables } from './engine/metric'
 import type { Cells, CountryCode, CountryMeta, FxData, Lang, Profile } from './engine/types'
-import { detectLang, dicts } from './i18n'
+import { detectLang, dictFor, LANG_NAMES, LANGS, loadDict, useShownLang } from './i18n'
 import { readUrlState, TABS, writeUrlState, type Tab } from './urlState'
 
 const STORAGE_KEY = 'career-map:profile'
@@ -77,6 +77,17 @@ async function loadShared(): Promise<Shared> {
 type Theme = 'auto' | 'light' | 'dark'
 const THEMES: Theme[] = ['auto', 'light', 'dark']
 
+const LANG_KEY = 'career-map:lang'
+
+function readLang(): Lang | null {
+  try {
+    const v = localStorage.getItem(LANG_KEY)
+    return LANGS.includes(v as Lang) ? (v as Lang) : null
+  } catch {
+    return null
+  }
+}
+
 function readTheme(): Theme {
   try {
     const v = localStorage.getItem('career-map:theme')
@@ -90,8 +101,11 @@ export default function App() {
   // A shared link (URL fragment) wins over inputs remembered on this device
   const fromUrl = useMemo(() => readUrlState(location.hash), [])
   const stored = useMemo(readStored, [])
-  const [lang, setLang] = useState<Lang>(fromUrl?.lang ?? detectLang())
-  const t = dicts[lang]
+  // A link's language wins over the one chosen earlier on this device, which wins over the browser's
+  const [wantedLang, setWantedLang] = useState<Lang>(() => fromUrl?.lang ?? readLang() ?? detectLang())
+  // zh/ko/vi dictionaries load lazily; until then the page renders in English
+  const lang = useShownLang(wantedLang)
+  const t = dictFor(lang)
   const [profile, setProfile] = useState<Profile>(fromUrl ? { ...DEFAULT_PROFILE, ...fromUrl.profile } : stored ?? DEFAULT_PROFILE)
   const [remember, setRemember] = useState(stored != null)
   const [metric, setMetric] = useState<Metric>(fromUrl?.metric ?? 'gross')
@@ -114,8 +128,18 @@ export default function App() {
   useEffect(() => writeStored(remember ? profile : null), [remember, profile])
 
   useEffect(() => {
-    history.replaceState(null, '', writeUrlState({ profile, metric, tab, lang, scenario }))
-  }, [profile, metric, tab, lang, scenario])
+    history.replaceState(null, '', writeUrlState({ profile, metric, tab, lang: wantedLang, scenario }))
+  }, [profile, metric, tab, wantedLang, scenario])
+
+  const changeLang = (l: Lang) => {
+    try {
+      localStorage.setItem(LANG_KEY, l)
+    } catch {
+      /* not remembered */
+    }
+    // switch once the dictionary is there, so the page doesn't flash English first
+    loadDict(l).catch(() => {}).finally(() => setWantedLang(l))
+  }
 
   useEffect(() => {
     if (theme === 'auto') delete document.documentElement.dataset.theme
@@ -195,9 +219,12 @@ export default function App() {
           <button className="ghost" type="button" onClick={() => setTheme(THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length])}>
             {t.theme[theme]}
           </button>
-          <button className="ghost" type="button" onClick={() => setLang(lang === 'ja' ? 'en' : 'ja')} lang={lang === 'ja' ? 'en' : 'ja'}>
-            {t.lang}
-          </button>
+          <select
+            className="ghost lang-select" value={wantedLang} onChange={(e) => changeLang(e.target.value as Lang)}
+            aria-label={lang === 'en' ? t.lang : `${t.lang} / Language`}
+          >
+            {LANGS.map((l) => <option key={l} value={l} lang={l}>{LANG_NAMES[l]}</option>)}
+          </select>
         </div>
       </header>
 

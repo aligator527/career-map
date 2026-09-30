@@ -1,7 +1,7 @@
-export type Lang = 'ja' | 'en'
+export type Lang = 'ja' | 'en' | 'zh' | 'ko' | 'vi'
 export type Label = Partial<Record<Lang, string>> & { en?: string }
 
-export type CountryCode = 'JP' | 'US' | 'UK' | 'CA' | 'DE' | 'FR' | 'IT'
+export type CountryCode = 'JP' | 'US' | 'UK' | 'CA' | 'DE' | 'FR' | 'IT' | 'NL' | 'AU' | 'SG' | 'KR'
 export type Sex = 'M' | 'F'
 /** JP/US/CA use the first four; the Eurostat countries use ISCED groups (lower/upper secondary, tertiary). */
 export type Education =

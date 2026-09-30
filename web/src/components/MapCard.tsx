@@ -15,10 +15,11 @@ export function MapCard({ env, profile, onSelectRegion }: { env: Env; profile: P
   const [regions, setRegions] = useState<{ country: string; cells: Record<string, Cells> } | null>(null)
 
   useEffect(() => {
+    if (!TILES[profile.country] || !meta.regions.length) return
     let live = true
-    loadRegions(profile.country).then((cells) => live && setRegions({ country: profile.country, cells }))
+    loadRegions(profile.country).then((cells) => live && setRegions({ country: profile.country, cells })).catch(() => {})
     return () => { live = false }
-  }, [profile.country])
+  }, [profile.country, meta.regions.length])
 
   if (!TILES[profile.country] || !meta.regions.length) return null
   if (!regions || regions.country !== profile.country) {

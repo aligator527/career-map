@@ -157,7 +157,7 @@ export function ScenarioCard({ env, a, b, onChangeB }: { env: Env; a: Profile; b
       )}
       <p className="note">{t.scenarioNote}</p>
       {Object.values(rent).length > 0 && (
-        <p className="note">{t.rentSource}: {[...new Set([a.country, b.country])].map((c) => rent[c] && label(rent[c]!.source.name, lang)).filter(Boolean).join(' / ')}</p>
+        <p className="note">{t.rentSource}: {[...new Set([a.country, b.country])].map((c) => rent[c] && `${label(rent[c]!.source.name, lang)} (${rent[c]!.period}) — ${label(rent[c]!.basis, lang)}`).filter(Boolean).join(' / ')}. {t.rentCaveat}</p>
       )}
     </section>
   )

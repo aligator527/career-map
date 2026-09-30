@@ -384,6 +384,371 @@
           "asOf": "2026-10"
         }
       ]
+    },
+    "AU": {
+      "freeMovement": null,
+      "routes": [
+        {
+          "id": "au-sid-482",
+          "name": {"ja": "技能需要ビザ（Skills in Demand、subclass 482）", "en": "Skills in Demand visa (subclass 482)"},
+          "summary": {
+            "ja": "豪州の認定スポンサー企業に指名されて最長4年間働く一時就労ビザ。一般的な専門職はCore Skills stream（コアスキル職業リストCSOL掲載職種）、高所得の専門職はSpecialist Skills streamで申請する。",
+            "en": "Temporary employer-sponsored visa for up to 4 years. Most professionals apply through the Core Skills stream (occupations on the Core Skills Occupation List, CSOL); highly paid specialists can use the Specialist Skills stream."
+          },
+          "requirements": [
+            {"ja": "認定スポンサーによる指名（Core Skills streamはCSOL掲載職種）", "en": "Nomination by an approved sponsor; for the Core Skills stream, the occupation must be on the CSOL"},
+            {"ja": "市場賃金（AMSR）以上かつコアスキル所得基準（CSIT）以上の給与", "en": "Pay of at least the annual market salary rate (AMSR) and no less than the Core Skills Income Threshold (CSIT)"},
+            {"ja": "指名職種または関連分野で1年以上の職務経験", "en": "At least 1 year of relevant work experience in the nominated occupation or a related field"},
+            {"ja": "職種により技能評価、所定の英語力（免除あり）", "en": "Skills assessment if required for the occupation, and minimum English proficiency unless exempt"}
+          ],
+          "salaryThreshold": {
+            "amount": 79423,
+            "currency": "AUD",
+            "period": "year",
+            "note": "Core Skills Income Threshold (CSIT) for nominations lodged 1 Jul 2026 – 30 Jun 2027 (AUD 76,515 for 2025–26). Specialist Skills stream threshold (SSIT) is AUD 146,576. Pay must also meet the market salary rate. Indexed every 1 July (see Home Affairs 'Salary requirements to nominate a worker')."
+          },
+          "processingNote": {
+            "ja": "在留は最長4年（香港旅券保持者は5年）。要件を満たせば永住申請（186等）が可能。所得基準は毎年7月1日に改定。",
+            "en": "Stay of up to 4 years (5 for Hong Kong passport holders), with a pathway to permanent residence (e.g. subclass 186) if eligible. Income thresholds are indexed every 1 July."
+          },
+          "source": {"title": "Department of Home Affairs – Skills in Demand visa (subclass 482) Core Skills stream", "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skills-in-demand-visa-subclass-482/core-skills-stream"},
+          "asOf": "2026-09"
+        },
+        {
+          "id": "au-ens-186",
+          "name": {"ja": "雇用主指名永住ビザ（Employer Nomination Scheme、subclass 186）", "en": "Employer Nomination Scheme visa (subclass 186)"},
+          "summary": {
+            "ja": "豪州の雇用主の指名に基づく永住ビザ。Direct Entry streamでは海外から直接申請でき、482保持者はTemporary Residence Transition streamで移行できる。",
+            "en": "Permanent visa based on nomination by an Australian employer. The Direct Entry stream allows direct applications, and 482 holders can move over through the Temporary Residence Transition stream."
+          },
+          "requirements": [
+            {"ja": "雇用主による指名（CSOL掲載職種）", "en": "Employer nomination for an occupation on the Core Skills Occupation List"},
+            {"ja": "申請時45歳未満（免除あり）", "en": "Under 45 at the time of application, unless exempt"},
+            {"ja": "原則3年以上の関連職務経験と事前の技能評価（Direct Entry stream）", "en": "At least 3 years of relevant work experience and a positive skills assessment before applying (Direct Entry stream), unless exempt"},
+            {"ja": "所定の英語力、健康・人物要件", "en": "Minimum English proficiency, plus health and character requirements"},
+            {"ja": "市場賃金以上かつCSIT以上の給与", "en": "Salary of at least the market rate and the Core Skills Income Threshold (CSIT)"}
+          ],
+          "salaryThreshold": {
+            "amount": 79423,
+            "currency": "AUD",
+            "period": "year",
+            "note": "CSIT applies to ENS nominations lodged on or after 7 Dec 2024; AUD 79,423 for nominations lodged 1 Jul 2026 – 30 Jun 2027 (source: Home Affairs 'Salary requirements to nominate a worker')."
+          },
+          "processingNote": {
+            "ja": "永住ビザ（無期限）。",
+            "en": "Permanent visa."
+          },
+          "source": {"title": "Department of Home Affairs – Employer Nomination Scheme (subclass 186) Direct Entry stream", "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/employer-nomination-scheme-186/direct-entry-stream"},
+          "asOf": "2026-08"
+        },
+        {
+          "id": "au-skilled-independent-189",
+          "name": {"ja": "独立技能移民ビザ（Skilled Independent、subclass 189）", "en": "Skilled Independent visa (subclass 189) – Points-tested stream"},
+          "summary": {
+            "ja": "雇用主や州のスポンサー不要のポイント制永住ビザ。SkillSelectで関心表明（EOI）を提出し、招待を受けて申請する。",
+            "en": "Points-tested permanent visa that needs no employer or state sponsor. Applicants submit an Expression of Interest (EOI) in SkillSelect and must be invited to apply."
+          },
+          "requirements": [
+            {"ja": "対象の技能職業リスト掲載職種と適切な技能評価", "en": "Occupation on the relevant skilled occupation list, with a suitable skills assessment"},
+            {"ja": "ポイントテストで65点以上", "en": "Score at least 65 points on the points test"},
+            {"ja": "招待時に45歳未満", "en": "Under 45 when invited to apply"},
+            {"ja": "SkillSelectからの招待", "en": "Invitation to apply via SkillSelect"}
+          ],
+          "processingNote": {
+            "ja": "65点は最低ライン。実際の招待点数は招待ラウンドごとに職種別に決まり、通常はより高い。",
+            "en": "65 points is only the minimum; the scores actually invited are set per invitation round and occupation, and are usually higher."
+          },
+          "source": {"title": "Department of Home Affairs – Skilled Independent visa (subclass 189) Points-tested stream", "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-independent-189/points-tested"},
+          "asOf": "2026-07"
+        },
+        {
+          "id": "au-niv-858",
+          "name": {"ja": "ナショナル・イノベーション・ビザ（subclass 858、旧グローバル・タレント）", "en": "National Innovation visa (subclass 858, formerly Global Talent)"},
+          "summary": {
+            "ja": "国際的に認められた卓越した実績を持つ研究者・起業家・投資家・アスリート・クリエイター等のための招待制永住ビザ。",
+            "en": "Invitation-only permanent visa for exceptionally talented people, such as researchers, entrepreneurs, innovative investors, athletes and creatives, with an internationally recognised record of outstanding achievement."
+          },
+          "requirements": [
+            {"ja": "関心表明（EOI）を提出して招待を受け、招待から60日以内に申請", "en": "Submit an Expression of Interest, be invited, and apply within 60 days of the invitation"},
+            {"ja": "職業・スポーツ・芸術・学術研究のいずれかで国際的に認められた卓越した実績", "en": "Internationally recognised record of exceptional and outstanding achievement in a profession, sport, the arts, or academia and research"},
+            {"ja": "同分野で全国的評価のある推薦者（豪市民・永住者・適格NZ市民・豪州の団体）", "en": "A nominator with a national reputation in the same field (Australian citizen, permanent resident, eligible NZ citizen or Australian organisation)"}
+          ],
+          "processingNote": {
+            "ja": "給与基準はなし。招待は政府の優先分野に基づいて行われる。",
+            "en": "No salary threshold; invitations are issued in line with the government's National Innovation visa priorities."
+          },
+          "source": {"title": "Department of Home Affairs – National Innovation visa (subclass 858)", "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/national-innovation-visa-858"},
+          "asOf": "2026-09"
+        }
+      ]
+    },
+    "SG": {
+      "freeMovement": null,
+      "routes": [
+        {
+          "id": "sg-employment-pass",
+          "name": {"ja": "エンプロイメント・パス（EP）", "en": "Employment Pass (EP)"},
+          "summary": {
+            "ja": "専門職・管理職・役員向けの就労パス。年齢別の最低給与（Stage 1）を満たし、原則としてポイント制のCOMPASS（Stage 2）で40点以上が必要。",
+            "en": "Work pass for professionals, managers and executives. Candidates must earn at least the age-graded qualifying salary (Stage 1) and, unless exempt, score 40 points on the points-based COMPASS framework (Stage 2)."
+          },
+          "requirements": [
+            {"ja": "シンガポールの雇用主からの雇用オファー（事前にMyCareersFutureで求人掲載が必要）", "en": "Job offer from a Singapore employer, which must first advertise the role on MyCareersFuture (Fair Consideration Framework)"},
+            {"ja": "月額固定給S$5,600以上（年齢とともに上昇し45歳以上はS$10,700、金融はS$6,200〜S$11,800）", "en": "Fixed monthly salary of at least S$5,600, rising with age to S$10,700 at 45+ (financial services: S$6,200 to S$11,800)"},
+            {"ja": "COMPASSで40点以上（給与・学歴・多様性・現地雇用支援等。月額S$22,500以上などは免除）", "en": "40 points on COMPASS (salary, qualifications, diversity, support for local employment, plus bonuses); exempt if the fixed monthly salary is S$22,500+ or in other listed cases"}
+          ],
+          "salaryThreshold": {
+            "amount": 67200,
+            "currency": "SGD",
+            "period": "year",
+            "note": "S$5,600/month × 12, the current minimum for the youngest applicants (all sectors except financial services, where it is S$6,200/month). It rises progressively with age from 23, up to S$10,700/month at 45+. From 1 Jan 2027 (new applications), the minimum rises to S$6,000/month (S$6,600 in financial services)."
+          },
+          "processingNote": {
+            "ja": "不足スキルを持つ経験豊富なテック人材は5年間のEPを申請可能。最低給与は2027年1月1日の新規申請から引き上げ。",
+            "en": "Experienced tech professionals with skills in shortage may apply for a 5-year EP. Qualifying salaries rise for new applications from 1 Jan 2027."
+          },
+          "source": {"title": "Ministry of Manpower – Eligibility for Employment Pass", "url": "https://www.mom.gov.sg/passes-and-permits/employment-pass/eligibility"},
+          "asOf": "2026-04"
+        },
+        {
+          "id": "sg-s-pass",
+          "name": {"ja": "Sパス", "en": "S Pass"},
+          "summary": {
+            "ja": "中技能の専門職・技術者（准専門職）向けの就労パス。雇用主には外国人雇用枠（クォータ）と外国人雇用税（レビー）が適用される。",
+            "en": "Work pass for mid-skilled staff (associate professionals and technicians). Employers are subject to a quota and a monthly levy."
+          },
+          "requirements": [
+            {"ja": "シンガポールでの雇用オファー", "en": "Job offer in Singapore"},
+            {"ja": "月額固定給S$3,300以上（年齢とともに上昇し45歳以上はS$4,800、金融はS$3,800〜S$5,650）", "en": "Fixed monthly salary of at least S$3,300, rising with age to S$4,800 at 45+ (financial services: S$3,800 to S$5,650)"},
+            {"ja": "雇用主の外国人雇用枠・レビー", "en": "Employer quota and levy apply"}
+          ],
+          "salaryThreshold": {
+            "amount": 39600,
+            "currency": "SGD",
+            "period": "year",
+            "note": "S$3,300/month × 12, the current minimum for the youngest applicants (all sectors except financial services, where it is S$3,800/month). It rises with age up to S$4,800/month at 45+. From 1 Jan 2027 (new applications), the minimum rises to S$3,600/month (S$4,000 in financial services)."
+          },
+          "processingNote": {
+            "ja": "最低給与は2027年1月1日の新規申請から引き上げ。",
+            "en": "Qualifying salaries rise for new applications from 1 Jan 2027."
+          },
+          "source": {"title": "Ministry of Manpower – Eligibility for S Pass", "url": "https://www.mom.gov.sg/passes-and-permits/s-pass/eligibility"},
+          "asOf": "2026-09"
+        },
+        {
+          "id": "sg-one-pass",
+          "name": {"ja": "ONEパス（Overseas Networks & Expertise Pass）", "en": "Overseas Networks & Expertise Pass (ONE Pass)"},
+          "summary": {
+            "ja": "ビジネス・芸術・スポーツ・学術・研究のトップ人材向けの個人パス。特定の雇用主に縛られず、複数の会社で同時に働いたり起業したりできる。",
+            "en": "Personalised pass for top talent in business, the arts, sports, academia and research. Holders are not tied to one employer and may work for several companies or start a business."
+          },
+          "requirements": [
+            {"ja": "過去12か月（1社から）または将来のシンガポール雇用主から月額固定給S$30,000以上", "en": "Fixed monthly salary of at least S$30,000 from one employer over the previous 12 months, or from a prospective Singapore-based employer"},
+            {"ja": "または芸術・スポーツ・学術研究等での卓越した業績（ケースバイケース審査）", "en": "Or outstanding achievements in the arts, sports, science and technology, or academia and research (assessed case by case)"}
+          ],
+          "salaryThreshold": {
+            "amount": 360000,
+            "currency": "SGD",
+            "period": "year",
+            "note": "S$30,000/month × 12 in fixed monthly salary, earned from a single employer (current/last employment or a prospective Singapore employer). The outstanding-achievements and AI & Tech categories are assessed on other criteria."
+          },
+          "processingNote": {
+            "ja": "有効期間5年で更新可能。2027年1月からAI・テック人材向けのONE Pass（AI and Tech）トラックが導入予定（Tech.Passの後継）。",
+            "en": "Valid for 5 years and renewable. A ONE Pass (AI and Tech) track is being introduced from January 2027 to replace the Tech.Pass."
+          },
+          "source": {"title": "Ministry of Manpower – Eligibility for Overseas Networks & Expertise Pass", "url": "https://www.mom.gov.sg/passes-and-permits/overseas-networks-expertise-pass/eligibility"},
+          "asOf": "2026-09"
+        },
+        {
+          "id": "sg-tech-pass",
+          "name": {"ja": "テック・パス（Tech.Pass、2027年1月で受付終了）", "en": "Tech.Pass (closing January 2027)"},
+          "summary": {
+            "ja": "実績のあるテック分野の起業家・リーダー・技術専門家向けの個人パス。2027年1月28日以降は新規・更新申請を受け付けず、ONE Pass（AI and Tech）トラックに置き換えられる。",
+            "en": "Personalised pass for established tech entrepreneurs, leaders and technical experts. New and renewal applications will not be accepted from 28 Jan 2027, when it is replaced by the ONE Pass (AI and Tech) track."
+          },
+          "requirements": [
+            {"ja": "直近1年の月額固定給S$22,500以上", "en": "Last drawn fixed monthly salary (within the past year) of at least S$22,500"},
+            {"ja": "評価額US$5億以上または調達額US$3,000万以上のテック企業（またはAUM US$5億以上のVC）で主導的役割5年以上", "en": "At least 5 cumulative years in a leading role at a tech company valued at US$500m+ or with US$30m+ funding raised, or at a tech VC firm with US$500m+ AUM"}
+          ],
+          "salaryThreshold": {
+            "amount": 270000,
+            "currency": "SGD",
+            "period": "year",
+            "note": "S$22,500/month × 12 (last drawn fixed monthly salary). Applications close at 23:59 on 27 Jan 2027."
+          },
+          "processingNote": {
+            "ja": "有効期間2年（要件を満たせば2年更新）。既存保持者は期限まで有効。",
+            "en": "Valid for 2 years, renewable once for 2 more if the renewal criteria are met. Existing holders keep their pass until it expires."
+          },
+          "source": {"title": "Singapore EDB – Tech.Pass", "url": "https://www.edb.gov.sg/en/how-we-help/incentives-and-facilitation/tech-pass"},
+          "asOf": "2026-09"
+        }
+      ]
+    },
+    "NL": {
+      "freeMovement": {
+        "ja": "EU/EEA加盟国およびスイスの市民は就労許可・滞在許可なしにオランダで働ける（EU域内の移動の自由）。",
+        "en": "EU/EEA and Swiss citizens can work in the Netherlands without a work or residence permit under EU free movement."
+      },
+      "routes": [
+        {
+          "id": "nl-highly-skilled-migrant",
+          "name": {"ja": "高度技能移民（kennismigrant）", "en": "Highly skilled migrant (kennismigrant)"},
+          "summary": {
+            "ja": "IND認定スポンサー企業に雇用される人向けの滞在許可。学位要件はなく、年齢等に応じた給与基準を満たせばよい。",
+            "en": "Residence permit for employees of an IND-recognised sponsor. There is no degree requirement; the main test is an age-dependent salary threshold."
+          },
+          "requirements": [
+            {"ja": "IND認定スポンサー（公開登録簿に掲載）との雇用契約", "en": "Employment contract with an employer or research institution that is an IND-recognised sponsor (listed in the public register)"},
+            {"ja": "2026年の月額総給与（休暇手当除く）: 30歳以上€5,942、30歳未満€4,357、新卒等の軽減基準€3,122", "en": "2026 gross monthly salary, excluding holiday allowance: €5,942 at age 30+, €4,357 under 30, or €3,122 under the reduced criterion for recent graduates"},
+            {"ja": "給与が市場水準に見合うこと", "en": "Salary in line with the market rate for the job"}
+          ],
+          "salaryThreshold": {
+            "amount": 71304,
+            "currency": "EUR",
+            "period": "year",
+            "note": "2026 threshold for age 30+: €5,942 gross/month × 12, excluding the 8% holiday allowance. Under 30: €4,357/month (€52,284/yr). Reduced criterion: €3,122/month (€37,464/yr) during or after an orientation year, or within 3 years of graduating, obtaining a PhD or completing research. Amounts change every 1 January."
+          },
+          "processingNote": {
+            "ja": "認定スポンサー経由の申請は迅速手続き。基準額は毎年1月1日改定。",
+            "en": "Recognised sponsors use an accelerated procedure. Thresholds change every 1 January."
+          },
+          "source": {"title": "IND – Required amounts income requirements (2026)", "url": "https://ind.nl/en/required-amounts-income-requirements"},
+          "asOf": "2026-09"
+        },
+        {
+          "id": "nl-blue-card",
+          "name": {"ja": "EUブルーカード", "en": "EU Blue Card"},
+          "summary": {
+            "ja": "高学歴または高度な経験を持つ人向けのEU共通の就労・滞在許可。雇用主は認定スポンサーでなくてもよく、他のEU国への移動や長期滞在許可の取得で有利。",
+            "en": "EU-wide work and residence permit for highly educated or highly experienced workers. The employer does not have to be a recognised sponsor, and the card makes it easier to move to another EU country or get long-term EU residence."
+          },
+          "requirements": [
+            {"ja": "3年以上の高等教育課程の学位（外国学位はNuffic評価）、または学位相当の職務経験5年以上（IT職は直近7年で3年以上）", "en": "Higher-education diploma from a programme of at least 3 years (foreign diplomas evaluated by Nuffic), or 5+ years of degree-level experience (IT professionals: 3 years within the last 7)"},
+            {"ja": "6か月以上の雇用契約", "en": "Employment contract of at least 6 months"},
+            {"ja": "2026年の月額総給与€5,942以上（卒業後3年以内は€4,754）", "en": "2026 gross monthly salary of at least €5,942 (€4,754 within 3 years of graduation)"}
+          ],
+          "salaryThreshold": {
+            "amount": 71304,
+            "currency": "EUR",
+            "period": "year",
+            "note": "2026 threshold: €5,942 gross/month × 12, excluding holiday allowance. Reduced criterion €4,754/month (€57,048/yr) for graduates who apply within 3 years of graduating (source: IND 'Required amounts income requirements'). Changes every 1 January."
+          },
+          "processingNote": {
+            "ja": "ブルーカードで2年経過後、条件によりEU長期滞在許可を申請可能（通常は5年）。",
+            "en": "Blue Card holders can in some cases apply for long-term EU residence after 2 years instead of 5."
+          },
+          "source": {"title": "IND – European Blue Card residence permit", "url": "https://ind.nl/en/residence-permits/work/european-blue-card-residence-permit"},
+          "asOf": "2026-06"
+        },
+        {
+          "id": "nl-orientation-year",
+          "name": {"ja": "オリエンテーション・イヤー（zoekjaar hoogopgeleiden）", "en": "Orientation year for highly educated persons (zoekjaar)"},
+          "summary": {
+            "ja": "オランダまたは世界大学ランキング上位校を卒業した人が、1年間オランダで職探しをするための滞在許可。期間中は就労許可なしで自由に働ける。",
+            "en": "One-year residence permit to look for work after graduating in the Netherlands or from a top-ranked foreign university. Holders may work freely during the year without a work permit."
+          },
+          "requirements": [
+            {"ja": "申請前3年以内に、オランダで学士・修士等を修了、または指定外国大学で修士・博士を取得", "en": "Within the 3 years before applying: completed a bachelor's, master's or post-master's programme in the Netherlands, or a master's/PhD at a designated foreign institution"},
+            {"ja": "指定外国大学 = THE・QS・上海ランキングのうち異なる2つ以上で上位200位以内（総合または分野別）", "en": "Designated foreign institution: in the top 200 of at least two rankings from different publishers (Times Higher Education, QS, ShanghaiRanking; general or by subject)"},
+            {"ja": "収入証明は不要", "en": "No proof of income required"}
+          ],
+          "processingNote": {
+            "ja": "期間中または期間後に高度技能移民へ切り替える場合、軽減給与基準（2026年は月€3,122）が適用される。",
+            "en": "Switching to highly skilled migrant during or after the year qualifies for the reduced salary criterion (€3,122/month in 2026)."
+          },
+          "source": {"title": "IND – Residence permit for orientation year", "url": "https://ind.nl/en/residence-permits/work/residence-permit-for-orientation-year"},
+          "asOf": "2026-09"
+        },
+        {
+          "id": "nl-daft-djta",
+          "name": {"ja": "日蘭通商航海条約・米蘭友好条約（DAFT）による自営業許可", "en": "Self-employment under the Dutch-American Friendship Treaty (DAFT) / Dutch-Japanese Trade Treaty"},
+          "summary": {
+            "ja": "米国籍または日本国籍の人が、オランダで自営業・起業をするための滞在許可。通常の自営業許可で求められるポイント審査の代わりに、事業への実質的な投資が要件となる。",
+            "en": "Residence permit for US or Japanese nationals who want to be self-employed or run a business in the Netherlands. A substantial capital investment in the business replaces the points assessment used for the regular self-employed permit."
+          },
+          "requirements": [
+            {"ja": "米国籍または日本国籍", "en": "US or Japanese nationality"},
+            {"ja": "日蘭・米蘭間の貿易、またはオランダでの事業の立ち上げ・運営（自由業も可、政府・医療分野を除く）", "en": "Trade between the Netherlands and the US/Japan, or developing and running a business in the Netherlands (including an independent profession, except in government or healthcare)"},
+            {"ja": "事業への実質的な資本投資（多くの事業形態で最低€4,500）", "en": "Substantial capital invested in the business (minimum €4,500 for most business forms)"},
+            {"ja": "初回許可から6か月以内に商工会議所登録と投資を完了", "en": "For a first permit: register with the Chamber of Commerce and make the investment within 6 months of the decision"}
+          ],
+          "processingNote": {
+            "ja": "日本国籍者も日蘭通商航海条約により同様の要件で申請可能。",
+            "en": "Japanese nationals can apply under the same requirements through the Dutch-Japanese Trade Treaty."
+          },
+          "source": {"title": "IND – Residence permit self-employed person", "url": "https://ind.nl/en/residence-permits/work/residence-permit-self-employed-person"},
+          "asOf": "2026-09"
+        }
+      ]
+    },
+    "KR": {
+      "freeMovement": null,
+      "routes": [
+        {
+          "id": "kr-e7-professional",
+          "name": {"ja": "特定活動（E-7-1 専門人材）", "en": "Special Occupation visa (E-7-1, professionals)"},
+          "summary": {
+            "ja": "法務部長官が指定する職種（管理職・IT・エンジニア・研究等の専門職）で韓国の機関と契約して働くための就労ビザ。E-7-1は専門人材区分。",
+            "en": "Work visa for jobs in occupations designated by the Minister of Justice (managers and professionals such as IT, engineering and R&D), under a contract with an organisation in Korea. E-7-1 is the professional category."
+          },
+          "requirements": [
+            {"ja": "韓国の機関・企業との雇用契約（法務部指定職種）", "en": "Employment contract with an organisation in Korea for a designated occupation"},
+            {"ja": "職種ごとの学歴・経歴要件", "en": "Education and experience requirements set for each occupation"},
+            {"ja": "2026年の賃金要件: 年3,112万ウォン以上", "en": "2026 wage requirement: at least KRW 31.12 million a year"}
+          ],
+          "salaryThreshold": {
+            "amount": 31120000,
+            "currency": "KRW",
+            "period": "year",
+            "note": "E-7-1 wage requirement applied 1 Feb – 31 Dec 2026 (KRW 31.12 million/yr); E-7-2 and E-7-3 KRW 25.89m, E-7-4 KRW 26.00m. Occupations for which the Minister of Justice has set a different standard follow that standard. Announced by the Ministry of Justice on 29 Dec 2025 and revised annually."
+          },
+          "processingNote": {
+            "ja": "就労活動の範囲は許可された職種・勤務先に限られる。E-9（非専門就業）は単純労働向けで専門職の対象外。",
+            "en": "Work is limited to the approved occupation and employer. E-9 (non-professional employment) is for low-skilled work and does not apply to professionals."
+          },
+          "source": {"title": "법무부 공고 제2025-406호「2026년 특정활동(E-7) 체류자격 임금요건 기준 공고」", "url": "https://www.immigration.go.kr/bbs/immigration/211/488810/download.do"},
+          "asOf": "2025-12"
+        },
+        {
+          "id": "kr-d10-job-seeker",
+          "name": {"ja": "求職（D-10）", "en": "Job Seeker visa (D-10)"},
+          "summary": {
+            "ja": "専門職（E-1〜E-7）分野での就職を目指して韓国で求職活動・インターンをするための在留資格。一般求職（D-10-1）はポイント制で審査される。",
+            "en": "Status for job-seeking and internships in Korea aimed at professional roles (E-1 to E-7 fields). General job seekers (D-10-1) are assessed on a points system."
+          },
+          "requirements": [
+            {"ja": "E-1〜E-7該当分野での求職目的", "en": "Intention to seek work in a field covered by E-1 to E-7"},
+            {"ja": "ポイント制の基準点を満たすこと（一般求職D-10-1）", "en": "Meet the points-system pass mark (general job seeker, D-10-1)"},
+            {"ja": "29歳以下で世界大学ランキング200位以内の大学卒業者等はポイント制・財政要件が免除（2025年10月〜、試行）", "en": "Graduates aged 29 or under from universities ranked in the global top 200, among others, are exempt from the points and financial requirements (pilot from Oct 2025)"}
+          ],
+          "processingNote": {
+            "ja": "2025年10月29日から、求職期間は1回1年・最長3年に拡大（従来は1回6か月・最長2年）。同一企業でのインターンは最長1年。",
+            "en": "From 29 Oct 2025, the job-seeking period is up to 1 year per grant and 3 years in total (previously 6 months and 2 years). An internship with a single company can last up to 1 year."
+          },
+          "source": {"title": "법무부 보도자료「법무부, 기업이 원하는 인재 확보를 지원한다」(2025.10.27)", "url": "https://www.immigration.go.kr/bbs/immigration/214/486421/download.do"},
+          "asOf": "2025-10"
+        },
+        {
+          "id": "kr-f2-7-points",
+          "name": {"ja": "居住（F-2-7 点数制優秀人材）", "en": "Residence visa F-2-7 (points-based talent)"},
+          "summary": {
+            "ja": "専門職等で一定期間在留した人や高所得の有望産業従事者等がポイント制の基準を満たすと取得できる長期居住資格。就労制限がほぼなく、永住（F-5）への足がかりになる。",
+            "en": "Long-term residence status for professionals already in Korea (and some other groups) who meet the points criteria. It largely removes job restrictions and is a stepping stone to permanent residence (F-5)."
+          },
+          "requirements": [
+            {"ja": "対象類型: 上場企業従事者、有望産業従事者（前年所得GNIの1.5倍以上）、専門職従事者（D-5〜D-9・E-1〜E-7-1で3年以上連続在留）、国内修士以上の留学人材など", "en": "Eligible groups include employees of listed companies, workers in promising industries (prior-year income at least 1.5× GNI per capita), professionals with 3+ consecutive years in D-5 to D-9 or E-1 to E-7-1 status, and graduates with a Korean master's or higher"},
+            {"ja": "ポイント制の基準点、品行・公衆衛生等の要件", "en": "Meet the points threshold plus conduct and public-health requirements"},
+            {"ja": "家族を居住（F-2）で帯同するには本人所得がGNI以上であること", "en": "Main applicant's income must be at least GNI per capita to bring family members on F-2"}
+          ],
+          "processingNote": {
+            "ja": "配点・基準点の詳細は法務部の指針で定められ、改定されることがある。申請前にHi Koreaの在留資格別案内マニュアルで確認を。",
+            "en": "Point scores and the pass mark are set in Ministry of Justice guidelines and may change; check the current Hi Korea visa manual before applying."
+          },
+          "source": {"title": "법무부 출입국·외국인정책본부「비자 내비게이터」(2022.12)", "url": "https://www.immigration.go.kr/bbs/immigration_eng/230/454086/download.do"},
+          "asOf": "2022-12"
+        }
+      ]
     }
   }
 }
