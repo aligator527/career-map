@@ -6,7 +6,7 @@ import { MapCard } from './components/MapCard'
 import { ProfileForm } from './components/ProfileForm'
 import { ResultCard } from './components/ResultCard'
 import { crosswalk, type CommonOccupation } from './engine/compare'
-import { COUNTRIES, mapEducation } from './engine/countries'
+import { COUNTRIES, HAS_PRICES, mapEducation } from './engine/countries'
 import { loadCaTax, loadCommonOccupations, loadFx, loadMeta, loadNational, loadPrices, loadRegion, loadStateTax, type Prices } from './engine/data'
 import { findCell } from './engine/lookup'
 import type { Metric, TaxTables } from './engine/metric'
@@ -51,7 +51,7 @@ async function loadShared(): Promise<Shared> {
   const [fx, metaList, priceList, usTax, caTax, common] = await Promise.all([
     loadFx(),
     Promise.all(COUNTRIES.map((c) => optional(loadMeta(c)))),
-    Promise.all(COUNTRIES.map((c) => optional(loadPrices(c)))),
+    Promise.all(COUNTRIES.map((c) => (HAS_PRICES.includes(c) ? optional(loadPrices(c)) : Promise.resolve(null)))),
     optional(loadStateTax()),
     optional(loadCaTax()),
     optional(loadCommonOccupations()),

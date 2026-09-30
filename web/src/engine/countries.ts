@@ -7,6 +7,9 @@ export const CURRENCY: Record<CountryCode, string> = {
   JP: 'JPY', US: 'USD', UK: 'GBP', CA: 'CAD', DE: 'EUR', FR: 'EUR', IT: 'EUR',
 }
 
+/** Countries with a regional price-level index (prices.json). */
+export const HAS_PRICES: CountryCode[] = ['JP', 'US']
+
 /** Unit the income field is entered in (Japanese users think in 万円). */
 export const INCOME_UNIT: Record<CountryCode, number> = { JP: 10_000, US: 1, UK: 1, CA: 1, DE: 1, FR: 1, IT: 1 }
 
