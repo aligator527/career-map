@@ -1,0 +1,875 @@
+{
+ "_topic": "jp_it",
+ "_method": "WebSearch cannot reach reddit.com, and direct/WebFetch access to reddit.com is blocked (login wall). So archived copies of old.reddit.com thread pages were used instead: the Internet Archive Wayback CDX index was queried for r/japanlife, r/movingtojapan, r/japan, r/cscareerquestions(EU) and r/ExperiencedDevs thread URLs whose slugs mention software/developer/programmer/IT/tech/salary/raise etc. Threads were kept if their base-36 IDs date from 2021 or later. For each thread the largest archived capture was fetched (about 150 threads, about 1,250 comments), and the author, timestamp and text were parsed from the archived HTML. Keyword searches over that corpus found claims, and each one was kept only when at least 3 distinct usernames in at least 2 distinct threads stated it independently, all dated 2021-01 or later. Claims and notes are paraphrases. Posts by AutoModerator and by users describing the same individual were excluded. The coverage is limited to what the Wayback Machine archived, and the rate limits mean it is not an exhaustive crawl.",
+ "insights": [
+  {
+   "id": "jp_it_salary_entry_typical",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "一般的な（主に国内の中小）企業での未経験〜ジュニア開発者の年収はおおむね250万〜450万円程度にとどまる。",
+    "en": "Entry-level/junior developers at typical (mostly domestic, smaller) companies in Japan earn roughly ¥2.5–4.5M a year."
+   },
+   "quantity": {
+    "kind": "annual_salary",
+    "currency": "JPY",
+    "low": 2500000,
+    "high": 4500000,
+    "ageBand": null,
+    "experienceYears": [
+     0,
+     2
+    ],
+    "employer": "japanese"
+   },
+   "caveats": {
+    "ja": "外国人の転職者・英会話講師からの転向組の体験談が中心で、大手の新卒採用（より高い）とは母集団が異なる。地方ではさらに低い例もある。",
+    "en": "Mostly anecdotes from foreigners/career changers; large-company new-grad programs pay more, and rural examples can be lower."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2024-01",
+     "note": "Says starting developer salaries are generally around 2–4M yen.",
+     "userHash": "ed1dfffad334"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2024-01",
+     "note": "Hiring manager: juniors are typically hired at 2.5–4M yen.",
+     "userHash": "7b7e07f65132"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Most entry-level back-end offers seen were 2–3M yen; landed 4.5M after a year of searching.",
+     "userHash": "a9cef706ab2b"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Own starting salary in tech was 3M yen; now much higher.",
+     "userHash": "b26cd7e135e9"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Earned under 4M yen in first two IT jobs.",
+     "userHash": "e496f39c998b"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_salary_entry_bigtech",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "東京の外資系大手テック企業では、エントリーレベルのソフトウェアエンジニアでも年収約900万〜1500万円が相場とされる。",
+    "en": "At large foreign (mostly US) tech companies in Tokyo, entry-level software engineers reportedly earn about ¥9–15M."
+   },
+   "quantity": {
+    "kind": "annual_salary",
+    "currency": "JPY",
+    "low": 9000000,
+    "high": 15000000,
+    "ageBand": null,
+    "experienceYears": [
+     0,
+     2
+    ],
+    "employer": "foreign"
+   },
+   "caveats": {
+    "ja": "ごく少数の企業に限られ、採用枠は非常に競争的。1500万円は株式報酬を含む総報酬の値。2023年は採用凍結の言及も多い。",
+    "en": "Applies to a handful of firms with very competitive hiring; the upper figure includes stock. Several mention 2023 hiring freezes."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Foreign-affiliated firms pay roughly 10M yen for new grads.",
+     "userHash": "82b8eb0fe35c"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Their English-only employer pays entry-level (L1) engineers about 9–11M base.",
+     "userHash": "bfc006e1f5b0"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "FAANG entry-level base in Japan is about 10M, excluding stock.",
+     "userHash": "876c2a5f9c01"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Big tech paying 10M+ for entry-level SDEs is normal, but competition is intense.",
+     "userHash": "c18a15317ecf"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "At US tech companies in Tokyo, entry-level engineers get around 15M total compensation.",
+     "userHash": "5030c5b89bbb"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_salary_mid_general",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "経験数年〜10年程度の中堅エンジニアの年収は、日本の一般的な市場では500万〜800万円程度が標準的とされる。",
+    "en": "In the general Japanese market, mid-level engineers (roughly 3–10 years' experience) typically earn about ¥5–8M."
+   },
+   "quantity": {
+    "kind": "annual_salary",
+    "currency": "JPY",
+    "low": 5000000,
+    "high": 8000000,
+    "ageBand": null,
+    "experienceYears": [
+     3,
+     10
+    ],
+    "employer": "any"
+   },
+   "caveats": {
+    "ja": "企業による差が極めて大きく、外資・大手テックでは大幅に高い。",
+    "en": "Company-to-company variance is huge; foreign/big-tech employers pay well above this band."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2023-12",
+     "note": "5–7M is typical for junior-to-associate devs; seniors may reach about 9M.",
+     "userHash": "9d88d76e500f"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2024-01",
+     "note": "Says 5–7M+ is normal for mid-level developers in Japan.",
+     "userHash": "ed1dfffad334"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2024-01",
+     "note": "Hiring manager: 5–7M hires mid-to-senior engineers with 5–10 years' experience.",
+     "userHash": "7b7e07f65132"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "For about six years' experience, 6–8M would be expected.",
+     "userHash": "1e6a9990851f"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "A developer with four years' experience should be around 7M.",
+     "userHash": "0f4d73a7c88b"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_salary_mid_domestic",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "伝統的な日系企業では、経験4〜6年程度の開発者でも年収400万〜550万円程度が珍しくない。",
+    "en": "At traditional Japanese companies, developers with about 4–6 years' experience often earn only around ¥4–5.5M."
+   },
+   "quantity": {
+    "kind": "annual_salary",
+    "currency": "JPY",
+    "low": 4000000,
+    "high": 5500000,
+    "ageBand": null,
+    "experienceYears": [
+     4,
+     6
+    ],
+    "employer": "japanese"
+   },
+   "caveats": {
+    "ja": "主に中小・SIer系の例。大手日系やWeb系メガベンチャーはより高い場合がある。",
+    "en": "Mostly smaller firms/SIers; large Japanese firms and major web companies can pay more."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/nguzl4/programmerit_salary_in_kansai/",
+     "subreddit": "japanlife",
+     "date": "2021-05",
+     "note": "About 5M is fairly standard for experienced programmers at Japanese companies.",
+     "userHash": "353d9baffd49"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "4.5M is roughly average for a Java engineer with four years' experience.",
+     "userHash": "2af9f2f3ef41"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "4.5M with heavy overtime is the norm at that experience level.",
+     "userHash": "bee8099b78f6"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "Japanese-speaking developer at a Japanese company with similar experience earns about 4M.",
+     "userHash": "33713c2a3742"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_salary_mid_foreign",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "外資系や英語環境の企業では、経験4〜7年程度のエンジニアが年収800万〜1200万円程度を得ることは十分可能とされる。",
+    "en": "At foreign or English-speaking companies in Tokyo, engineers with about 4–7 years' experience can realistically earn ¥8–12M."
+   },
+   "quantity": {
+    "kind": "annual_salary",
+    "currency": "JPY",
+    "low": 8000000,
+    "high": 12000000,
+    "ageBand": null,
+    "experienceYears": [
+     4,
+     7
+    ],
+    "employer": "foreign"
+   },
+   "caveats": {
+    "ja": "コーディング面接の通過が前提で、英語力が求められることが多い。",
+    "en": "Assumes passing competitive coding interviews and usually working in English."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "With four years' experience, 7–15M is attainable at a subset of companies.",
+     "userHash": "cf2f2c69d973"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "Full-stack devs with six years' experience should get 10–13M at big companies.",
+     "userHash": "3fff8c477474"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "An average-performing six-year engineer would easily earn 8–10M at a foreign firm.",
+     "userHash": "effde5331043"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "With seven years' experience, moved from a 7M offer to about 12M.",
+     "userHash": "51ba62cc902d"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/nguzl4/programmerit_salary_in_kansai/",
+     "subreddit": "japanlife",
+     "date": "2021-05",
+     "note": "An experienced programmer could get 8–10M+ at a global company.",
+     "userHash": "353d9baffd49"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_salary_senior_bigtech",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "東京の最上位（主に米系）テック企業では、シニア級の総報酬が2000万〜3500万円程度に達する例がある。",
+    "en": "At the top-paying (mostly US) tech firms in Tokyo, senior-level total compensation can reach roughly ¥20–35M."
+   },
+   "quantity": {
+    "kind": "annual_salary",
+    "currency": "JPY",
+    "low": 20000000,
+    "high": 35000000,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "foreign"
+   },
+   "caveats": {
+    "ja": "株式・賞与を含む総報酬で、ごく一部の企業・ポジションに限られる。",
+    "en": "Total compensation including stock/bonus; limited to a few employers and senior/manager roles."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "At US tech firms, 3–5 years' experience pays about 20–30M total compensation.",
+     "userHash": "5030c5b89bbb"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/sz4e4f/reasonable_salary_range_for_software_engineers_in/",
+     "subreddit": "movingtojapan",
+     "date": "2022-02",
+     "note": "Received a big-tech Tokyo offer of about 32M total compensation.",
+     "userHash": "2240249bfa2c"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/wjflr4/salary_negotiation/",
+     "subreddit": "movingtojapan",
+     "date": "2022-08",
+     "note": "Says Indeed pays roughly 25–35M+ for engineering-manager level roles.",
+     "userHash": "310bd95ed60c"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_foreign_vs_japanese_pay",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "外資系テック企業は伝統的な日系企業よりもソフトウェアエンジニアの給与が大幅に高い傾向がある。",
+    "en": "Foreign tech companies tend to pay software engineers substantially more than traditional Japanese companies."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "一部の日系Web企業（メルカリ等）や大手は例外として高給とされる。",
+    "en": "Some Japanese web/tech firms and large companies are cited as exceptions."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Japanese companies are known for paying software engineers poorly.",
+     "userHash": "1536646ee150"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Japanese firms undervalue software engineering; international companies pay much more.",
+     "userHash": "498fc1fcabed"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "For 10M+, foreign-owned firms are the path; Japanese firms pay less.",
+     "userHash": "c46953b41712"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "Moving to a domestic company would roughly halve their international-company salary.",
+     "userHash": "1e6a9990851f"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1jyrq8c/how_to_negotiate_salary_in_a_job_offer_from_a/",
+     "subreddit": "japanlife",
+     "date": "2025-04",
+     "note": "Internal recruiter: Japanese companies pay far lower than foreign companies.",
+     "userHash": "4dbee003badd"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/nguzl4/programmerit_salary_in_kansai/",
+     "subreddit": "japanlife",
+     "date": "2021-05",
+     "note": "Japan underpays tech workers; global companies pay notably more.",
+     "userHash": "353d9baffd49"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_company_over_role",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "日本のIT職の給与は職種や肩書きよりも勤務先企業によって大きく決まり、同経験でも企業間で数倍の差がある。",
+    "en": "In Japan, IT pay depends far more on which company you work for than on role or title; spreads of several times at equal experience are common."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "高給企業の採用枠は少なく競争が激しい。",
+    "en": "The high-paying employers have few openings and competitive hiring."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "Salary depends on employer, not job; senior programmers range from 3.5M to 25M.",
+     "userHash": "c22bf40331fe"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "Company matters more than position; ordinary backend work pays 10M+ at top firms.",
+     "userHash": "4041bd962fe6"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2024-01",
+     "note": "High pay is concentrated in a small set of companies like Google and Indeed.",
+     "userHash": "b039b972b3ee"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Pay at five years' experience ranges from about 5M to 15M by company.",
+     "userHash": "52e464d77022"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_small_internal_raises",
+   "topic": "salary",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "同じ会社にとどまった場合の昇給は小さく（年数%程度）、大きな昇給を交渉で得るのは難しい。",
+    "en": "Staying at the same company usually brings small raises (a few percent a year), and large raises are hard to negotiate internally."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "外資やスタートアップでは評価次第で大きく上がる例もある。",
+    "en": "Foreign firms and startups may grant larger performance-based raises."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/163ti0s/software_develop_visa_support_salary/",
+     "subreddit": "movingtojapan",
+     "date": "2023-08",
+     "note": "Salaries in Japan usually rise only about 2–4% a year.",
+     "userHash": "d85783733a39"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Staying put yields around 5% raises versus 20–30% when switching.",
+     "userHash": "2c26e950fce3"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "It is very hard to get raises; switching jobs gives a bigger bump.",
+     "userHash": "1e6a9990851f"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1nc8vvd/salary_negotiation_tips_for_high_positions_10m_20m/",
+     "subreddit": "japanlife",
+     "date": "2025-09",
+     "note": "Negotiating a significant raise within the same Japanese company is very hard.",
+     "userHash": "9e6bfb122e69"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_job_change_jumps",
+   "topic": "job_change",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "IT職では転職が年収を大きく上げる主な手段で、1回の転職で20〜30%以上、時には倍増する例も語られる。",
+    "en": "Changing employers is the main way IT workers in Japan raise pay substantially: 20–30%+ per move, sometimes doubling."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "大幅増は主に日系から外資への移動で、全員に当てはまるわけではない。",
+    "en": "The biggest jumps are mostly moves from Japanese to foreign firms; not universal."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Changes jobs about every two years, averaging 20–30% raises each time.",
+     "userHash": "2c26e950fce3"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "Went from 4M at a Japanese firm to 10M at a foreign firm in one move.",
+     "userHash": "c41327bb9516"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "Jumped from 7M to about 12M by changing jobs within six months.",
+     "userHash": "51ba62cc902d"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1gtsuxc/is_it_my_salary_too_low_as_a_software_engineer/",
+     "subreddit": "japanlife",
+     "date": "2024-11",
+     "note": "The only way to raise salary significantly and quickly is job hopping.",
+     "userHash": "7655cd26589c"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Two job changes in three years took them from 4.5M to 10M+.",
+     "userHash": "bc144942e1d6"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_japanese_language_options",
+   "topic": "language",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "日本語力（N2以上程度）があると応募できる求人の幅が大きく広がり、ないと外資や英語チームに限られがち。",
+    "en": "Japanese ability (around N2+) substantially widens job options; without it, candidates are largely limited to foreign firms or English-speaking teams."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "最も高給な外資の職は日本語不要なことも多い（別項参照）。",
+    "en": "Many of the highest-paying foreign-company roles do not require Japanese (see separate insight)."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/kwz0y9/software_engineer_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2021-01",
+     "note": "Without Japanese you'll mostly work at a foreign company or an English-speaking team.",
+     "userHash": "1ab92758f486"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "Japanese companies are a tough sell without enough Japanese to interview.",
+     "userHash": "0338147c4232"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2023-12",
+     "note": "Lacking Japanese while targeting Japanese companies leads to weaker offers.",
+     "userHash": "9d88d76e500f"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Japanese below N3 limits how many openings will call you back.",
+     "userHash": "4a9e9d5b5eaf"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/z93ui8/foreignerfriendly_japanese_tech_companies/",
+     "subreddit": "movingtojapan",
+     "date": "2022-11",
+     "note": "With N2 and three years' experience, finding a job via agencies should be easy.",
+     "userHash": "9bfaa37d9a3f"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_english_high_pay",
+   "topic": "language",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "日本の高給ソフトウェア職の多くは英語を主言語とし、英語力は収入を大きく押し上げる一方、日本語は必須でないことが多い。",
+    "en": "Many of the best-paid software jobs in Japan use English as the working language; English boosts income, while Japanese is often not required."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "主に外国人エンジニア視点。日本語話者の日本人は国内企業で選択肢が多い。",
+    "en": "Largely the view of foreign engineers; the premium applies to a limited set of employers."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "High-paying software companies in Japan almost always use English as the main language.",
+     "userHash": "c02d91f13e57"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "English ability could raise a Japanese developer's pay 1.5–2x.",
+     "userHash": "d80c7fb89e7d"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Higher-paying employers are Western firms or Japanese firms hiring mainly foreigners, needing English.",
+     "userHash": "2f1f491045b9"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "None of their 10M+ offers required any Japanese.",
+     "userHash": "cf2f2c69d973"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/16amx19/tech_jobs_in_japan_paying_over_10m_salary_23yoe/",
+     "subreddit": "japanlife",
+     "date": "2023-09",
+     "note": "Higher-paying jobs want specialized skills; Japanese ability is secondary.",
+     "userHash": "c41327bb9516"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_overtime_traditional",
+   "topic": "workplace",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "低賃金の国内IT企業では長時間の残業（サービス残業を含む）が依然として一般的だとする声が多い。",
+    "en": "Long overtime, sometimes unpaid, is still described as common at lower-paying domestic IT companies."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "外資やスタートアップでは残業が少ないという報告も多い。",
+    "en": "Many report little overtime at foreign firms and startups; varies by employer."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/10vvd40/software_engineer_salary_in_tokyo/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Daily overtime of several hours at modest pay is more the norm than exception.",
+     "userHash": "bee8099b78f6"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "Junior dev in the countryside with lots of unpaid overtime and low pay.",
+     "userHash": "716e2ff8af6c"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Confirms that overtime at Japanese IT jobs is not exaggerated.",
+     "userHash": "2017598d7e44"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/lugbcm/low_salary_at_software_development_company_what/",
+     "subreddit": "japanlife",
+     "date": "2021-02",
+     "note": "Works weekends at a Tokyo software firm without overtime pay.",
+     "userHash": "64dcb99c813b"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_junior_market_hard",
+   "topic": "job_market",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "2023年頃以降、未経験・ジュニア開発者の就職は競争が激しく難しいとされる（ブートキャンプ出身者の増加、大手の採用抑制）。",
+    "en": "Since around 2023, junior/entry-level developer jobs in Japan are described as hard to land (many bootcamp switchers, big firms slowing hiring)."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "主に海外からの応募者・転職者の視点。市況は年により変動する。",
+    "en": "Mostly perspectives on foreign applicants and career changers; market conditions shift year to year."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Juniors aren't in demand; more teachers pivot into IT via bootcamps each year.",
+     "userHash": "e496f39c998b"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Companies want experienced devs; bootcamp juniors glut the market while firms cut costs.",
+     "userHash": "2e447eff737f"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/18h1iey/first_software_developer_job_in_japan_salary/",
+     "subreddit": "japanlife",
+     "date": "2023-12",
+     "note": "Hiring is tough now; big companies aren't hiring.",
+     "userHash": "5030c5b89bbb"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/16t0ay0/web_developer_job_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2023-09",
+     "note": "Web development is competitive, especially for juniors seeking visa sponsorship.",
+     "userHash": "b0699b72aca3"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/16t0ay0/web_developer_job_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2023-09",
+     "note": "Entry-level development jobs in Japan are highly competitive.",
+     "userHash": "8e829aa18d9f"
+    }
+   ]
+  },
+  {
+   "id": "jp_it_pay_vs_us",
+   "topic": "salary",
+   "countries": [
+    "JP",
+    "US"
+   ],
+   "occupation": {
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "日本のソフトウェアエンジニアの給与は米国と比べて大幅に低く、米国から移る場合は大きな減給になる。",
+    "en": "Software engineering pay in Japan is far lower than in the US; moving from the US usually means a large pay cut."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "生活費の違いを考慮すると差は縮まるとの指摘もある。",
+    "en": "Some note lower living costs narrow the real gap."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2023-12",
+     "note": "Japanese dev jobs pay much less than US ones, with longer hours.",
+     "userHash": "51317b8d83fe"
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/18venxk/how_are_dev_jobs_in_japan/",
+     "subreddit": "movingtojapan",
+     "date": "2024-01",
+     "note": "Japan tech pay is low, even below Singapore and South Korea.",
+     "userHash": "b7eeda5d818a"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/11anf4s/whats_it_like_being_a_programmer_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2023-02",
+     "note": "The US–Japan tech salary gap is enormous.",
+     "userHash": "cc9e8f2bb78e"
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/mc1akm/software_engineering_in_japan/",
+     "subreddit": "japanlife",
+     "date": "2021-03",
+     "note": "Moving to Japan means a pay cut, even at big foreign tech firms.",
+     "userHash": "1122ced073ad"
+    },
+    {
+     "url": "https://www.reddit.com/r/japan/comments/18jk7x9/is_it_hard_to_land_a_job_as_software_developer_in/",
+     "subreddit": "japan",
+     "date": "2023-12",
+     "note": "Pay compared to the US will be a big shock.",
+     "userHash": "ac4d250074b3"
+    }
+   ]
+  }
+ ]
+}
