@@ -1,0 +1,479 @@
+{
+  "_source": "CRA 'Last year tax rates and income brackets (2025)': https://www.canada.ca/en/revenue-agency/services/tax/individuals/tax-rates-brackets/last-year.html ; T4127 Payroll Deductions Formulas 121st ed. (effective July 1, 2025): https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jul/t4127-jul-25e.pdf , https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jul/rates-income-thresholds-constants-25e.csv , https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jul/other-rates-amounts-25e.csv ; T4127 Jan 2025 CPP/QPP/EI/QPIP tables: https://www.canada.ca/content/dam/cra-arc/formspubs/pub/t4127-jan/cpp-qpp-ttl-01-25e.csv , cpp-qpp-addntl-01-25e.csv , cpp-qpp-scnd-addntl-01-25e.csv , ei-01-25e.csv , qpip-01-25e.csv ; Revenu Quebec income tax rates / principal changes for 2025: https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/income-tax-rates/ , https://www.revenuquebec.ca/en/businesses/source-deductions-and-employer-contributions/employers-kit/principal-changes-for-2025-employers-kit/ (Revenu Quebec blocks scripted fetches; QC figures cross-checked via search snippets of those pages).",
+  "_year": 2025,
+  "_notes": "Single employee, no dependents, employment income only, full-year resident of one province on Dec 31, 2025. brackets = [lower threshold of taxable income, marginal rate]. Federal lowest rate: legislated cut from 15% to 14% effective July 1, 2025, giving an effective full-year rate of 14.5% for 2025 (used for both the first bracket and all non-refundable credits: BPA, CEA, CPP base contributions, EI premiums). Payroll withholding in Jul-Dec used 14%; annual tax uses 14.5%. From 2026 the rate is 14%. Suggested calc: taxable income = gross - CPP/QPP enhanced contributions (first additional 1% portion + CPP2/QPP2); CPP base credit amount = base portion of contributions (4.95/5.95 of CPP, 5.4/6.4 of QPP). Federal tax = max(0, bracket tax - creditRate*(BPA + CEA + CPP base + EI [+ QPIP])); in QC subtract 16.5% abatement of basic federal tax. Provincial tax similarly with provincial BPA and creditRate, then ON surtax + health premium. Ignored: low-income reductions (ON/BC tax reductions, NS/NL low-income), Canada Workers Benefit, GST/HST and provincial refundable credits, federal 'top-up' credit, provincial CEA except Yukon. Mid-year changes (AB 8% bracket, PE/SK BPA, MB indexation freeze) are given as final full-year 2025 values, not T4127's prorated July payroll figures.",
+  "federal": {
+    "brackets": [
+      [
+        0,
+        0.145
+      ],
+      [
+        57375,
+        0.205
+      ],
+      [
+        114750,
+        0.26
+      ],
+      [
+        177882,
+        0.29
+      ],
+      [
+        253414,
+        0.33
+      ]
+    ],
+    "basicPersonalAmount": {
+      "max": 16129,
+      "min": 14538,
+      "phaseoutStart": 177882,
+      "phaseoutEnd": 253414
+    },
+    "creditRate": 0.145,
+    "canadaEmploymentAmount": 1471,
+    "quebecAbatement": 0.165
+  },
+  "payroll": {
+    "cpp": {
+      "rate": 0.0595,
+      "basicExemption": 3500,
+      "ympe": 71300,
+      "baseRate": 0.0495,
+      "firstAdditionalRate": 0.01,
+      "maxContribution": 4034.1,
+      "notes": "Employee rate 5.95% = 4.95% base (credited) + 1.00% first additional (deductible)."
+    },
+    "cpp2": {
+      "rate": 0.04,
+      "yampe": 81200,
+      "maxContribution": 396.0,
+      "notes": "On earnings between YMPE 71,300 and YAMPE 81,200; deductible."
+    },
+    "ei": {
+      "rate": 0.0164,
+      "maxInsurable": 65700,
+      "maxPremium": 1077.48
+    },
+    "qpp": {
+      "rate": 0.064,
+      "basicExemption": 3500,
+      "ympe": 71300,
+      "baseRate": 0.054,
+      "firstAdditionalRate": 0.01,
+      "maxContribution": 4339.2
+    },
+    "qpp2": {
+      "rate": 0.04,
+      "yampe": 81200,
+      "maxContribution": 396.0
+    },
+    "eiQuebec": {
+      "rate": 0.0131,
+      "maxInsurable": 65700,
+      "maxPremium": 860.67
+    },
+    "qpip": {
+      "rate": 0.00494,
+      "maxInsurable": 98000,
+      "maxPremium": 484.12
+    }
+  },
+  "provinces": {
+    "ON": {
+      "brackets": [
+        [
+          0,
+          0.0505
+        ],
+        [
+          52886,
+          0.0915
+        ],
+        [
+          105775,
+          0.1116
+        ],
+        [
+          150000,
+          0.1216
+        ],
+        [
+          220000,
+          0.1316
+        ]
+      ],
+      "basicPersonalAmount": 12747,
+      "creditRate": 0.0505,
+      "surtax": [
+        [
+          5710,
+          0.2
+        ],
+        [
+          7307,
+          0.36
+        ]
+      ],
+      "healthPremium": "Ontario Health Premium on taxable income: $0 up to $20,000; 6% of excess over $20,000 (max $300, reached at $25,000); $300 to $36,000; $300 + 6% of excess over $36,000 (max $450 at $38,500); $450 to $48,000; $450 + 25% of excess over $48,000 (max $600 at $48,600); $600 to $72,000; $600 + 25% of excess over $72,000 (max $750 at $72,600); $750 to $200,000; $750 + 25% of excess over $200,000 (max $900 at $200,600); $900 above.",
+      "healthPremiumSegments": [
+        [
+          20000,
+          0,
+          0.06,
+          300
+        ],
+        [
+          36000,
+          300,
+          0.06,
+          450
+        ],
+        [
+          48000,
+          450,
+          0.25,
+          600
+        ],
+        [
+          72000,
+          600,
+          0.25,
+          750
+        ],
+        [
+          200000,
+          750,
+          0.25,
+          900
+        ]
+      ],
+      "healthPremiumSegmentsFormat": "[incomeThreshold, base, rate, cap]: use the highest segment whose threshold < income; premium = min(base + rate*(income - threshold), cap); 0 if income <= 20,000.",
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. Surtax = 20% of (basic ON tax - 5,710) + 36% of (basic ON tax - 7,307), where basic ON tax is after non-refundable credits. Ontario Tax Reduction: basic amount $294 (x2 minus ON tax, floor 0) only matters at low incomes. Ontario Health Premium is added after surtax."
+    },
+    "QC": {
+      "brackets": [
+        [
+          0,
+          0.14
+        ],
+        [
+          53255,
+          0.19
+        ],
+        [
+          106495,
+          0.24
+        ],
+        [
+          129590,
+          0.2575
+        ]
+      ],
+      "basicPersonalAmount": 18571,
+      "creditRate": 0.14,
+      "notes": "Quebec provincial tax is administered by Revenu Quebec (TP-1), not CRA. Residents pay QPP (payroll.qpp/qpp2) instead of CPP, EI at the reduced Quebec rate (payroll.eiQuebec) and QPIP (payroll.qpip). Federal basic tax is reduced by the 16.5% Quebec abatement (federal.quebecAbatement). Quebec non-refundable credits at 14% (BPA 18,571). Quebec does not grant a provincial non-refundable credit for QPP/EI/QPIP contributions; instead employees get the 'deduction for employment income' (6% of employment income, max about $1,420-1,450 for 2025 - unverified) and QPP enhanced (first additional + QPP2) contributions are deductible. Federal CPP/EI credits apply: federal credit for base QPP portion (5.4/6.4 of QPP), EI (Quebec rate) and QPIP premiums at 14.5% federally. No Quebec health contribution (abolished 2017)."
+    },
+    "BC": {
+      "brackets": [
+        [
+          0,
+          0.0506
+        ],
+        [
+          49279,
+          0.077
+        ],
+        [
+          98560,
+          0.105
+        ],
+        [
+          113158,
+          0.1229
+        ],
+        [
+          137407,
+          0.147
+        ],
+        [
+          186306,
+          0.168
+        ],
+        [
+          259829,
+          0.205
+        ]
+      ],
+      "basicPersonalAmount": 12932,
+      "creditRate": 0.0506,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. BC Tax Reduction: up to $562 for 2025, reduced by 3.56% of net income over about $25,020 (threshold unverified; fully phased out ~ $40,800), so irrelevant for middle incomes."
+    },
+    "AB": {
+      "brackets": [
+        [
+          0,
+          0.08
+        ],
+        [
+          60000,
+          0.1
+        ],
+        [
+          151234,
+          0.12
+        ],
+        [
+          181481,
+          0.13
+        ],
+        [
+          241974,
+          0.14
+        ],
+        [
+          362961,
+          0.15
+        ]
+      ],
+      "basicPersonalAmount": 22323,
+      "creditRate": 0.08,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. New 8% bracket on the first $60,000 enacted in 2025 and effective for the full 2025 tax year (payroll prorated it as 6% for Jul-Dec to catch up). Non-refundable credits are at 8%; the new Alberta Supplemental Tax Credit tops credits back up to 10% for the portion of total credit amounts exceeding $60,000 (i.e. extra = max(0, credits*0.08 - 4,800) * 0.02/0.08) - irrelevant for a single employee with just BPA + CPP/EI."
+    },
+    "SK": {
+      "brackets": [
+        [
+          0,
+          0.105
+        ],
+        [
+          53463,
+          0.125
+        ],
+        [
+          152750,
+          0.145
+        ]
+      ],
+      "basicPersonalAmount": 19491,
+      "creditRate": 0.105,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. BPA raised from 18,491 to 19,491 for 2025 (Saskatchewan Affordability Act, +$500/yr planned through 2028 on top of indexing). Payroll used a prorated 19,991 for Jul-Dec; 19,491 is the full-year amount."
+    },
+    "MB": {
+      "brackets": [
+        [
+          0,
+          0.108
+        ],
+        [
+          47000,
+          0.1275
+        ],
+        [
+          100000,
+          0.174
+        ]
+      ],
+      "basicPersonalAmount": 15780,
+      "creditRate": 0.108,
+      "bpaPhaseout": {
+        "start": 200000,
+        "end": 400000
+      },
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. Manitoba Budget 2025 froze bracket thresholds and BPA at 2024 levels (not indexed) - per T4127 July 2025 (47,000 / 100,000, BPA 15,780). NOTE: CRA's 'last year tax rates (2025)' page lists 47,564 / 101,200 (indexed values); T4127/Budget values used here. BPA phases out for net income between $200,000 and $400,000 (to $0)."
+    },
+    "NB": {
+      "brackets": [
+        [
+          0,
+          0.094
+        ],
+        [
+          51306,
+          0.14
+        ],
+        [
+          102614,
+          0.16
+        ],
+        [
+          190060,
+          0.195
+        ]
+      ],
+      "basicPersonalAmount": 13396,
+      "creditRate": 0.094,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount."
+    },
+    "NS": {
+      "brackets": [
+        [
+          0,
+          0.0879
+        ],
+        [
+          30507,
+          0.1495
+        ],
+        [
+          61015,
+          0.1667
+        ],
+        [
+          95883,
+          0.175
+        ],
+        [
+          154650,
+          0.21
+        ]
+      ],
+      "basicPersonalAmount": 11744,
+      "creditRate": 0.0879,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. Brackets indexed starting 2025. BPA is a flat 11,744 for 2025 (the old income-tested extra $3,000 'BPANS' formula was eliminated)."
+    },
+    "PE": {
+      "brackets": [
+        [
+          0,
+          0.095
+        ],
+        [
+          33328,
+          0.1347
+        ],
+        [
+          64656,
+          0.166
+        ],
+        [
+          105000,
+          0.1762
+        ],
+        [
+          140000,
+          0.19
+        ]
+      ],
+      "basicPersonalAmount": 14650,
+      "creditRate": 0.095,
+      "surtax": [],
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. BPA increased from 14,250 to 14,650 effective Jan 1, 2025 (April 2025 budget; payroll prorated 15,050 for Jul-Dec). PEI surtax (10% of PE tax over $12,500) was eliminated starting 2024 - no surtax for 2025."
+    },
+    "NL": {
+      "brackets": [
+        [
+          0,
+          0.087
+        ],
+        [
+          44192,
+          0.145
+        ],
+        [
+          88382,
+          0.158
+        ],
+        [
+          157792,
+          0.178
+        ],
+        [
+          220910,
+          0.198
+        ],
+        [
+          282214,
+          0.208
+        ],
+        [
+          564429,
+          0.213
+        ],
+        [
+          1128858,
+          0.218
+        ]
+      ],
+      "basicPersonalAmount": 11067,
+      "creditRate": 0.087,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount."
+    },
+    "YT": {
+      "brackets": [
+        [
+          0,
+          0.064
+        ],
+        [
+          57375,
+          0.09
+        ],
+        [
+          114750,
+          0.109
+        ],
+        [
+          177882,
+          0.128
+        ],
+        [
+          500000,
+          0.15
+        ]
+      ],
+      "basicPersonalAmount": 16129,
+      "creditRate": 0.064,
+      "bpaFollowsFederal": true,
+      "canadaEmploymentAmount": 1471,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount. Yukon BPA is harmonized with the federal BPA including its phase-out: 16,129 max, reduced linearly to 14,538 for net income between 177,882 and 253,414 (same as federal.basicPersonalAmount). Yukon also has a Canada Employment Amount of 1,471 credited at 6.4%."
+    },
+    "NT": {
+      "brackets": [
+        [
+          0,
+          0.059
+        ],
+        [
+          51964,
+          0.086
+        ],
+        [
+          103930,
+          0.122
+        ],
+        [
+          168967,
+          0.1405
+        ]
+      ],
+      "basicPersonalAmount": 17842,
+      "creditRate": 0.059,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount."
+    },
+    "NU": {
+      "brackets": [
+        [
+          0,
+          0.04
+        ],
+        [
+          54707,
+          0.07
+        ],
+        [
+          109413,
+          0.09
+        ],
+        [
+          177881,
+          0.115
+        ]
+      ],
+      "basicPersonalAmount": 19274,
+      "creditRate": 0.04,
+      "notes": "Provincial non-refundable credits (BPA, CPP base-contribution credit, EI premium credit) are computed at creditRate (lowest provincial rate). CPP first/second enhanced contributions are deducted from income (not credited). No provincial Canada Employment Amount."
+    }
+  }
+}
