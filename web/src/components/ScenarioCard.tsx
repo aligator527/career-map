@@ -126,7 +126,7 @@ export function ScenarioCard({ env, a, b, onChangeB }: { env: Env; a: Profile; b
       </div>
 
       {fa && fb ? (
-        <div className="table-wrap">
+        <div className="table-wrap" tabIndex={0} role="region" aria-label={t.scenarioTitle}>
           <table className="data scenario-table">
             <thead>
               <tr><th></th><th>{t.scenarioA}</th><th>{t.scenarioB}</th><th>{t.scenarioDiff}</th></tr>

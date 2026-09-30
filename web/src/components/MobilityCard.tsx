@@ -133,7 +133,7 @@ export function MobilityCard({ env, profile }: { env: Env; profile: Profile }) {
               {current && band && Object.keys(current.pay).length > 0 && (
                 <>
                   <h4>{t.rankPayTitle(ageLabel(band, lang))}</h4>
-                  <div className="table-wrap">
+                  <div className="table-wrap" tabIndex={0}>
                     <table className="data">
                       <tbody>
                         {RANKS.filter((r) => current.pay[r]).map((r) => (

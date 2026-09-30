@@ -113,7 +113,7 @@ export function RangeRows({ rows, currency, lang, t, income }: Props) {
 export function RangeTable({ rows, currency, lang, t }: Omit<Props, 'income'>) {
   const f = (v: number) => formatMoney(v, currency, lang)
   return (
-    <div className="table-wrap">
+    <div className="table-wrap" tabIndex={0}>
       <table className="data">
         <thead>
           <tr>
