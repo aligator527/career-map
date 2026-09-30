@@ -1,51 +1,192 @@
-{"_topic": "relocation",
+{
+ "_topic": "relocation",
  "_method": "reddit.com cannot be fetched or searched directly, so threads were read through the redlib mirror redlib.groet-infra.nl (subreddit search plus full thread pages) and reddit.sentinel-team.org snapshots. Only claims stated independently by at least 3 distinct users across at least 2 threads dated 2021 or later are kept. Notes are paraphrases. Dates come from mirror timestamps; relative ages were converted as of 2026-10. PARTIAL: only the cross-country insights are included; the per-country research (DE/NL/UK/US/CA/JP) was still running when this file was written.",
  "insights": [
-  {"id": "reloc_junior_sponsorship_rare",
+  {
+   "id": "reloc_junior_sponsorship_rare",
    "topic": "visa",
-   "countries": ["DE", "NL", "UK", "CA"],
-   "occupation": {"US": "151252", "UK": "2134", "DE": "MOC2", "CA": "N07", "JP": "J012"},
-   "claim": {"ja": "2025〜2026年の時点では、海外在住のエントリーレベル・ジュニア人材を企業がビザスポンサーして採用することはほぼない。現実的な経路は、現地での大学院進学や、数年の経験を積んでからの社内転勤などである。",
-             "en": "As of 2025-2026, employers almost never sponsor visas for entry-level or junior candidates hired from abroad. Realistic routes are studying locally or an intra-company transfer after gaining several years of experience."},
+   "countries": [
+    "DE",
+    "NL",
+    "UK",
+    "CA"
+   ],
+   "occupation": {
+    "US": "151252",
+    "UK": "2134",
+    "DE": "MOC2",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "2025〜2026年の時点では、海外在住のエントリーレベル・ジュニア人材を企業がビザスポンサーして採用することはほぼない。現実的な経路は、現地での大学院進学や、数年の経験を積んでからの社内転勤などである。",
+    "en": "As of 2025-2026, employers almost never sponsor visas for entry-level or junior candidates hired from abroad. Realistic routes are studying locally or an intra-company transfer after gaining several years of experience."
+   },
    "quantity": null,
    "sources": [
-    {"url": "https://www.reddit.com/r/IWantOut/comments/1vxicx6/iwantout_24f_dataml_egypt_ca_ausnz_ukire_nl/", "subreddit": "r/IWantOut", "user": "u/Dear-Response-7218", "date": "2026-08", "note": "Says entry-level sponsorship is basically impossible in any field; suggests study or a transfer after years of experience."},
-    {"url": "https://www.reddit.com/r/IWantOut/comments/1wqvsuu/iwantout_29m_data_entry_operator_pakistan_canada/", "subreddit": "r/IWantOut", "user": "u/bbbberlin", "date": "2026-09", "note": "Employers must justify a foreign hire over locals, which is hard at entry level; get experience or study first."},
-    {"url": "https://www.reddit.com/r/IWantOut/comments/1wqvsuu/iwantout_29m_data_entry_operator_pakistan_canada/", "subreddit": "r/IWantOut", "user": "u/TONAFOONON", "date": "2026-09", "note": "A job offer with a work permit is unrealistic in the current Canadian market."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/", "subreddit": "r/cscareerquestionsEU", "user": "u/Prophetoflost", "date": "2026-09", "note": "At about 2.5 years' experience, expect visa help at most; full support needs 10+ years of niche expertise."}
+    {
+     "url": "https://www.reddit.com/r/IWantOut/comments/1vxicx6/iwantout_24f_dataml_egypt_ca_ausnz_ukire_nl/",
+     "subreddit": "r/IWantOut",
+     "date": "2026-08",
+     "note": "Says entry-level sponsorship is basically impossible in any field; suggests study or a transfer after years of experience.",
+     "userHash": "aaace68db3f2"
+    },
+    {
+     "url": "https://www.reddit.com/r/IWantOut/comments/1wqvsuu/iwantout_29m_data_entry_operator_pakistan_canada/",
+     "subreddit": "r/IWantOut",
+     "date": "2026-09",
+     "note": "Employers must justify a foreign hire over locals, which is hard at entry level; get experience or study first.",
+     "userHash": "0d13f0ca38b1"
+    },
+    {
+     "url": "https://www.reddit.com/r/IWantOut/comments/1wqvsuu/iwantout_29m_data_entry_operator_pakistan_canada/",
+     "subreddit": "r/IWantOut",
+     "date": "2026-09",
+     "note": "A job offer with a work permit is unrealistic in the current Canadian market.",
+     "userHash": "5a924e8729c8"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-09",
+     "note": "At about 2.5 years' experience, expect visa help at most; full support needs 10+ years of niche expertise.",
+     "userHash": "ecb93aa31b0c"
+    }
    ],
-   "caveats": {"ja": "主にIT・データ職の投稿に基づく。2021年のスレッドでは、スタートアップがジュニアをスポンサーした事例も報告されており、市況によって状況は変わる。",
-               "en": "Based mostly on IT and data roles. A 2021 thread reported startups sponsoring juniors, so this depends on the market cycle."}},
-  {"id": "reloc_packages_senior_only",
+   "caveats": {
+    "ja": "主にIT・データ職の投稿に基づく。2021年のスレッドでは、スタートアップがジュニアをスポンサーした事例も報告されており、市況によって状況は変わる。",
+    "en": "Based mostly on IT and data roles. A 2021 thread reported startups sponsoring juniors, so this depends on the market cycle."
+   }
+  },
+  {
+   "id": "reloc_packages_senior_only",
    "topic": "relocation",
-   "countries": ["NL", "SE", "DE"],
-   "occupation": {"US": "151252", "UK": "2134", "DE": "MOC2", "CA": "N07", "JP": "J012"},
-   "claim": {"ja": "欧州のテック職では、フルのリロケーションパッケージはもはや標準ではなく、主にシニア人材向けになっている。中堅以下では、ビザ支援と少額の一時金程度が一般的である。",
-             "en": "In European tech, full relocation packages are no longer standard and mostly go to senior hires. Mid-level and junior hires usually get visa support and at most a small one-off payment."},
+   "countries": [
+    "NL",
+    "SE",
+    "DE"
+   ],
+   "occupation": {
+    "US": "151252",
+    "UK": "2134",
+    "DE": "MOC2",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "欧州のテック職では、フルのリロケーションパッケージはもはや標準ではなく、主にシニア人材向けになっている。中堅以下では、ビザ支援と少額の一時金程度が一般的である。",
+    "en": "In European tech, full relocation packages are no longer standard and mostly go to senior hires. Mid-level and junior hires usually get visa support and at most a small one-off payment."
+   },
    "quantity": null,
    "sources": [
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/", "subreddit": "r/cscareerquestionsEU", "user": "u/RewindRobin", "date": "2026-09", "note": "Relocation packages are generally kept for senior roles."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/", "subreddit": "r/cscareerquestionsEU", "user": "u/Prophetoflost", "date": "2026-09", "note": "Expect visa help and maybe a small sign-on bonus rather than a full package."},
-    {"url": "https://www.reddit.com/r/IWantOut/comments/1sqs7pd/wewantout_34f_uiux_designer_39m_ios_dev_serbia/", "subreddit": "r/IWantOut", "user": "u/Pretend-Leg-6914", "date": "2026-04", "note": "Swedish employers stopped offering relocation packages roughly five or six years ago."},
-    {"url": "https://www.reddit.com/r/IWantOut/comments/1sqs7pd/wewantout_34f_uiux_designer_39m_ios_dev_serbia/", "subreddit": "r/IWantOut", "user": "u/No_Bumblebee_5250", "date": "2026-04", "note": "Relocation packages are no longer standard; most roles go to local or EU candidates."}
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-09",
+     "note": "Relocation packages are generally kept for senior roles.",
+     "userHash": "74554c560718"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-09",
+     "note": "Expect visa help and maybe a small sign-on bonus rather than a full package.",
+     "userHash": "ecb93aa31b0c"
+    },
+    {
+     "url": "https://www.reddit.com/r/IWantOut/comments/1sqs7pd/wewantout_34f_uiux_designer_39m_ios_dev_serbia/",
+     "subreddit": "r/IWantOut",
+     "date": "2026-04",
+     "note": "Swedish employers stopped offering relocation packages roughly five or six years ago.",
+     "userHash": "9fe1d3b25d5c"
+    },
+    {
+     "url": "https://www.reddit.com/r/IWantOut/comments/1sqs7pd/wewantout_34f_uiux_designer_39m_ios_dev_serbia/",
+     "subreddit": "r/IWantOut",
+     "date": "2026-04",
+     "note": "Relocation packages are no longer standard; most roles go to local or EU candidates.",
+     "userHash": "7c1ab0016caa"
+    }
    ],
-   "caveats": {"ja": "大手テック企業(FAANG等)は現在もパッケージを提供している例がある。金額についての証言は裏付けが不十分なため、数量は付けていない。",
-               "en": "Big tech (FAANG-type) firms still offer packages in some cases. Reported amounts were not corroborated, so no quantity is given."}},
-  {"id": "reloc_de_tech_job_search_duration",
+   "caveats": {
+    "ja": "大手テック企業(FAANG等)は現在もパッケージを提供している例がある。金額についての証言は裏付けが不十分なため、数量は付けていない。",
+    "en": "Big tech (FAANG-type) firms still offer packages in some cases. Reported amounts were not corroborated, so no quantity is given."
+   }
+  },
+  {
+   "id": "reloc_de_tech_job_search_duration",
    "topic": "job_market",
-   "countries": ["DE"],
-   "occupation": {"US": "151252", "UK": "2134", "DE": "MOC2", "CA": "N07", "JP": "J012"},
-   "claim": {"ja": "2026年時点のドイツのソフトウェア職探しは、おおむね3〜6か月かかり、応募数も数十〜数百件に及ぶことが多い。海外からの応募も含む。",
-             "en": "In 2026, a software job search in Germany, including applying from abroad, commonly takes about 3-6 months and dozens to hundreds of applications."},
-   "quantity": {"kind": "months", "currency": null, "low": 3, "high": 6, "ageBand": null, "experienceYears": null, "employer": "any"},
-   "sources": [
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/", "subreddit": "r/cscareerquestionsEU", "user": "u/The_Other_David", "date": "2026-07", "note": "Senior backend engineer applied from the US: about 99 applications over 6 months, one offer."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/", "subreddit": "r/cscareerquestionsEU", "user": "u/Haunting_County_7129", "date": "2026-07", "note": "Non-EU Blue Card holder: about 60 applications over 5 months, two offers."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/", "subreddit": "r/cscareerquestionsEU", "user": "u/darbyShaw96", "date": "2026-07", "note": "Around 5 months and 200 applications, with frequent ghosting."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/", "subreddit": "r/cscareerquestionsEU", "user": "u/Aware-Comfortable720", "date": "2026-07", "note": "Junior role found after about 3 months and roughly 250 applications."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v9r4wq/", "subreddit": "r/cscareerquestionsEU", "user": "u/xersuatance", "date": "2026-07", "note": "Senior engineer in the EU: 80 applications over about 3 months, two offers."},
-    {"url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/", "subreddit": "r/cscareerquestionsEU", "user": "u/qtechno", "date": "2026-09", "note": "Even an EU citizen with 10+ years' experience searched for more than six months."}
+   "countries": [
+    "DE"
    ],
-   "caveats": {"ja": "4件の証言は1スレッドに集中している。2つ目・3つ目のスレッドの投稿者はEU全般での求職で、ドイツに限定されない。自己申告のため、数週間から1年以上までのばらつきがある。",
-               "en": "Four of the sources are in one thread. The posters in the second and third threads searched EU-wide, not only in Germany. Reports are self-selected and range from a few weeks to over a year."}}
- ]}
+   "occupation": {
+    "US": "151252",
+    "UK": "2134",
+    "DE": "MOC2",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "2026年時点のドイツのソフトウェア職探しは、おおむね3〜6か月かかり、応募数も数十〜数百件に及ぶことが多い。海外からの応募も含む。",
+    "en": "In 2026, a software job search in Germany, including applying from abroad, commonly takes about 3-6 months and dozens to hundreds of applications."
+   },
+   "quantity": {
+    "kind": "months",
+    "currency": null,
+    "low": 3,
+    "high": 6,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-07",
+     "note": "Senior backend engineer applied from the US: about 99 applications over 6 months, one offer.",
+     "userHash": "baf99d307afa"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-07",
+     "note": "Non-EU Blue Card holder: about 60 applications over 5 months, two offers.",
+     "userHash": "1c2e8e5bd141"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-07",
+     "note": "Around 5 months and 200 applications, with frequent ghosting.",
+     "userHash": "bf7540506bf2"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-07",
+     "note": "Junior role found after about 3 months and roughly 250 applications.",
+     "userHash": "2d4bd0cd37c4"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v9r4wq/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-07",
+     "note": "Senior engineer in the EU: 80 applications over about 3 months, two offers.",
+     "userHash": "4d9114976301"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/question_regarding_companies_offering_relocation/",
+     "subreddit": "r/cscareerquestionsEU",
+     "date": "2026-09",
+     "note": "Even an EU citizen with 10+ years' experience searched for more than six months.",
+     "userHash": "e88c1226004e"
+    }
+   ],
+   "caveats": {
+    "ja": "4件の証言は1スレッドに集中している。2つ目・3つ目のスレッドの投稿者はEU全般での求職で、ドイツに限定されない。自己申告のため、数週間から1年以上までのばらつきがある。",
+    "en": "Four of the sources are in one thread. The posters in the second and third threads searched EU-wide, not only in Germany. Reports are self-selected and range from a few weeks to over a year."
+   }
+  }
+ ]
+}

@@ -1,0 +1,451 @@
+{
+ "_topic": "relocation_ca_jp",
+ "_access": "Reddit threads read via the redlib.groet-infra.nl mirror (reddit.com not reachable); paraphrases from page summaries",
+ "insights": [
+  {
+   "id": "ca-crs-500",
+   "topic": "visa",
+   "countries": [
+    "CA"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "エクスプレス・エントリーに雇用オファーは必須ではない。ただし、カナダでの就労・就学経験もフランス語もない海外在住者の場合、CRSが460〜480点程度では一般抽選で招待される見込みはほぼない。500点以上を目指すか、フランス語やカナダでの就学・就労で加点するのが現実的とされる。",
+    "en": "A job offer is not required for Express Entry, but a foreign applicant with no Canadian experience or French at ~460-480 CRS has little chance in general draws; users say aim for 500+ or add points via French or Canadian study/work."
+   },
+   "quantity": {
+    "kind": "points",
+    "currency": null,
+    "low": 500,
+    "high": null,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wrmrg7/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "869354216721",
+     "date": "2026-09",
+     "note": "No job offer needed, but 467 CRS isn't competitive; French speakers and healthcare are exceptions."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wrmrg7/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "a86d5e96ba31",
+     "date": "2026-09",
+     "note": "Aim for 500+; under 500 you need the French route; lose about 5 points yearly after 30."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wrmrg7/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "67e7dce120e3",
+     "date": "2026-09",
+     "note": "A job offer is not needed to submit an application."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wmvpjw/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "230fcf294f81",
+     "date": "2026-09",
+     "note": "Without Canadian education or work, ~481 CRS is weak and age points will soon drop."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wmvpjw/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "d8404cc9c3dd",
+     "date": "2026-09",
+     "note": "The provincial streams mentioned require Canadian work experience."
+    },
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1w2pjwo/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "dd25ca772a7b",
+     "date": "2026-08",
+     "note": "Recommends Canadian higher education or French to raise the immigration score."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1w55kme/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "de6baf0f9b77",
+     "date": "2026-09",
+     "note": "Stresses French at B2 minimum in all skills; job market currently difficult."
+    }
+   ],
+   "counterpoints": [],
+   "caveats": {
+    "ja": "カットオフは抽選ごと・カテゴリーごとに大きく変動し、フランス語・医療職・CEC向けなどのカテゴリー別抽選では条件が異なる。30歳以降は年齢点が毎年減る。",
+    "en": "Cutoffs vary by draw and category; French, healthcare and CEC category draws differ. Age points decline each year after 30."
+   }
+  },
+  {
+   "id": "ca-job-from-abroad-hard",
+   "topic": "job_market",
+   "countries": [
+    "CA"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "現在、海外からカナダの雇用オファーやLMIAによるスポンサーを得るのは非常に難しい。永住権を得て渡航した後も、カナダでの職歴がないと仕事探しに苦労するという声が多い。海外からの現実的な経路としては社内転勤が挙げられている。",
+    "en": "Getting a Canadian job offer or LMIA sponsorship from abroad is very hard now, and new PRs without Canadian work history struggle to find jobs; intra-company transfer is cited as the realistic route."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1tup2x6/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "3c437a5cdd14",
+     "date": "2026-06",
+     "note": "Private-sector roles expect Canadian work history regardless of status; bilingual federal jobs are the exception."
+    },
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1tup2x6/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "86c8b239b956",
+     "date": "2026-06",
+     "note": "Foreign credentials largely disregarded; expect to start from scratch amid a recession."
+    },
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1tup2x6/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "5a924e8729c8",
+     "date": "2026-06",
+     "note": "Financial services struggling; even entry-level job hunting will be difficult."
+    },
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1w3vlhs/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "5a924e8729c8",
+     "date": "2026-09",
+     "note": "LMIA sponsorship very unlikely when Canadians are available; suggests internal transfer or French."
+    },
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1w3vlhs/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "ed4d98c24596",
+     "date": "2026-09",
+     "note": "Calls a job from abroad at 43 nearly impossible; industry prefers junior graduates."
+    },
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1w3vlhs/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "0327e1c8a3c1",
+     "date": "2026-09",
+     "note": "Market far worse than five years ago."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1w55kme/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "67e7dce120e3",
+     "date": "2026-09",
+     "note": "Securing Canadian employment from abroad is pretty hard overall."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1w55kme/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "716c114f96d6",
+     "date": "2026-09",
+     "note": "Job hunting is hard even for people already in Canada."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1w55kme/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "2a6c1c8a8a4f",
+     "date": "2026-09",
+     "note": "Internal company transfers are the most viable path for overseas hires."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wmvpjw/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "230fcf294f81",
+     "date": "2026-09",
+     "note": "Tech market saturated, so employer sponsorship is unlikely."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1tup2x6/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "a204080faaf4",
+     "date": "2026-06",
+     "note": "Thinks foreign professionals have some advantages; bilingual candidates do better in Quebec."
+    }
+   ],
+   "caveats": {
+    "ja": "2026年の景気後退期の意見が中心で、業種や地域（特にケベック州やバイリンガル人材）によって状況は異なる。",
+    "en": "Mostly 2026 opinions during a downturn; varies by sector and region, especially Quebec and bilingual candidates."
+   }
+  },
+  {
+   "id": "ca-aor-to-ecopr-months",
+   "topic": "visa",
+   "countries": [
+    "CA"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "エクスプレス・エントリーの申請受理（AOR）から永住権確認（eCOPR）までは、最近の事例でおおむね3.5〜7か月。2026年1月のメガスレッドの集計では中央値は約189日だった。",
+    "en": "Recent Express Entry cases report about 3.5-7 months from AOR to eCOPR; a January 2026 megathread tally put the median at about 189 days."
+   },
+   "quantity": {
+    "kind": "months",
+    "currency": null,
+    "low": 3.5,
+    "high": 7,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/ImmigrationCanada/comments/1q6vljc/",
+     "subreddit": "ImmigrationCanada",
+     "userHash": "3002f4c52a71",
+     "date": "2026-01",
+     "note": "Megathread stats: median AOR to eCOPR about 189 days; portal 2 to eCOPR median 60 days."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wo70g9/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "fccd1063adbb",
+     "date": "2026-09",
+     "note": "CEC with spouse: ITA and AOR June 10, eCOPR Sept 22, about 3.5 months."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wo70g9/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "dc8f61752817",
+     "date": "2026-09",
+     "note": "CEC general: AOR June 1, approved Sept 18, about 3.5 months."
+    },
+    {
+     "url": "https://www.reddit.com/r/canadaexpressentry/comments/1wqe9j7/",
+     "subreddit": "canadaexpressentry",
+     "userHash": "10f270e85875",
+     "date": "2026-09",
+     "note": "CEC at CRS 514: ITA Mar 3, AOR May 2, eCOPR Sept 18."
+    }
+   ],
+   "counterpoints": [],
+   "caveats": {
+    "ja": "事例の多くはカナダ国内在住のCEC申請者。セキュリティチェックで2〜7か月以上延びる例や、エクスプレス・エントリー以外のPNPで578日かかった例もある。ITAから申請提出までの最大60日は含まない。",
+    "en": "Mostly inland CEC cases. Security checks can add 2-7+ months; a non-EE PNP case took 578 days. Excludes up to 60 days from ITA to submission."
+   }
+  },
+  {
+   "id": "jp-coe-processing-months",
+   "topic": "visa",
+   "countries": [
+    "JP"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "就労ビザの在留資格認定証明書（COE）の審査は、現在は2〜3か月以上かかることが多く、5〜14か月待つ例もある。以前よく言われた「30〜45日」という目安はもう当てはまらないとの声が多い。ただし4〜6週間で下りる人も一部いる。",
+    "en": "Work-visa COE processing now commonly takes 2-3+ months, sometimes 5-14 months; the old 30-45 day estimate is called outdated, though a minority still get it in 4-6 weeks."
+   },
+   "quantity": {
+    "kind": "months",
+    "currency": null,
+    "low": 2,
+    "high": 3,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1tbymgr/",
+     "subreddit": "movingtojapan",
+     "userHash": "9d88d76e500f",
+     "date": "2026-05",
+     "note": "The 30-45 day estimate is outdated; theirs took about 60 days."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1tbymgr/",
+     "subreddit": "movingtojapan",
+     "userHash": "b3c809fccf02",
+     "date": "2026-05",
+     "note": "Approved after 88 days; treat 90 days as the current minimum."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1tbymgr/",
+     "subreddit": "movingtojapan",
+     "userHash": "71865b6a650e",
+     "date": "2026-05",
+     "note": "Can take weeks or months with no way to expedite."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1tbymgr/",
+     "subreddit": "movingtojapan",
+     "userHash": "449bd542e7e0",
+     "date": "2026-05",
+     "note": "Waited 11 months for an intra-company transfer case, called exceptional."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1uvgkzw/",
+     "subreddit": "movingtojapan",
+     "userHash": "e1387f956da8",
+     "date": "2026-07",
+     "note": "Has been waiting 7 months for a COE."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1uvgkzw/",
+     "subreddit": "movingtojapan",
+     "userHash": "bbfcee4cfc0e",
+     "date": "2026-07",
+     "note": "Shinagawa had 60k+ pending in April; personally waited nearly 14 months."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1uvgkzw/",
+     "subreddit": "movingtojapan",
+     "userHash": "fa66efecca5f",
+     "date": "2026-07",
+     "note": "Applied November 5, still waiting 8 months later."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1wtgeo8/",
+     "subreddit": "movingtojapan",
+     "userHash": "33bebf05f3b8",
+     "date": "2026-09",
+     "note": "Employee and dependent COEs arrived together after about 5 months."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1wtgeo8/",
+     "subreddit": "movingtojapan",
+     "userHash": "f6a483fdbc39",
+     "date": "2026-09",
+     "note": "Typical processing spans 1-3 months."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1uvgkzw/",
+     "subreddit": "movingtojapan",
+     "userHash": "3f11a9e84dbb",
+     "date": "2026-07",
+     "note": "Got an Engineer/Specialist in Humanities COE in 6 weeks with a 5-year visa."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1sj8d7w/",
+     "subreddit": "movingtojapan",
+     "userHash": "131420e0d1d4",
+     "date": "2026-04",
+     "note": "COE approved for a small software company job at N5 level."
+    }
+   ],
+   "caveats": {
+    "ja": "審査期間は地方出入国在留管理局（特に東京・品川の滞留）、雇用主の区分（カテゴリー1〜4）、家族帯同の有無によって大きく異なる。",
+    "en": "Varies strongly by immigration bureau (Shinagawa backlog), employer category 1-4, and whether dependents apply."
+   }
+  },
+  {
+   "id": "jp-english-only-swe-hard",
+   "topic": "language",
+   "countries": [
+    "JP"
+   ],
+   "occupation": {
+    "JP": "J012",
+    "US": "151252"
+   },
+   "claim": {
+    "ja": "英語のみ、または海外やワーキングホリデーから東京でソフトウェアエンジニア職を探す外国人にとって、現在の市場は非常に厳しい。特に経験3年未満では、N2〜N1レベルの日本語が採否を分けることが増えているという声が多い。",
+    "en": "Foreign software engineers who are English-only, or job-hunting from abroad or on a working holiday, face a very tough Tokyo market; N2-N1 Japanese increasingly decides outcomes, especially under ~3 years' experience."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1win9wi/",
+     "subreddit": "movingtojapan",
+     "userHash": "ddd800175714",
+     "date": "2026-09",
+     "note": "12+ months of fruitless search with 17+ years' experience; N2 Japanese is the biggest blocker."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1win9wi/",
+     "subreddit": "movingtojapan",
+     "userHash": "df8a18f15139",
+     "date": "2026-09",
+     "note": "24+ months of unsuccessful search as an English-only engineer with 14+ years' experience."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1win9wi/",
+     "subreddit": "movingtojapan",
+     "userHash": "435c7031b228",
+     "date": "2026-09",
+     "note": "Basic Japanese is uncompetitive; English-main roles are a tiny fraction of openings."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1win9wi/",
+     "subreddit": "movingtojapan",
+     "userHash": "dc5f81664ab2",
+     "date": "2026-09",
+     "note": "Odds are slim without language skills or existing residence in Japan."
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1pctg0t/",
+     "subreddit": "japanlife",
+     "userHash": "51aca026afa8",
+     "date": "2025-12",
+     "note": "Many postings require N1; top firms skip candidates under 3 years' experience."
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1pctg0t/",
+     "subreddit": "japanlife",
+     "userHash": "2c91b9253c23",
+     "date": "2025-12",
+     "note": "N1 increasingly required outright; foreign juniors lose out to Japanese new grads."
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1pctg0t/",
+     "subreddit": "japanlife",
+     "userHash": "b0a27ddcae52",
+     "date": "2025-12",
+     "note": "Job boards dismiss candidates with under 5 years' experience."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1ej4iy4/",
+     "subreddit": "movingtojapan",
+     "userHash": "e4e996707688",
+     "date": "2024-08",
+     "note": "Competition fierce; companies find hiring locally easier than sponsoring visas."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1ej4iy4/",
+     "subreddit": "movingtojapan",
+     "userHash": "d23e9f629744",
+     "date": "2024-08",
+     "note": "No real tech shortage; hiring freezes and rising experience requirements."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1ej4iy4/",
+     "subreddit": "movingtojapan",
+     "userHash": "8069282d8342",
+     "date": "2024-08",
+     "note": "Experienced engineers don't need Japanese; a Japanese requirement signals lower-quality roles."
+    },
+    {
+     "url": "https://www.reddit.com/r/movingtojapan/comments/1ej4iy4/",
+     "subreddit": "movingtojapan",
+     "userHash": "b0462350551b",
+     "date": "2024-08",
+     "note": "Japanese is unnecessary for software developers."
+    },
+    {
+     "url": "https://www.reddit.com/r/japanlife/comments/1pctg0t/",
+     "subreddit": "japanlife",
+     "userHash": "330844d51e08",
+     "date": "2025-12",
+     "note": "Technical mastery and interview practice matter more than perfect Japanese."
+    }
+   ],
+   "caveats": {
+    "ja": "経験豊富なエンジニアや外資系・英語環境の企業（メルカリ、楽天など）では日本語不要とする反対意見もある。ネットワーキングや紹介の方が応募より有効との声も多い。",
+    "en": "Dissent says experienced engineers at English-friendly firms need no Japanese; networking and referrals reportedly beat cold applications."
+   }
+  }
+ ]
+}

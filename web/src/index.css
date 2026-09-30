@@ -326,3 +326,8 @@ button.primary:disabled { opacity: 0.5; cursor: not-allowed; }
 .delta { font-weight: 600; }
 .delta.up { color: var(--accent-ink); }
 .delta.down { color: var(--div-down-strong); }
+
+.badge.verdict-consistent { border-color: var(--div-up-strong); color: var(--accent-ink); font-weight: 600; }
+.badge.verdict-partly { border-color: var(--axis); }
+.badge.verdict-inconsistent { border-color: var(--div-down-strong); color: var(--div-down-strong); font-weight: 600; }
+.insights .effect-source a + a { margin-left: 0; }

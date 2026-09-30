@@ -1,0 +1,512 @@
+{
+ "_topic": "relocation_us",
+ "_access": "Reddit threads read via the redlib.groet-infra.nl mirror (reddit.com not reachable); paraphrases from page summaries",
+ "insights": [
+  {
+   "id": "us-h1b-premium-processing",
+   "topic": "visa",
+   "countries": [
+    "US"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "H-1Bのプレミアム処理（I-129）は、多くの場合7〜15営業日ほどで承認される。ただし2026年6〜8月には15営業日を超えて待たされるケースが相次いだ。",
+    "en": "H-1B premium processing (I-129) is usually approved in about 7-15 business days, but in June-August 2026 many cases ran past 15 business days."
+   },
+   "quantity": {
+    "kind": "business_days",
+    "currency": null,
+    "low": 7,
+    "high": 15,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1r9we10/",
+     "subreddit": "h1b",
+     "userHash": "388e5f912517",
+     "date": "2026-02",
+     "note": "PP clock started Feb 5, approved Feb 13 at Texas, about 7 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1r9we10/",
+     "subreddit": "h1b",
+     "userHash": "cea79004b87c",
+     "date": "2026-03",
+     "note": "Clock started Feb 13, approved Feb 26 at Vermont, about 10 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1r9we10/",
+     "subreddit": "h1b",
+     "userHash": "b8808c0d2aea",
+     "date": "2026-02",
+     "note": "Clock started Feb 9, approved Feb 24 at Texas, about 12 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1r9we10/",
+     "subreddit": "h1b",
+     "userHash": "e224fa719524",
+     "date": "2026-03",
+     "note": "Clock started Feb 13, approved Mar 5 at Vermont, 15 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1r9we10/",
+     "subreddit": "h1b",
+     "userHash": "578ad4bb24e7",
+     "date": "2026-02",
+     "note": "OP: transfer approved after 15 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1viy7ak/",
+     "subreddit": "h1b",
+     "userHash": "60a5c2780b6e",
+     "date": "2026-08",
+     "note": "Texas receipt Jul 27, approved Aug 7."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1viy7ak/",
+     "subreddit": "h1b",
+     "userHash": "78f7ca3cae62",
+     "date": "2026-08",
+     "note": "Extension filed Jul 1, approved Jul 6 at Vermont."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1viy7ak/",
+     "subreddit": "h1b",
+     "userHash": "6ae9834631e0",
+     "date": "2026-08",
+     "note": "Change of employer at Nebraska approved in under 15 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1viy7ak/",
+     "subreddit": "h1b",
+     "userHash": "e337c429e675",
+     "date": "2026-08",
+     "note": "Vermont case approved in 9 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v4khtn/",
+     "subreddit": "h1b",
+     "userHash": "5790ec34ca23",
+     "date": "2026-07",
+     "note": "Extension filed Jul 4, approved Jul 22, about 13 business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v4khtn/",
+     "subreddit": "h1b",
+     "userHash": "e5359466dd8f",
+     "date": "2026-07",
+     "note": "Paralegal: USCIS using full 15 business days plus 2-3 extra; notices lag weeks."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v4khtn/",
+     "subreddit": "h1b",
+     "userHash": "13055791adcc",
+     "date": "2026-07",
+     "note": "OP: transfer filed Jun 29 at Vermont, still pending after 17+ business days."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1viy7ak/",
+     "subreddit": "h1b",
+     "userHash": "242dbb4f2ef9",
+     "date": "2026-08",
+     "note": "Premium filed Jun 25, still no decision or RFE after 50+ days."
+    }
+   ],
+   "caveats": {
+    "ja": "15営業日はUSCISが何らかの対応（承認・RFE・却下）をする期限であり、承認を保証するものではない。RFEが出ると期限は止まる。報告は自己申告で、問題のあったケースほど投稿されやすい。",
+    "en": "The 15 business days is a deadline for any USCIS action (approval, RFE or denial), not a guaranteed approval; an RFE stops the clock. Reports are self-selected, and problem cases are more likely to be posted."
+   }
+  },
+  {
+   "id": "us-h1b-layoff-b2-bridge-risky",
+   "topic": "visa",
+   "countries": [
+    "US"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "H-1Bで解雇された後、60日の猶予期間中にB-2（観光）へ資格変更してつなぐ方法は、2026年時点ではリスクが高いとされている。H-4・F-1・F-2への変更や帰国を勧める声が多い。",
+    "en": "After an H-1B layoff, bridging the 60-day grace period by changing to B-2 visitor status is seen as high-risk in 2026; users recommend H-4, F-1/F-2 or leaving instead."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1snahuc/",
+     "subreddit": "h1b",
+     "userHash": "4922f04a7460",
+     "date": "2026-04",
+     "note": "B-2 is very high risk; USCIS scrutinizes job-search intent."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1snahuc/",
+     "subreddit": "h1b",
+     "userHash": "28bbf36abae6",
+     "date": "2026-04",
+     "note": "Don't job-hunt on B-2; used H-4 instead, then quick premium H-1B transfer."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1snahuc/",
+     "subreddit": "h1b",
+     "userHash": "99cf34af251a",
+     "date": "2026-04",
+     "note": "Advises against B-2; file F-2 and H-4 instead."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1tdg4lv/",
+     "subreddit": "h1b",
+     "userHash": "d42863b96191",
+     "date": "2026-05",
+     "note": "B-2 approvals slow, employers won't hire from B-2, denials up; suggests H-4 or F-1."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1tdg4lv/",
+     "subreddit": "h1b",
+     "userHash": "5659fb4c0e8c",
+     "date": "2026-05",
+     "note": "B-2 is unsafe; need an alternative plan."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1s1ln0i/",
+     "subreddit": "h1b",
+     "userHash": "454178ae4da8",
+     "date": "2026-03",
+     "note": "B-2 to pause the clock worked under the prior administration but largely fails now."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1s1ln0i/",
+     "subreddit": "h1b",
+     "userHash": "d1ff6bf89bf1",
+     "date": "2026-03",
+     "note": "OP: B-2 and later H-1B change of status both rejected; told to consular process."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1snahuc/",
+     "subreddit": "h1b",
+     "userHash": "35b09c825b24",
+     "date": "2026-04",
+     "note": "Used B-2 for a six-month break, then returned to H-1B after an offer."
+    }
+   ],
+   "caveats": {
+    "ja": "B-2への変更自体は合法だが、審査は2025年以降厳しくなったと報告されている。個別の状況によって判断が変わるため、移民弁護士への相談が推奨されている。",
+    "en": "Changing to B-2 is legal, but scrutiny reportedly tightened from 2025; outcomes depend on individual facts and users recommend consulting an immigration attorney."
+   }
+  },
+  {
+   "id": "us-h1b-fy2027-lottery-odds",
+   "topic": "visa",
+   "countries": [
+    "US"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "FY2027のH-1B抽選では、10万ドル手数料の影響で登録数が約34.4万件から約21.2万件に減り、当選率が例年より高くなった。自己申告データでは約61%が当選した。",
+    "en": "In the FY2027 H-1B lottery, registrations fell from about 344k to about 212k after the $100k fee, and selection odds were higher than usual; self-reports show about 61% selected."
+   },
+   "quantity": {
+    "kind": "share",
+    "currency": null,
+    "low": 0.58,
+    "high": 0.64,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1swho1h/",
+     "subreddit": "h1b",
+     "userHash": "2f67872d2db5",
+     "date": "2026-04",
+     "note": "About 5,500 self-reports: roughly 61% selected; 58-64% across wage levels."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1s92lmq/",
+     "subreddit": "h1b",
+     "userHash": "77b8a5fb9aef",
+     "date": "2026-03",
+     "note": "Fragomen said selection rate was higher than last year due to the $100k rule."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1s92lmq/",
+     "subreddit": "h1b",
+     "userHash": "2fdd501693a4",
+     "date": "2026-04",
+     "note": "Fee deterred consular-route applicants, so fewer registrations and higher selection rate."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1tjytw5/",
+     "subreddit": "h1b",
+     "userHash": "cc2135ac6d02",
+     "date": "2026-05",
+     "note": "USCIS: 211,600 FY2027 registrations vs 343,981 in FY2026."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1rmx5xc/",
+     "subreddit": "h1b",
+     "userHash": "4764cb208911",
+     "date": "2026-03",
+     "note": "Predicted the $100k fee would eliminate many registrants."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1rmx5xc/",
+     "subreddit": "h1b",
+     "userHash": "808b4ddd1ae2",
+     "date": "2026-03",
+     "note": "Estimated about 75% of last year's entries as realistic due to fee changes."
+    }
+   ],
+   "counterpoints": [],
+   "caveats": {
+    "ja": "61%は自己申告による集計で、正式な当選率ではなく偏りがある可能性がある。FY2027からは賃金レベルで重み付けした抽選が導入されている。2026年6月に手数料が裁判所で差し止められたため、FY2028以降の倍率は変わる可能性がある。",
+    "en": "The 61% figure is a self-reported tally, not the official rate, and may be biased; FY2027 used wage-weighted selection. The fee was blocked by a court in June 2026, so odds for FY2028+ may differ."
+   }
+  },
+  {
+   "id": "us-h1b-rfe-outcomes",
+   "topic": "visa",
+   "countries": [
+    "US"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "2026年半ばはH-1BのRFE（追加証拠要求）が多く出たが、大半は回答後に承認されている。USCISが回答を受け取ってから承認まではおおむね1〜2週間である。",
+    "en": "H-1B RFEs were frequent in mid-2026, but most ended in approval, typically about 1-2 weeks after USCIS received the response."
+   },
+   "quantity": {
+    "kind": "business_days",
+    "currency": null,
+    "low": 5,
+    "high": 14,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v5gtt8/",
+     "subreddit": "h1b",
+     "userHash": "8f6532e1575d",
+     "date": "2026-07",
+     "note": "OP: specialty-occupation RFE response received Jul 16, approved Jul 28."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v5gtt8/",
+     "subreddit": "h1b",
+     "userHash": "2fbc6e324ab2",
+     "date": "2026-07",
+     "note": "Cap-exemption RFE; response Jul 6, approved Jul 23."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v5gtt8/",
+     "subreddit": "h1b",
+     "userHash": "47b97820b1f3",
+     "date": "2026-07",
+     "note": "Prior-employment RFE; response Jul 20, approved Jul 28."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v5gtt8/",
+     "subreddit": "h1b",
+     "userHash": "5675c11623a9",
+     "date": "2026-08",
+     "note": "Maintenance-of-status RFE; response mailed Aug 14, approved Aug 25."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v5gtt8/",
+     "subreddit": "h1b",
+     "userHash": "011e7101e607",
+     "date": "2026-08",
+     "note": "Specialty-occupation RFE; response mailed Aug 21, approved Sep 2."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v21uun/",
+     "subreddit": "h1b",
+     "userHash": "f6733dc49b58",
+     "date": "2026-07",
+     "note": "Their attorney says denials after RFE are rare."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v21uun/",
+     "subreddit": "h1b",
+     "userHash": "7a0a7b3300b7",
+     "date": "2026-07",
+     "note": "Statistics favor approval; prepare documents calmly."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v21uun/",
+     "subreddit": "h1b",
+     "userHash": "a359a9dd606c",
+     "date": "2026-08",
+     "note": "Got RFE around day 17; approved Aug 29 after responding."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1v21uun/",
+     "subreddit": "h1b",
+     "userHash": "adc54c57b6ec",
+     "date": "2026-07",
+     "note": "Claims about 1 in 5 RFE cases end in denial."
+    }
+   ],
+   "caveats": {
+    "ja": "RFEの具体的な発生率を示すデータはなく、スレッドには承認報告が集まりやすい。日数は受領からの暦日ベースの報告が多く、郵送のRFE通知が届くまでに1週間以上かかることもある。",
+    "en": "No hard RFE rate was found, and approval reports cluster in these threads. Durations are mostly reported in calendar days from receipt; mailed RFE notices can take a week or more to arrive."
+   }
+  },
+  {
+   "id": "us-h1b-fee-employer-reluctance",
+   "topic": "job_market",
+   "countries": [
+    "US"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "2025年9月の10万ドル手数料の導入以降、米国企業はH-1Bスポンサーに慎重になっている。規則上は対象外の国内での資格変更でも、人事部がリスクを理由に拒否する例が報告されている。",
+    "en": "Since the September 2025 $100k fee, US employers have become more cautious about H-1B sponsorship, with HR sometimes refusing even in-US changes of status the rule does not target."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1oddq3x/",
+     "subreddit": "h1b",
+     "userHash": "4ca42540b6ea",
+     "date": "2025-10",
+     "note": "Companies see a hostile administration as business risk and limit H-1B exposure."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1oddq3x/",
+     "subreddit": "h1b",
+     "userHash": "cba41d6a68ff",
+     "date": "2025-10",
+     "note": "Even after USCIS clarification, corporate risk-aversion drives sponsorship decisions."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1oddq3x/",
+     "subreddit": "h1b",
+     "userHash": "5b329e21a968",
+     "date": "2025-10",
+     "note": "Says Walmart and Goldman Sachs stopped hiring visa workers."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1sb3r4b/",
+     "subreddit": "h1b",
+     "userHash": "39ec357e8b2f",
+     "date": "2026-04",
+     "note": "OP: university HR refused an in-US change of status, fearing the $100k fee."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1sb3r4b/",
+     "subreddit": "h1b",
+     "userHash": "2fdd501693a4",
+     "date": "2026-04",
+     "note": "Risk-averse HR now blocks sponsorships even when hiring teams want them."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1vc402v/",
+     "subreddit": "h1b",
+     "userHash": "21f886c5bca1",
+     "date": "2026-08",
+     "note": "Many firms avoid sponsoring unless the candidate clearly beats visa-free options."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1sb3r4b/",
+     "subreddit": "h1b",
+     "userHash": "580f35236e92",
+     "date": "2026-04",
+     "note": "Actual fee risk for in-US change of status is minimal; HR may be using it as a soft no."
+    }
+   ],
+   "caveats": {
+    "ja": "2026年6月に連邦地裁が手数料を差し止めたが、企業の慎重姿勢がすぐに戻るかは不明である。企業名を挙げた報告はニュース記事の引用で、個別に確認したものではない。",
+    "en": "A federal court blocked the fee in June 2026; whether employer caution eases is unclear. Company names cited come from news articles and were not independently verified."
+   }
+  },
+  {
+   "id": "us-h1b-fee-scope",
+   "topic": "visa",
+   "countries": [
+    "US"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "10万ドル手数料の対象は、2025年9月21日以降に申請された、米国外にいる人のための新規H-1B申請である。既存のH-1B保持者や延長は対象外と理解されていた。",
+    "en": "The $100k fee targets new H-1B petitions filed after September 21, 2025 for beneficiaries outside the US; existing holders and extensions were understood to be exempt."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1nmh7iu/",
+     "subreddit": "h1b",
+     "userHash": "6b04b1f07453",
+     "date": "2025-09",
+     "note": "Company lawyers: only new-employment petitions after Sep 21 pay; current holders unaffected."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1nmh7iu/",
+     "subreddit": "h1b",
+     "userHash": "fcd3b4caf7ff",
+     "date": "2025-09",
+     "note": "Only new cap-subject petitions from outside the US affected; renewals exempt."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1nmh7iu/",
+     "subreddit": "h1b",
+     "userHash": "5513e558ee89",
+     "date": "2025-09",
+     "note": "Targets new petitions for workers abroad; in-US status changes unaffected."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1sb3r4b/",
+     "subreddit": "h1b",
+     "userHash": "4aa200868447",
+     "date": "2026-04",
+     "note": "USCIS clarified the fee is for new beneficiaries outside the US, not change of status."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1s1ln0i/",
+     "subreddit": "h1b",
+     "userHash": "bb4aee652e31",
+     "date": "2026-03",
+     "note": "Fee applies only to petitions approved after Sep 21, 2025."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1nmh7iu/",
+     "subreddit": "h1b",
+     "userHash": "40fed349c2ae",
+     "date": "2025-09",
+     "note": "Unclear whether employer transfers count as new petitions."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1nmh7iu/",
+     "subreddit": "h1b",
+     "userHash": "89f98b7094b3",
+     "date": "2025-09",
+     "note": "Change-of-employer status unclear pending guidance."
+    },
+    {
+     "url": "https://www.reddit.com/r/h1b/comments/1s1ln0i/",
+     "subreddit": "h1b",
+     "userHash": "d1ff6bf89bf1",
+     "date": "2026-03",
+     "note": "OP: after being found out of status, was told the $100k fee applies."
+    }
+   ],
+   "caveats": {
+    "ja": "【ボーダーライン】転職（雇用主変更）や国内での資格変更の扱いについては意見が分かれていた。資格外と判断された場合や、領事館での手続きに切り替えられた場合は、手数料を求められた例がある。2026年6月に裁判所が手数料を差し止めている。",
+    "en": "BORDERLINE: users disagreed on transfers and in-US changes of status; people found out of status or switched to consular processing reported being asked to pay. A court blocked the fee in June 2026."
+   }
+  }
+ ]
+}

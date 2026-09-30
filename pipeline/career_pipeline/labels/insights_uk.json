@@ -1,0 +1,288 @@
+{
+ "_method": "Compiled by a research agent from Reddit threads (read via a Redlib mirror; links point to reddit.com). Usernames hashed.",
+ "insights": [
+  {
+   "id": "uk-sponsorship-junior-tech-hard",
+   "topic": "visa",
+   "countries": [
+    "UK"
+   ],
+   "occupation": {
+    "UK": "2134"
+   },
+   "claim": {
+    "ja": "2025〜2026年の英国では、海外からのジュニア〜中堅ITエンジニアがビザスポンサー付きで採用されることはほぼない。国内に就労資格のある候補者が十分いるため、スポンサーは希少スキルや上位層に限られる。",
+    "en": "In the UK in 2025–2026, junior to mid-level tech hires from abroad almost never get visa sponsorship: with plenty of candidates who already have work rights, sponsorship goes to rare skills or top-tier talent."
+   },
+   "quantity": null,
+   "caveats": {
+    "ja": "ITエンジニア中心の声。5年前より大幅に厳しくなったという意見が多い。英国内（卒業生ビザ等）にいる人は有利。",
+    "en": "Mostly software engineers. Many say it is far harder than five years ago; people already in the UK (e.g. on a Graduate visa) fare better."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1muqywo/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2025-08",
+     "note": "Extremely unlikely for a junior in the current market.",
+     "userHash": "f851feef213d"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1muqywo/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2025-08",
+     "note": "Hard; competing with equally experienced candidates who need no visa.",
+     "userHash": "50f5aab78517"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1szlcdu/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-04",
+     "note": "Without UK work rights, junior-to-mid roles are unlikely unless exceptional.",
+     "userHash": "de12f780d31e"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1szlcdu/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-04",
+     "note": "Immigrating at junior level is extremely difficult now.",
+     "userHash": "c77e1ef350df"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1t6958r/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-05",
+     "note": "Junior-to-mid sponsorship basically impossible without a rare skillset.",
+     "userHash": "05e1d49f35ac"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1td060h/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-05",
+     "note": "Sponsorship follows skill shortages; a non-starter for junior SWEs.",
+     "userHash": "351974c95caa"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1o0gb0a/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2025-10",
+     "note": "Realistic only for roughly top-5% talent at big tech or fintech.",
+     "userHash": "bf97b1a3143d"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1vzq6ou/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-08",
+     "note": "Hiring manager: needing sponsorship is an automatic no with plentiful local talent.",
+     "userHash": "1859918c7154"
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1vzq6ou/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-08",
+     "note": "Far harder than five years ago, when graduates got sponsored.",
+     "userHash": "ffb8529038d8"
+    }
+   ]
+  },
+  {
+   "id": "uk-ihs-upfront",
+   "topic": "visa",
+   "countries": [
+    "UK"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "英国の移民健康付加料（IHS）は成人1年あたり£1,035で、ビザ期間分を申請時に一括前払いする（分割不可）。3年ビザで約£3,105、5年で約£5,175。",
+    "en": "The UK Immigration Health Surcharge is £1,035 per adult per year and must be paid upfront for the whole visa length, with no instalments: about £3,105 for 3 years, £5,175 for 5."
+   },
+   "quantity": {
+    "currency": "GBP",
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any",
+    "kind": "annual_fee",
+    "low": 1035,
+    "high": 1035
+   },
+   "caveats": {
+    "ja": "2024年2月に£624から引き上げ。帯同家族は期間の端数で高くなる場合がある。",
+    "en": "Raised from £624 in Feb 2024. Dependants can be charged slightly more because of how the period is rounded."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1avqafm/",
+     "subreddit": "r/ukvisa",
+     "date": "2024-02",
+     "note": "Full upfront payment is mandatory; no alternative arrangement.",
+     "userHash": "0f0ed9847c49"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1avqafm/",
+     "subreddit": "r/ukvisa",
+     "date": "2024-02",
+     "note": "Paid a single £5,175 for a 5-year visa.",
+     "userHash": "300733483e8d"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1avqafm/",
+     "subreddit": "r/ukvisa",
+     "date": "2024-02",
+     "note": "Fee doubled on 6 Feb 2024.",
+     "userHash": "6d25fdf2d985"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1i6sroo/",
+     "subreddit": "r/ukvisa",
+     "date": "2025-01",
+     "note": "One upfront payment, no instalment option.",
+     "userHash": "696f1fab4bab"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1cs0o5u/",
+     "subreddit": "r/ukvisa",
+     "date": "2024-05",
+     "note": "Charged £3,105 for 3 years as main applicant.",
+     "userHash": "f51dd99abe12"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1gg8syn/",
+     "subreddit": "r/ukvisa",
+     "date": "2024-10",
+     "note": "Skilled Worker paid £3,105 surcharge for a 3-year visa.",
+     "userHash": "0a23fda08d29"
+    }
+   ]
+  },
+  {
+   "id": "uk-london-rent",
+   "topic": "housing",
+   "countries": [
+    "UK"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "2025〜2026年のロンドンでは、シェアハウスの一部屋が月£900〜1,300程度、1ベッドルームは月£1,850〜2,000以上という声が多い。",
+    "en": "In London in 2025–2026, people report a room in a flatshare at about £900–1,300 a month and a one-bed flat at about £1,850–2,000+."
+   },
+   "quantity": {
+    "currency": "GBP",
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any",
+    "kind": "monthly_rent",
+    "low": 1850,
+    "high": 2100,
+    "region": "E12000007"
+   },
+   "caveats": {
+    "ja": "新規募集の家賃の体験談。公的統計（ONS）は既存契約を含む平均で、光熱費を含まない。",
+    "en": "Asking rents for new lets; the ONS figure averages new and existing tenancies and excludes bills."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/london/comments/1wn5x4a/",
+     "subreddit": "r/london",
+     "date": "2026-09",
+     "note": "Zone 3–4 rooms near £1,000; £1,200–1,300 in some areas.",
+     "userHash": "907a06a5b9d7"
+    },
+    {
+     "url": "https://www.reddit.com/r/london/comments/1njjuuw/",
+     "subreddit": "r/london",
+     "date": "2025-09",
+     "note": "Agent quoted shared rooms at £900–975 a month.",
+     "userHash": "7fa7614edabc"
+    },
+    {
+     "url": "https://www.reddit.com/r/UKPersonalFinance/comments/1u1y1qh/",
+     "subreddit": "r/UKPersonalFinance",
+     "date": "2026-06",
+     "note": "A room in a shared house costs at least £1,000.",
+     "userHash": "12d7991ee4eb"
+    },
+    {
+     "url": "https://www.reddit.com/r/UKPersonalFinance/comments/1u1y1qh/",
+     "subreddit": "r/UKPersonalFinance",
+     "date": "2026-06",
+     "note": "Zone 1–2 rooms near £1,000; one-beds £2,000+.",
+     "userHash": "4740f11b492a"
+    },
+    {
+     "url": "https://www.reddit.com/r/UKPersonalFinance/comments/1u1y1qh/",
+     "subreddit": "r/UKPersonalFinance",
+     "date": "2026-06",
+     "note": "A good room £900–1,100 plus bills.",
+     "userHash": "57ed2788a0f1"
+    },
+    {
+     "url": "https://www.reddit.com/r/UKPersonalFinance/comments/1tu366x/",
+     "subreddit": "r/UKPersonalFinance",
+     "date": "2026-06",
+     "note": "Considering a £1,850 one-bed.",
+     "userHash": "e6e587b83261"
+    }
+   ],
+   "counterpoints": [
+    {
+     "note": "Found a zone 3 room under £800 including bills."
+    }
+   ]
+  },
+  {
+   "id": "uk-skilled-worker-threshold",
+   "topic": "visa",
+   "countries": [
+    "UK"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "英国の技能労働者ビザの一般的な給与基準は£41,700（2025年7月22日から）。新卒・26歳未満などの「新規参入者」には約£33,400の減額基準がある。",
+    "en": "The general UK Skilled Worker salary threshold is £41,700 (since 22 July 2025); new entrants such as recent graduates or under-26s qualify at a reduced rate of about £33,400."
+   },
+   "quantity": {
+    "currency": "GBP",
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any",
+    "kind": "annual_salary_threshold",
+    "low": 41700,
+    "high": 41700
+   },
+   "caveats": {
+    "ja": "体験談というより規則の引用。2024年4月以前からのビザ保持者には経過措置がある。",
+    "en": "Mostly users quoting the rule rather than lived experience; pre-April-2024 visa holders keep transitional rates."
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsuk/comments/1t6958r/",
+     "subreddit": "r/cscareerquestionsuk",
+     "date": "2026-05",
+     "note": "Cited £41,700, or £33,400 for new-entrant graduates.",
+     "userHash": "dabb3a2e94e2"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1p2kdax/",
+     "subreddit": "r/ukvisa",
+     "date": "2025-11",
+     "note": "Above their occupation rate but below £41,700; asks about the 70% rate.",
+     "userHash": "249392afe9a7"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1lq8pcm/",
+     "subreddit": "r/ukvisa",
+     "date": "2025-07",
+     "note": "Worried about meeting £41,700 at renewal.",
+     "userHash": "5145c2d06fda"
+    },
+    {
+     "url": "https://www.reddit.com/r/ukvisa/comments/1lq8pcm/",
+     "subreddit": "r/ukvisa",
+     "date": "2025-07",
+     "note": "Thresholds rose; pre-2024 holders keep lower transitional rates.",
+     "userHash": "7962e97cef56"
+    }
+   ]
+  }
+ ]
+}

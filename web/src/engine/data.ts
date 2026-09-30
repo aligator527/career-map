@@ -103,3 +103,27 @@ export interface RentData {
   regions: Record<string, number>
 }
 export const loadRent = (c: CountryCode) => load<RentData>(`${dir(c)}/rent.json`)
+
+export interface Insight {
+  id: string
+  topic: string
+  countries: string[]
+  occupation: Partial<Record<CountryCode, string>> | null
+  claim: import('./types').Label
+  quantity: null | {
+    kind: string; currency: string | null; low: number; high: number
+    ageBand?: string | null; experienceYears?: [number, number] | null; grossLow?: number; grossHigh?: number
+  }
+  caveats: import('./types').Label | null
+  users: number
+  threads: string[]
+  period: [string, string]
+  counterpoints: number
+}
+export interface InsightsData {
+  published: boolean
+  access: import('./types').Label | null
+  insights: Insight[]
+  pending: number
+}
+export const loadInsights = () => load<InsightsData>('insights.json')

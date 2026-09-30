@@ -1,0 +1,531 @@
+{
+  "_topic": "relocation_nl",
+  "_access": "Reddit threads read via the redlib.groet-infra.nl mirror (reddit.com not reachable); paraphrases from page summaries",
+  "insights": [
+    {
+      "id": "nl-hsm-processing",
+      "topic": "visa",
+      "countries": [
+        "NL"
+      ],
+      "occupation": null,
+      "claim": {
+        "ja": "高度人材(kennismigrant)の滞在許可は、認定スポンサー経由でもIND公式目安の2週間を超えることが多く、2025〜26年は4〜8週間程度の待ちが一般的で、法定上限の90日かかった例もある。",
+        "en": "Highly skilled migrant permits often exceed the IND's 2-week target even via recognised sponsors; 4-8 weeks was common in 2025-26, some took the full 90 days."
+      },
+      "quantity": {
+        "kind": "weeks",
+        "currency": null,
+        "low": 4,
+        "high": 8,
+        "ageBand": null,
+        "experienceYears": null,
+        "employer": "any"
+      },
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1sxvjwu/",
+          "subreddit": "Netherlands",
+          "userHash": "af7f1f1b83fc",
+          "date": "2026-04",
+          "note": "Employer-side view: 4-8 weeks common even for recognised sponsors; IND rarely answers follow-ups early."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1sxvjwu/",
+          "subreddit": "Netherlands",
+          "userHash": "9df47172fc42",
+          "date": "2026-06",
+          "note": "Applied early April, still no decision by late June despite repeated follow-ups."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1sxvjwu/",
+          "subreddit": "Netherlands",
+          "userHash": "53a93c552c2d",
+          "date": "2026-06",
+          "note": "Applied end of April; still waiting with no update in late June."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1thkmjw/",
+          "subreddit": "Netherlands",
+          "userHash": "b12effd87129",
+          "date": "2026-08",
+          "note": "Recognised-sponsor application went past week 5 and ultimately took the full three months."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1thkmjw/",
+          "subreddit": "Netherlands",
+          "userHash": "e4e491f5d0a6",
+          "date": "2026-05",
+          "note": "Own permit in 2022 from South America took roughly five to six weeks."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1ld1q63/",
+          "subreddit": "Netherlands",
+          "userHash": "aecc020d18c7",
+          "date": "2025-08",
+          "note": "Decision took about five weeks; contacted IND after hearing of three-month waits."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1ld1q63/",
+          "subreddit": "Netherlands",
+          "userHash": "0a5d45fbc9e7",
+          "date": "2025-06",
+          "note": "Application from mid-May still pending in late June."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1o1hsjk/",
+          "subreddit": "Netherlands",
+          "userHash": "25d0f0c4bbbe",
+          "date": "2025-10",
+          "note": "Delays and extensions on HSM cases are routine; depends on IND workload, no firm upper limit."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1q82yte/",
+          "subreddit": "Netherlands",
+          "userHash": "66be6b1ccc5b",
+          "date": "2026-01",
+          "note": "Approval near-certain but processing typically takes two to three months."
+        }
+      ],
+      "counterpoints": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1ld1q63/",
+          "subreddit": "Netherlands",
+          "userHash": "7f21083ec916",
+          "date": "2025-06",
+          "note": "Recognised employer application approved in about 12 days."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1ld1q63/",
+          "subreddit": "Netherlands",
+          "userHash": "da9087343370",
+          "date": "2025-06",
+          "note": "Reports a five-day processing time."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1ld1q63/",
+          "subreddit": "Netherlands",
+          "userHash": "101ed89f0952",
+          "date": "2025-06",
+          "note": "Application approved the next day; biometrics within a week."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1q82yte/",
+          "subreddit": "Netherlands",
+          "userHash": "148f78361fad",
+          "date": "2026-01",
+          "note": "Approved within about one month with a registered sponsor."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1wqmvlv/",
+          "subreddit": "Netherlands",
+          "userHash": "25c6da0c6162",
+          "date": "2026-09",
+          "note": "Recent HSM approval came within two business days (hospital employer)."
+        }
+      ],
+      "caveats": {
+        "ja": "処理期間の幅は非常に大きく、数日で下りる例も多い。祝日(King's Day・5月休暇)や混雑状況で変わり、90日の法定期限は延長されることもある。自己申告の体験談に基づく。",
+        "en": "Very wide variance; many cases clear in days. Holidays and IND workload matter, and the 90-day limit can be extended. Self-reported anecdotes."
+      }
+    },
+    {
+      "id": "nl-sponsorship-barrier",
+      "topic": "job_market",
+      "countries": [
+        "NL"
+      ],
+      "occupation": null,
+      "claim": {
+        "ja": "条件を満たせばIND許可自体はほぼ確実に下りる。本当の壁は、ビザ不要の現地・EU候補者と競ってスポンサー企業に採用されることで、ジュニアや専門性の薄い人ほど難しい。",
+        "en": "The HSM permit is near-automatic once conditions are met; the real barrier is getting hired by a sponsor against visa-free local/EU candidates, hardest for juniors and non-niche profiles."
+      },
+      "quantity": null,
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1q82yte/",
+          "subreddit": "Netherlands",
+          "userHash": "6b8b92ce3257",
+          "date": "2026-01",
+          "note": "Hard part is landing a sponsoring employer; IND approval is nearly automatic afterwards."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1q82yte/",
+          "subreddit": "Netherlands",
+          "userHash": "640cbd6fdca6",
+          "date": "2026-01",
+          "note": "Qualifying roles harder to find now, but the permit is essentially guaranteed once hired."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1q82yte/",
+          "subreddit": "Netherlands",
+          "userHash": "2625c6fde0af",
+          "date": "2026-01",
+          "note": "IND approval very likely; main difficulty is winning offers against local candidates."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1q82yte/",
+          "subreddit": "Netherlands",
+          "userHash": "4dd2b0c8a14a",
+          "date": "2026-01",
+          "note": "Approval certain if sponsor is listed and salary exceeds the threshold."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1wqmvlv/",
+          "subreddit": "Netherlands",
+          "userHash": "65d69faba0bd",
+          "date": "2026-09",
+          "note": "Many roles require existing work rights; need unique skills to beat local/EU applicants."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1wqmvlv/",
+          "subreddit": "Netherlands",
+          "userHash": "e5173ac31262",
+          "date": "2026-09",
+          "note": "Local Dutch speakers and EU citizens needing no sponsorship make the market hard."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1kciic6/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "00d6848349ab",
+          "date": "2025-05",
+          "note": "Sponsorship chances very small; sponsored roles attract thousands of applicants."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wlhps4/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "711559dfbb87",
+          "date": "2026-09",
+          "note": "Hard even for EU citizens at 2.5 years' experience; non-EU hiring only for niche skills."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v85oxz/",
+          "subreddit": "Netherlands",
+          "userHash": "7ca324e626dc",
+          "date": "2026-07",
+          "note": "Non-EU candidates cost employers more and must clearly beat local/EU applicants."
+        }
+      ],
+      "counterpoints": [],
+      "caveats": {
+        "ja": "主にIT・エンジニア職の体験談。2025〜26年の採用市場の冷え込みを反映しており、景気や職種(希少スキル)によって状況は変わる。",
+        "en": "Mostly tech/engineering anecdotes reflecting the 2025-26 hiring slowdown; niche skills and market cycles change the picture."
+      }
+    },
+    {
+      "id": "nl-dutch-language-tiebreaker",
+      "topic": "language",
+      "countries": [
+        "NL"
+      ],
+      "occupation": null,
+      "claim": {
+        "ja": "英語のみで働けるIT職は今もあるが、市場が厳しくなり、「英語可」と書かれた求人でもオランダ語ができる候補者が優先されることが多い。",
+        "en": "English-only tech jobs still exist, but in a tighter market Dutch fluency often acts as an unstated tiebreaker even for English-first roles."
+      },
+      "quantity": null,
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v7tlad/",
+          "subreddit": "Netherlands",
+          "userHash": "9a105e445a19",
+          "date": "2026-07",
+          "note": "Saturated market favours visa-free candidates; Dutch becomes an unstated tiebreaker."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v7tlad/",
+          "subreddit": "Netherlands",
+          "userHash": "60e2d2e59aa2",
+          "date": "2026-07",
+          "note": "Data/dev market saturated; companies increasingly prioritise Dutch speakers."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v7tlad/",
+          "subreddit": "Netherlands",
+          "userHash": "51e7bc3e1f44",
+          "date": "2026-07",
+          "note": "Dutch speakers are preferred when candidates are equally qualified."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1wbiukq/",
+          "subreddit": "Netherlands",
+          "userHash": "2625c6fde0af",
+          "date": "2026-09",
+          "note": "Layoffs and AI-driven cuts raised the bar; locals who speak Dutch preferred over expats."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v85oxz/",
+          "subreddit": "Netherlands",
+          "userHash": "838f39c2fb86",
+          "date": "2026-07",
+          "note": "Market closing for non-Dutch speakers; employers prefer cheaper remote workers."
+        }
+      ],
+      "counterpoints": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v7tlad/",
+          "subreddit": "Netherlands",
+          "userHash": "0ac9fca990bd",
+          "date": "2026-07",
+          "note": "Many international companies operate fully in English without informal Dutch expectations."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v7tlad/",
+          "subreddit": "Netherlands",
+          "userHash": "cd3ba22881e0",
+          "date": "2026-07",
+          "note": "Product companies stay English internally; client-facing agencies need Dutch."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v85oxz/",
+          "subreddit": "Netherlands",
+          "userHash": "3d28a80930a1",
+          "date": "2026-07",
+          "note": "Large employers like Adyen and Booking still hire internationally."
+        }
+      ],
+      "caveats": {
+        "ja": "国際的なプロダクト企業では英語のみで問題ないとする意見も多い。業種(顧客対応の有無)や企業規模で差が大きい。",
+        "en": "Many say international product companies work fully in English; depends heavily on client-facing work and company type."
+      }
+    },
+    {
+      "id": "nl-net-pay-30-ruling",
+      "topic": "salary",
+      "countries": [
+        "NL"
+      ],
+      "occupation": null,
+      "claim": {
+        "ja": "30%ルール適用時、額面年収7万〜8.5万ユーロの手取りは月およそ4,500〜6,000ユーロ程度になる。",
+        "en": "With the 30% ruling, €70-85k gross yields roughly €4,500-6,000 net per month."
+      },
+      "quantity": {
+        "kind": "monthly_net",
+        "currency": "EUR",
+        "low": 4500,
+        "high": 6000,
+        "ageBand": null,
+        "experienceYears": null,
+        "employer": "any"
+      },
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1k0e602/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "9378746543d7",
+          "date": "2025-04",
+          "note": "Earns €77k with 30% ruling, taking home over €5,000 net monthly."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1k0e602/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "5c37335e8caa",
+          "date": "2026-04",
+          "note": "€70k plus 30% ruling works out to about €4,500 net per month."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v82v6z/",
+          "subreddit": "Netherlands",
+          "userHash": "84da3ea98710",
+          "date": "2026-07",
+          "note": "€70k gross Leiden offer: about €4.8k net with ruling, €4k without."
+        },
+        {
+          "url": "https://www.reddit.com/r/Amsterdam/comments/1r6ovl0/",
+          "subreddit": "Amsterdam",
+          "userHash": "44c5a0ba998e",
+          "date": "2026-02",
+          "note": "€80k gross gives around €4,700 net with ruling (their figure; reading was ambiguous)."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v4q6nb/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "1143f8b3be64",
+          "date": "2026-07",
+          "note": "€85k base with 30% ruling estimated at about €5.3k net monthly."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v4q6nb/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "8028ae507c78",
+          "date": "2026-07",
+          "note": "Corrects estimate: €85k with ruling is about €6.1k net monthly."
+        }
+      ],
+      "counterpoints": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v82v6z/",
+          "subreddit": "Netherlands",
+          "userHash": "b4faa1c60a27",
+          "date": "2026-07",
+          "note": "Regular months nearer €4.1-4.2k after holiday pay split and insurance; first months ~€3k before ruling."
+        },
+        {
+          "url": "https://www.reddit.com/r/Amsterdam/comments/1r6ovl0/",
+          "subreddit": "Amsterdam",
+          "userHash": "3c22e0b26a3d",
+          "date": "2026-02",
+          "note": "Estimates €80k gross at about €4,300 net monthly."
+        }
+      ],
+      "caveats": {
+        "ja": "休暇手当(8%)を月割りするか、年金・保険料控除、30%ルールの承認時期で数字は変わる。30%ルールは段階的縮小・将来の率変更が議論されており、5年で終了する。",
+        "en": "Figures vary with holiday-pay treatment, pension/insurance deductions and ruling approval timing; the ruling is time-limited (5 years) and subject to policy changes."
+      }
+    },
+    {
+      "id": "nl-amsterdam-rent",
+      "topic": "cost_of_living",
+      "countries": [
+        "NL"
+      ],
+      "occupation": null,
+      "claim": {
+        "ja": "アムステルダム周辺の家賃はワンルーム・1LDKで月1,500〜2,500ユーロ程度が目安で、手取りの大きな部分を占め、単身の貯蓄は月1,000ユーロ前後にとどまりやすい。",
+        "en": "Amsterdam-area rent for a studio/1-bed is roughly €1,500-2,500/month, eating much of net pay; single savings often end up around €1k/month."
+      },
+      "quantity": {
+        "kind": "monthly_rent",
+        "currency": "EUR",
+        "low": 1500,
+        "high": 2500,
+        "ageBand": null,
+        "experienceYears": null,
+        "employer": "any"
+      },
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1rqs0vz/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "dd641f23ed03",
+          "date": "2026-03",
+          "note": "Living alone requires €1,500+ monthly for a studio; entry-level pay is tight."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1k0e602/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "5c37335e8caa",
+          "date": "2026-04",
+          "note": "Keep rent around €1,500-1,800; above €2,000 hurts significantly."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1k0e602/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "3438de0d2b74",
+          "date": "2025-04",
+          "note": "Budget about €3,500 monthly for living costs; realistic savings roughly €1,000."
+        },
+        {
+          "url": "https://www.reddit.com/r/Amsterdam/comments/1r6ovl0/",
+          "subreddit": "Amsterdam",
+          "userHash": "cf5d6d89fb32",
+          "date": "2026-02",
+          "note": "Amsterdam rent around €2,000, so savings lower than back home."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1ngmspi/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "46fe93414957",
+          "date": "2025-09",
+          "note": "Amsterdam-based engineer: rent alone costs roughly €2,500+ monthly."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1ngmspi/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "cf6b8ab0c458",
+          "date": "2025-09",
+          "note": "Housing plus utilities around €2,500; savings roughly equal to staying in Spain."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v4q6nb/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "35bb745e725f",
+          "date": "2026-07",
+          "note": "Modest two-bedroom costs about €2,600 monthly; tight on ~€100k household income."
+        }
+      ],
+      "counterpoints": [],
+      "caveats": {
+        "ja": "郊外(アルメレ、ザーンダム等)やシェアハウスなら安くなる。家族向け・市中心部は2,500ユーロを大きく超えることもある。",
+        "en": "Cheaper in suburbs or shared housing; family-size or central units can exceed €2,500."
+      }
+    },
+    {
+      "id": "nl-housing-main-obstacle",
+      "topic": "relocation",
+      "countries": [
+        "NL"
+      ],
+      "occupation": null,
+      "claim": {
+        "ja": "住宅探しは就職以上に大きな障壁になりがちで、内定前に住居や会社の支援を確保するか、アムステルダム郊外に住むことが勧められている。",
+        "en": "Housing is often a bigger obstacle than the job; people advise securing housing or employer help first, or living outside Amsterdam."
+      },
+      "quantity": null,
+      "sources": [
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v85oxz/",
+          "subreddit": "Netherlands",
+          "userHash": "a472fbc6f248",
+          "date": "2026-07",
+          "note": "Housing shortage is the main obstacle, bigger than job availability."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v85oxz/",
+          "subreddit": "Netherlands",
+          "userHash": "3b6aab9258e7",
+          "date": "2026-07",
+          "note": "Secure housing before accepting a job; check salary after housing costs."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1k0e602/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "54a9da7c978b",
+          "date": "2025-04",
+          "note": "Housing is the biggest challenge; life improves once it is secured."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1k0e602/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "28284ecf1b12",
+          "date": "2025-04",
+          "note": "Cheaper studios in Diemen, Almere, Zaandam within an hour's commute."
+        },
+        {
+          "url": "https://www.reddit.com/r/Netherlands/comments/1v82v6z/",
+          "subreddit": "Netherlands",
+          "userHash": "762343517d9b",
+          "date": "2026-07",
+          "note": "Finding a €1.5k place in Leiden is extremely hard with heavy competition."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v4q6nb/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "95a37ef39897",
+          "date": "2026-07",
+          "note": "Suggests Zaandam, about 15 minutes away and much cheaper."
+        },
+        {
+          "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v4q6nb/",
+          "subreddit": "cscareerquestionsEU",
+          "userHash": "5b5fdf4c4106",
+          "date": "2026-07",
+          "note": "€85k insufficient for Amsterdam family housing; consider Almere or Hilversum."
+        },
+        {
+          "url": "https://www.reddit.com/r/Amsterdam/comments/1r6ovl0/",
+          "subreddit": "Amsterdam",
+          "userHash": "fa660ab4ce3c",
+          "date": "2026-02",
+          "note": "Live about 30 minutes from Amsterdam to avoid high city rents."
+        }
+      ],
+      "counterpoints": [],
+      "caveats": {
+        "ja": "企業の社宅・住宅支援の有無で難易度が大きく変わる。高給のIT職なら何とかなるという意見もある。",
+        "en": "Difficulty depends heavily on employer housing support; some say tech salaries make it manageable."
+      }
+    }
+  ]
+}

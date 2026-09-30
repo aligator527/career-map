@@ -2,7 +2,7 @@
 
 import sys
 
-from . import ca_census, community, cost_of_living, eu_ses, fx_ppp, jp_mobility, jp_wage_census, occupations, research, tax_tables, visas, uk_ashe, us_acs_pums, us_cps_mobility
+from . import ca_census, community, insights, cost_of_living, eu_ses, fx_ppp, jp_mobility, jp_wage_census, occupations, research, tax_tables, visas, uk_ashe, us_acs_pums, us_cps_mobility
 
 STEPS = {
     "fx": [fx_ppp.build],
@@ -19,6 +19,7 @@ STEPS = {
     "occupations": [occupations.build],
     "research": [research.build],
     "visas": [visas.build],
+    "insights": [insights.build],
     # needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY; skipped otherwise
     "community": [community.build],
 }

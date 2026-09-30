@@ -3,6 +3,7 @@ import { CommunityCard } from './components/CommunityCard'
 import { CompareCard } from './components/CompareCard'
 import type { Env } from './components/env'
 import { GoalCard } from './components/GoalCard'
+import { InsightsCard } from './components/InsightsCard'
 import { GrowthCard } from './components/GrowthCard'
 import { MapCard } from './components/MapCard'
 import { MobilityCard } from './components/MobilityCard'
@@ -241,6 +242,7 @@ export default function App() {
                 <>
                   <MobilityCard env={env} profile={profile} />
                   <ResearchCard env={env} country={profile.country} median={match.cell.q[2]} currency={meta.currency} />
+                  <InsightsCard env={env} country={profile.country} profile={profile} />
                 </>
               )}
               {tab === 'abroad' && <VisaCard env={env} profile={profile} />}

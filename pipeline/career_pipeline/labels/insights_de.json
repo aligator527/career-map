@@ -1,0 +1,882 @@
+{
+ "_topic": "relocation_de",
+ "_access": "Reddit threads read via the redlib.groet-infra.nl mirror (reddit.com not reachable); paraphrases from page summaries",
+ "insights": [
+  {
+   "id": "de-bluecard-abh-wait",
+   "topic": "visa",
+   "countries": [
+    "DE"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "大都市の外国人局（Ausländerbehörde）でのEUブルーカード承認は通常2〜6か月かかり、1か月以内はまれ。",
+    "en": "Blue Card approval at big-city Ausländerbehörden usually takes about 2-6 months; under a month is rare."
+   },
+   "quantity": {
+    "kind": "months",
+    "currency": null,
+    "low": 2,
+    "high": 6,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "ce7d813dcace",
+     "date": "2026-04",
+     "note": "Munich application; got appointment after roughly 10 weeks."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "78d69698ab8f",
+     "date": "2026-04",
+     "note": "Waited 4.5 months before escalating; appointment followed two weeks later."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "c376ee0220ba",
+     "date": "2026-04",
+     "note": "Waiting more than 4 months in Berlin."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "d84c655579fe",
+     "date": "2026-04",
+     "note": "Hamburg: applied January, nothing until April; phone call got next-day appointment."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "9c0597d0b128",
+     "date": "2026-07",
+     "note": "Darmstadt: no decision after 2 months; employer withdrew offer."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "711559dfbb87",
+     "date": "2026-07",
+     "note": "Says approval within a month basically never happens without luck."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "e7f472396812",
+     "date": "2026-07",
+     "note": "Considers 2-3 months normal processing."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "820b2010da41",
+     "date": "2026-07",
+     "note": "Processing took 110 days."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "699d6b8e5459",
+     "date": "2026-07",
+     "note": "Decision arrived after about 3 months."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1kunbpz/",
+     "subreddit": "germany",
+     "userHash": "05df811af678",
+     "date": "2025-05",
+     "note": "Approval took about three months; cannot really be sped up."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "373c5225bc91",
+     "date": "2026-04",
+     "note": "Munich area wait lasted about 1.5 years."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "59bdb90b95dd",
+     "date": "2026-07",
+     "note": "Took 8 months; lost two job opportunities."
+    }
+   ],
+   "caveats": {
+    "ja": "都市・時期・個別の事情でばらつきが大きく、8か月〜1年半の例もある。体験談ベースの自己申告。",
+    "en": "Highly variable by city and period; outliers of 8-18 months reported. Self-reported anecdotes."
+   }
+  },
+  {
+   "id": "de-bluecard-small-city-employer-fast",
+   "topic": "visa",
+   "countries": [
+    "DE"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "小さな市や郡の外国人局、または雇用主の関与（ベルリンのBusiness Immigration Serviceなど）があると、手続きは1〜4週間程度に短縮されやすい。",
+    "en": "Smaller districts or employer involvement (e.g. Berlin's BIS) often cut processing to about 1-4 weeks."
+   },
+   "quantity": {
+    "kind": "weeks",
+    "currency": null,
+    "low": 1,
+    "high": 4,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "4af55483d34c",
+     "date": "2026-04",
+     "note": "Small cities process in 1-2 weeks; big ones overwhelmed."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "7b00aeb4861a",
+     "date": "2026-04",
+     "note": "Recommends applying in a smaller city instead."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "c6e9dbb63fdc",
+     "date": "2026-04",
+     "note": "Received card within one month in Baden-Württemberg."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "982a551f3c7c",
+     "date": "2026-07",
+     "note": "Suggests registering in a ~300k-population district for faster processing."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "04e0c542d487",
+     "date": "2026-07",
+     "note": "Employer coordinated with authority; resolved in under a week."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "45d419881b48",
+     "date": "2026-07",
+     "note": "HR contacting the authority speeds processing."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1trthxz/",
+     "subreddit": "germany",
+     "userHash": "9511ff94acde",
+     "date": "2026-05",
+     "note": "Nearby city gave appointment within days after stressing relocation urgency."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1plmq1o/",
+     "subreddit": "germany",
+     "userHash": "f8923b21bfef",
+     "date": "2025-12",
+     "note": "Berlin via employer BIS contact: appointment and work permit in 3.5 weeks."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1plmq1o/",
+     "subreddit": "germany",
+     "userHash": "9b9e858b0180",
+     "date": "2025-12",
+     "note": "Same BIS employer approach yielded appointment in about two weeks."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1plmq1o/",
+     "subreddit": "germany",
+     "userHash": "41fdda4790c9",
+     "date": "2025-12",
+     "note": "Munich employer without BIS route: about two months to appointment."
+    }
+   ],
+   "caveats": {
+    "ja": "BISはベルリン独自の窓口。国内在住者は対象外とされた例もある。",
+    "en": "BIS is Berlin-specific; one user reported being rejected by BIS as already in-country."
+   }
+  },
+  {
+   "id": "de-visa-escalation-lawyer",
+   "topic": "visa",
+   "countries": [
+    "DE"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "停滞した外国人局・ビザ案件は、弁護士の書面や法的措置の示唆などのエスカレーションで目に見えて早まることが多い。",
+    "en": "A lawyer's letter or legal escalation noticeably speeds up stalled ABH/visa cases."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "32b19a428eb5",
+     "date": "2026-04",
+     "note": "Recommends hiring an immigration lawyer to accelerate processing."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1srgr5t/",
+     "subreddit": "germany",
+     "userHash": "78d69698ab8f",
+     "date": "2026-04",
+     "note": "Threatening legal action produced an appointment within two weeks."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "a04bfa9c5d98",
+     "date": "2026-07",
+     "note": "Authorities respond faster to lawyers."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "52d2af2e3d32",
+     "date": "2026-07",
+     "note": "Resolved within one week after involving a lawyer."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1v3kppv/",
+     "subreddit": "germany",
+     "userHash": "c46f54115ac8",
+     "date": "2026-07",
+     "note": "Lawyer letter around 100-200 EUR helps after three months."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vf4don/",
+     "subreddit": "germany",
+     "userHash": "0649b63a4979",
+     "date": "2026-08",
+     "note": "Suggests filing through a lawyer to force a response."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vf4don/",
+     "subreddit": "germany",
+     "userHash": "0c1e90a64e57",
+     "date": "2026-08",
+     "note": "Suggests inaction lawsuit; warns fees 1,500-2,500 EUR, uncertain outcome."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vki4z9/",
+     "subreddit": "germany",
+     "userHash": "b82afc361822",
+     "date": "2026-08",
+     "note": "Friend got a response after threatening legal action."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vki4z9/",
+     "subreddit": "germany",
+     "userHash": "49c60cbe0b22",
+     "date": "2026-08",
+     "note": "Inaction lawsuit needs proof of real inaction, not security-check delays."
+    }
+   ],
+   "caveats": {
+    "ja": "費用は書面で100〜200ユーロ、訴訟（Untätigkeitsklage）で1,500〜2,500ユーロ程度との声。セキュリティ審査中は効果が薄い場合がある。",
+    "en": "Costs cited: ~100-200 EUR for a letter, 1,500-2,500 EUR for an inaction lawsuit; less effective during security checks."
+   }
+  },
+  {
+   "id": "de-bluecard-physical-card",
+   "topic": "visa",
+   "countries": [
+    "DE"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "外国人局での面談後、ブルーカードの実物カード（電子滞在許可証）の受け取りまでは約4〜8週間、多くは4〜6週間。",
+    "en": "The physical Blue Card arrives about 4-8 weeks after the ABH appointment, most often 4-6."
+   },
+   "quantity": {
+    "kind": "weeks",
+    "currency": null,
+    "low": 4,
+    "high": 8,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1trthxz/",
+     "subreddit": "germany",
+     "userHash": "9511ff94acde",
+     "date": "2026-05",
+     "note": "Physical card took about four weeks."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1trthxz/",
+     "subreddit": "germany",
+     "userHash": "4955b86fc4e7",
+     "date": "2026-05",
+     "note": "Card wait is 4-8 weeks nationwide; cards produced centrally in Berlin."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1qko5us/",
+     "subreddit": "germany",
+     "userHash": "215a27bac776",
+     "date": "2026-01",
+     "note": "Typically 4-6 weeks, counted after any security interview."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1qko5us/",
+     "subreddit": "germany",
+     "userHash": "baf99d307afa",
+     "date": "2026-01",
+     "note": "Card arrived within six weeks; book pickup appointment."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1qko5us/",
+     "subreddit": "germany",
+     "userHash": "24e46c635682",
+     "date": "2026-01",
+     "note": "Received card in roughly one month."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1plmq1o/",
+     "subreddit": "germany",
+     "userHash": "f8923b21bfef",
+     "date": "2025-12",
+     "note": "Appointment early December; card pickup scheduled January 21, about six weeks."
+    }
+   ],
+   "counterpoints": [],
+   "caveats": {
+    "ja": "待機中は仮の就労許可（Fiktionsbescheinigung等）で働ける場合が多い。",
+    "en": "Interim work authorization is usually available while waiting for the card."
+   }
+  },
+  {
+   "id": "de-national-visa-abroad-wait",
+   "topic": "visa",
+   "countries": [
+    "DE"
+   ],
+   "occupation": null,
+   "claim": {
+    "ja": "国外から申請する就労・ブルーカードの国内ビザは、ドイツ側当局の審査やセキュリティチェック待ちで全体2〜6か月かかることが多い。大使館での手続き自体は速い場合もある。",
+    "en": "A work/Blue Card national visa applied from abroad often takes 2-6 months, mainly waiting on German authorities or security checks."
+   },
+   "quantity": {
+    "kind": "months",
+    "currency": null,
+    "low": 2,
+    "high": 6,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1to5on7/",
+     "subreddit": "germany",
+     "userHash": "e093d87480d6",
+     "date": "2026-05",
+     "note": "Waited 2-6 months on Consular Services Portal."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1to5on7/",
+     "subreddit": "germany",
+     "userHash": "822f09257933",
+     "date": "2026-05",
+     "note": "Portal approval precedes appointment; can take weeks to months."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vf4don/",
+     "subreddit": "germany",
+     "userHash": "86d833c856c6",
+     "date": "2026-08",
+     "note": "Hamburg postdoc visa: over three months, consulate awaiting German authorities."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vf4don/",
+     "subreddit": "germany",
+     "userHash": "e8f40160c256",
+     "date": "2026-08",
+     "note": "Blue Card visa took five months, April to September."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vki4z9/",
+     "subreddit": "germany",
+     "userHash": "36b9345570c1",
+     "date": "2026-08",
+     "note": "Work visa via Rome embassy pending more than three months."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1vki4z9/",
+     "subreddit": "germany",
+     "userHash": "01146957259a",
+     "date": "2026-08",
+     "note": "Estimates German processing at 2-4 months."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1um5p69/",
+     "subreddit": "germany",
+     "userHash": "cdc3ece445ef",
+     "date": "2026-07",
+     "note": "Blue Card visa: appointment to passport notification in nine days."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1um5p69/",
+     "subreddit": "germany",
+     "userHash": "0fa75d8b7da7",
+     "date": "2026-07",
+     "note": "Eight working days from biometrics to issuance (student visa)."
+    },
+    {
+     "url": "https://www.reddit.com/r/germany/comments/1um5p69/",
+     "subreddit": "germany",
+     "userHash": "b278b5c0b429",
+     "date": "2026-07",
+     "note": "Got portal appointment within one week."
+    }
+   ],
+   "caveats": {
+    "ja": "国籍（例：ロシア）や大使館によって大きく異なる。遅延の多くは国内外国人局の事前同意待ち。",
+    "en": "Varies strongly by nationality and mission; many delays are really domestic ABH pre-approval."
+   }
+  },
+  {
+   "id": "de-tech-german-language-filter",
+   "topic": "language",
+   "countries": [
+    "DE"
+   ],
+   "occupation": {
+    "DE": "MOC2",
+    "US": "151252",
+    "UK": "2134",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "ドイツのIT求人では、英語で書かれた求人でもドイツ語が要求されたり選考のふるいに使われたりすることが増えている。",
+    "en": "German is increasingly required or used as a filter, even for English-language tech job ads."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "b428a3602b84",
+     "date": "2026-09",
+     "note": "Of 4,080 ads, 30% of English ads need German; ~35% workable without."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "86effc1053ad",
+     "date": "2026-09",
+     "note": "Assume German required; fluency decided outcome despite English company."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "874c9921276a",
+     "date": "2026-09",
+     "note": "Companies use German as screening filter when applicants abundant."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "c2ba51a824c6",
+     "date": "2026-09",
+     "note": "Hiring non-German speakers adds friction; German speakers preferred."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "0ea5963ce3ab",
+     "date": "2026-09",
+     "note": "Let go despite B2 German because native level demanded."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1px01vd/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "9f1b65548f80",
+     "date": "2025-12",
+     "note": "Native German increasingly required in tech hiring."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1qnq6et/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "63d8995fdfca",
+     "date": "2026-01",
+     "note": "Traditional industrial firms heavily prioritize German proficiency."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1r2piaf/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "141c9804a9d1",
+     "date": "2026-02",
+     "note": "Fluent German increasingly critical."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1r2piaf/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "fb95f587371a",
+     "date": "2026-02",
+     "note": "Companies avoid mixed-language teams."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "132e060929af",
+     "date": "2026-09",
+     "note": "Many international offices run fully in English."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "fe94c12c3c06",
+     "date": "2026-09",
+     "note": "English-first tech companies exist, especially Berlin."
+    }
+   ],
+   "caveats": {
+    "ja": "ベルリン（ドイツ語不要39%）やミュンヘン（35%）は比較的英語のみで働ける求人が多く、ハンブルク・ケルンは少ない。",
+    "en": "Share workable without German is higher in Berlin (39%) and Munich (35%) than Hamburg/Cologne (~16-17%)."
+   }
+  },
+  {
+   "id": "de-tech-english-only-berlin",
+   "topic": "language",
+   "countries": [
+    "DE"
+   ],
+   "occupation": {
+    "DE": "MOC2",
+    "US": "151252",
+    "UK": "2134",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "英語のみで働けるIT職は、主にベルリンの国際的な企業に存在し、ドイツ語なしで採用された例もある。",
+    "en": "English-only tech jobs do exist, mostly at international companies in Berlin; some were hired without German."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "fe94c12c3c06",
+     "date": "2026-09",
+     "note": "English-first tech companies in Berlin where staff speak no German."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "576e542eec67",
+     "date": "2026-09",
+     "note": "Berlin workplaces exist with zero German spoken."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "132e060929af",
+     "date": "2026-09",
+     "note": "International offices fully English, over half non-German speakers."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "baf99d307afa",
+     "date": "2026-07",
+     "note": "Hired without German after applying from the US."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "1c2e8e5bd141",
+     "date": "2026-07",
+     "note": "Non-EU Blue Card holder hired without German."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1wofs33/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "86effc1053ad",
+     "date": "2026-09",
+     "note": "German fluency proved decisive even at an English-speaking company."
+    }
+   ],
+   "caveats": {
+    "ja": "上記のドイツ語要求の主張と両立する。英語のみ可能な求人は全体の少数派。",
+    "en": "Compatible with the German-filter claim; English-only roles are a minority of openings."
+   }
+  },
+  {
+   "id": "de-tech-job-search-duration",
+   "topic": "job_market",
+   "countries": [
+    "DE"
+   ],
+   "occupation": {
+    "DE": "MOC2",
+    "US": "151252",
+    "UK": "2134",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "現在のドイツでのIT職の転職・就職活動は、5〜6か月以上・数百件の応募を要することが多い。",
+    "en": "A tech job search in Germany currently often takes 5-6+ months and hundreds of applications."
+   },
+   "quantity": {
+    "kind": "months",
+    "currency": null,
+    "low": 3,
+    "high": 12,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any"
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "baf99d307afa",
+     "date": "2026-07",
+     "note": "Six months, 99 applications, one offer with relocation; 10 YOE."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "1c2e8e5bd141",
+     "date": "2026-07",
+     "note": "Five months, 60 applications, two offers."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "f3861273cd01",
+     "date": "2026-07",
+     "note": "Six months, 700 applications, no success; left Germany."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "bf7540506bf2",
+     "date": "2026-07",
+     "note": "Five months, 200 applications."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "03fa394e0678",
+     "date": "2026-07",
+     "note": "Six months, 70 targeted applications, 80k architect role."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "2d4bd0cd37c4",
+     "date": "2026-07",
+     "note": "Junior: three months, 250 applications."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1r2piaf/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "0e6143011ee5",
+     "date": "2026-02",
+     "note": "Six months, 300+ applications, two interviews."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1r2piaf/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "6ffa488cba99",
+     "date": "2026-02",
+     "note": "Husband searching about a year with few interviews."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1kmpa2n/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "495ca06fe253",
+     "date": "2025-05",
+     "note": "Warns of 3-6 month job search if laid off."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1v3pw5y/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "354ad4e94e73",
+     "date": "2026-07",
+     "note": "Native German speaker landed 65k offer within about three weeks."
+    }
+   ],
+   "caveats": {
+    "ja": "応募数は60〜700件と幅が大きい。ドイツ語ネイティブやシニアは比較的短い傾向。",
+    "en": "Applications range widely (60-700); native German speakers and seniors tend to be faster."
+   }
+  },
+  {
+   "id": "de-tech-nonEU-junior-hard",
+   "topic": "job_market",
+   "countries": [
+    "DE"
+   ],
+   "occupation": {
+    "DE": "MOC2",
+    "US": "151252",
+    "UK": "2134",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "EU外出身のジュニアや、ドイツ語なしで国外から応募する人がドイツでIT職を得るのは、現状非常に難しい。",
+    "en": "Non-EU juniors and applicants abroad without German currently have very poor odds in German tech hiring."
+   },
+   "quantity": null,
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1qibyvd/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "58bc7d63da73",
+     "date": "2026-01",
+     "note": "Without EU citizenship, experience, C1 German or residence, chances extremely slim."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1qnq6et/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "63d8995fdfca",
+     "date": "2026-01",
+     "note": "Non-EU hiring requires exceptional technical and interpersonal skills."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1r2piaf/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "b411850a0f9e",
+     "date": "2026-02",
+     "note": "Young graduates and non-German speakers suffer most in downturn."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1r2piaf/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "aab3d7d5fb80",
+     "date": "2026-02",
+     "note": "Entry level devastated; senior-plus candidates doing fine."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1px01vd/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "e09332cf9eef",
+     "date": "2025-12",
+     "note": "German CS market never hot and currently declining."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1px01vd/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "e0a2f0284e86",
+     "date": "2025-12",
+     "note": "High unemployment, saturated roles, hiring outsourced abroad."
+    }
+   ],
+   "counterpoints": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1qibyvd/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "26f4bc622a43",
+     "date": "2026-01",
+     "note": "Suggests applying for jobs while studying in parallel."
+    }
+   ],
+   "caveats": {
+    "ja": "2025〜2026年の市況に基づく見方。ドイツでの修士留学を経由する道が勧められることもある。",
+    "en": "Reflects 2025-2026 market; studying in Germany first is sometimes suggested as a route."
+   }
+  },
+  {
+   "id": "de-net-share-of-gross",
+   "topic": "salary",
+   "countries": [
+    "DE"
+   ],
+   "occupation": {
+    "DE": "MOC2",
+    "US": "151252",
+    "UK": "2134",
+    "CA": "N07",
+    "JP": "J012"
+   },
+   "claim": {
+    "ja": "税区分1（独身）の手取りは額面の約55〜63%。額面7万ユーロ前後で月の手取りはおよそ3,500〜4,000ユーロ。",
+    "en": "Take-home in tax class 1 is roughly 55-63% of gross; about 70k EUR gross gives roughly 3,500-4,000 EUR net monthly."
+   },
+   "quantity": {
+    "kind": "net_share",
+    "currency": null,
+    "low": 0.55,
+    "high": 0.63,
+    "ageBand": null,
+    "experienceYears": null,
+    "employer": "any",
+    "grossLow": 50000,
+    "grossHigh": 90000
+   },
+   "sources": [
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/ug0cy2/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "fd649f2a8a99",
+     "date": "2022-05",
+     "note": "70k in Berlin nets about 3,500-4,000 EUR monthly."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/ug0cy2/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "9deee67ef3f1",
+     "date": "2022-05",
+     "note": "Slightly above 70k in Munich nets around 4,000 EUR monthly."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1kmpa2n/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "0b155ebb7455",
+     "date": "2025-05",
+     "note": "Berlin offer (68k base plus bonus) nets roughly 4,000 EUR monthly."
+    },
+    {
+     "url": "https://www.reddit.com/r/cscareerquestionsEU/comments/1fbieqj/",
+     "subreddit": "cscareerquestionsEU",
+     "userHash": "71e81356cc30",
+     "date": "2024-09",
+     "note": "53k gross is about 2,800 EUR net monthly in tax class 1."
+    }
+   ],
+   "counterpoints": [],
+   "caveats": {
+    "ja": "2022年の投稿を含み、税率・社会保険料はその後変わっている。一部の数値はボーナス込み。教会税・子の有無で変動。",
+    "en": "Includes a 2022 thread; rates have since changed. One figure includes bonus. Church tax and children shift the share."
+   }
+  }
+ ]
+}
