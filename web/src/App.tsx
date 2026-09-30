@@ -3,7 +3,9 @@ import { CompareCard } from './components/CompareCard'
 import type { Env } from './components/env'
 import { GoalCard } from './components/GoalCard'
 import { MapCard } from './components/MapCard'
+import { MobilityCard } from './components/MobilityCard'
 import { ProfileForm } from './components/ProfileForm'
+import { ResearchCard } from './components/ResearchCard'
 import { ResultCard } from './components/ResultCard'
 import { crosswalk, type CommonOccupation } from './engine/compare'
 import { COUNTRIES, HAS_PRICES, mapEducation } from './engine/countries'
@@ -159,6 +161,8 @@ export default function App() {
               <ResultCard env={env} meta={meta} match={match} profile={profile} />
               <CompareCard env={env} profile={profile} />
               <GoalCard env={env} profile={profile} national={nationalCells!} regional={regionalCells} />
+              <MobilityCard env={env} profile={profile} />
+              <ResearchCard env={env} country={profile.country} median={match.cell.q[2]} currency={meta.currency} />
               <MapCard env={env} profile={profile} onSelectRegion={(region) => setProfile({ ...profile, region })} />
             </>
           ) : (

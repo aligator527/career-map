@@ -40,3 +40,19 @@ export const loadRegions = (c: CountryCode) => load<Record<string, Cells>>(`${di
 export const loadStateTax = () => load<StateTaxTable>('us/tax.json')
 export const loadCaTax = () => load<import('./tax').CaTaxTable>('ca/tax.json')
 export const loadCommonOccupations = () => load<import('./compare').CommonOccupation[]>('occupations.json')
+export const loadJpMobility = () => load<import('./mobility').JpMobility>('jp/mobility.json')
+export const loadUsMobility = () => load<import('./mobility').UsMobility>('us/mobility.json')
+
+export interface ResearchEffect {
+  id: string
+  topic: 'schooling_year' | 'degree_premium' | 'graduate_premium' | 'language' | 'job_change' | 'certification' | 'city'
+  countries: string[]
+  label: import('./types').Label
+  effect: { point: number; low: number | null; high: number | null; unit: 'log wage points' | 'percent' | 'ratio' | 'percentage_points' | 'share' | 'elasticity' }
+  design: 'causal' | 'descriptive'
+  population: string
+  source: { authors: string; year: number; title: string; venue?: string; url: string }
+  quote?: string
+  notes?: string
+}
+export const loadResearch = () => load<{ compiled: string; effects: ResearchEffect[] }>('research.json')
