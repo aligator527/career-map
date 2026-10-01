@@ -6,3 +6,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .playwright-mcp/
+
+# local credentials
+.env*
+!.env*.example

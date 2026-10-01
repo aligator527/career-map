@@ -1,0 +1,23 @@
+{
+  "_note": "Searches for reddit_collect.py. Each query's threads go to data/raw/reddit/digest/<id>.md. Keep queries specific: broad ones mostly return off-topic threads.",
+  "since": "2021-01-01",
+  "queries": [
+    {"id": "jp-it-salary", "topic": "pay", "countries": ["JP"], "subreddits": ["japanlife", "movingtojapan", "cscareerquestions"], "q": "software engineer salary Japan"},
+    {"id": "jp-job-change", "topic": "job_market", "countries": ["JP"], "subreddits": ["japanlife", "movingtojapan"], "q": "changing jobs raise Japan"},
+    {"id": "jp-visa", "topic": "visa", "countries": ["JP"], "subreddits": ["movingtojapan", "japanlife"], "q": "COE processing time work visa"},
+    {"id": "us-h1b", "topic": "visa", "countries": ["US"], "subreddits": ["h1b", "immigration"], "q": "H1B lottery premium processing"},
+    {"id": "us-tech-salary", "topic": "pay", "countries": ["US"], "subreddits": ["cscareerquestions", "ExperiencedDevs"], "q": "salary offer total compensation"},
+    {"id": "uk-sponsorship", "topic": "visa", "countries": ["UK"], "subreddits": ["cscareerquestionsuk", "ukvisa"], "q": "visa sponsorship skilled worker"},
+    {"id": "uk-rent-london", "topic": "housing", "countries": ["UK"], "subreddits": ["london", "UKPersonalFinance"], "q": "rent room flatshare one bed"},
+    {"id": "de-bluecard", "topic": "visa", "countries": ["DE"], "subreddits": ["germany", "AskAGerman", "cscareerquestionsEU"], "q": "blue card Ausländerbehörde waiting"},
+    {"id": "de-tech-jobs", "topic": "job_market", "countries": ["DE"], "subreddits": ["cscareerquestionsEU", "germany"], "q": "job search Germany developer applications"},
+    {"id": "de-net-pay", "topic": "pay", "countries": ["DE"], "subreddits": ["germany", "Finanzen"], "q": "netto brutto 70k"},
+    {"id": "nl-hsm", "topic": "visa", "countries": ["NL"], "subreddits": ["Netherlands", "cscareerquestionsEU"], "q": "highly skilled migrant sponsor 30% ruling"},
+    {"id": "nl-housing", "topic": "housing", "countries": ["NL"], "subreddits": ["Netherlands", "Amsterdam"], "q": "rent apartment Amsterdam price"},
+    {"id": "ca-pr", "topic": "visa", "countries": ["CA"], "subreddits": ["ImmigrationCanada", "cscareerquestionsCAD"], "q": "express entry CRS job offer"},
+    {"id": "au-482", "topic": "visa", "countries": ["AU"], "subreddits": ["AusVisa", "cscareerquestionsOCE"], "q": "482 sponsorship skills in demand"},
+    {"id": "sg-ep", "topic": "visa", "countries": ["SG"], "subreddits": ["askSingapore", "singapore"], "q": "employment pass COMPASS salary"},
+    {"id": "kr-e7", "topic": "visa", "countries": ["KR"], "subreddits": ["korea", "Living_in_Korea"], "q": "E-7 visa job foreigner salary"},
+    {"id": "relocation-junior", "topic": "visa", "countries": ["DE", "NL", "UK", "CA"], "subreddits": ["IWantOut", "cscareerquestionsEU"], "q": "junior visa sponsorship from abroad"}
+  ]
+}

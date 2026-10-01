@@ -1,13 +1,16 @@
 """Community insights: claims from Reddit that several independent users corroborate.
 
-Input:  labels/insights_*.json (compiled by research agents; see each file's _access / _method)
+Input:  labels/insights_*.json (compiled by research agents from the local corpus, see reddit_collect.py)
         labels/insights_config.json  {"publish": false}  — publication switch (off by default)
+        data/raw/reddit/threads/*.json — threads fetched through the official Reddit Data API
 Output: web/public/data/insights.json
 
 Rules enforced here (an insight that breaks any of them stops the build):
   * at least 3 distinct users across at least 2 distinct threads
   * every source dated 2021-01 or later, and linking to a reddit.com thread (never a mirror)
   * paraphrases only (notes ≤ 25 words); no usernames are published — only counts and links
+  * every source must be found in the API corpus: the cited thread exists and the cited user (hash) wrote
+    in it on the cited month. Publishing requires the corpus, so nothing read elsewhere can be published.
 The comparison with official statistics is computed in the browser with the same engine as the
 rest of the site (pay cells, tax models), so it always uses the currently published data.
 """
@@ -20,6 +23,7 @@ import re
 from pathlib import Path
 
 from .common import WEB_DATA_DIR, write_json
+from .reddit_collect import load_threads
 
 LABELS = Path(__file__).parent / "labels"
 MIN_USERS = 3
@@ -42,8 +46,23 @@ def thread_of(url: str) -> str:
     return url[: m.end()].replace("://reddit.com", "://www.reddit.com")
 
 
-def check(ins: dict, origin: str) -> dict:
+def verify(ins: dict, where: str, corpus: dict[str, dict]) -> None:
+    for s in ins["sources"]:
+        url = thread_of(s["url"])
+        thread = corpus.get(url)
+        assert thread, f"{where}: thread not in the API corpus: {url}"
+        uid = user_id(s)
+        dates = [c["date"] for c in thread["comments"] if c["userHash"] == uid]
+        if thread["author"] == uid:
+            dates.append(thread["date"])
+        assert dates, f"{where}: user {uid} did not post in {url}"
+        assert any(d.startswith(s["date"]) for d in dates), f"{where}: no post by {uid} dated {s['date']} in {url}"
+
+
+def check(ins: dict, origin: str, corpus: dict[str, dict] | None) -> dict:
     where = f"{origin}/{ins['id']}"
+    if corpus is not None:
+        verify(ins, where, corpus)
     sources = ins["sources"]
     users = {user_id(s) for s in sources}
     threads = {thread_of(s["url"]) for s in sources}
@@ -75,12 +94,15 @@ def check(ins: dict, origin: str) -> dict:
 
 def build() -> None:
     config = json.loads((LABELS / "insights_config.json").read_text())
+    corpus = load_threads() or None
+    if config.get("publish"):
+        assert corpus, "publishing needs the Reddit API corpus (run reddit_collect first)"
     checked = []
     for path in sorted(LABELS.glob("insights_*.json")):
         if path.name == "insights_config.json":
             continue
         data = json.loads(path.read_text())
-        checked += [check(i, path.stem) for i in data.get("insights", [])]
+        checked += [check(i, path.stem, corpus) for i in data.get("insights", [])]
     ids = [i["id"] for i in checked]
     assert len(ids) == len(set(ids)), "duplicate insight ids"
     out = {
@@ -90,7 +112,8 @@ def build() -> None:
         "pending": 0 if config.get("publish") else len(checked),
     }
     write_json(WEB_DATA_DIR / "insights.json", out)
-    print(f"  insights: {len(checked)} valid, {'published' if out['published'] else 'NOT published (publish=false)'}")
+    verified = "verified against the API corpus" if corpus else "NOT verified (no API corpus yet)"
+    print(f"  insights: {len(checked)} valid, {verified}, {'published' if out['published'] else 'NOT published (publish=false)'}")
 
 
 if __name__ == "__main__":
